@@ -20,7 +20,8 @@
     "packages/@real-token/aa-modal",
     "packages/@real-token/ui-components",
     "packages/@real-token/web3",
-    "packages/@real-token/core"
+    "packages/@real-token/core",
+    "packages/@real-token/types"
   ],
   "dependencies": {
     "@real-token/aa-core": "v2.0.0-alpha.2",

@@ -3,3 +3,4 @@ packages:
   - "packages/@real-token/ui-components"
   - "packages/@real-token/web3"
   - "packages/@real-token/core"
+  - "packages/@real-token/types"

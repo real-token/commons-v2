@@ -1,0 +1,65 @@
+{
+  "name": "@real-token/core",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/runtime": "^7.24.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@real-token/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.25.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/runtime": "^7.24.7",
+    "@real-token/aa-core": "v2.0.0-alpha.2",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
+    "babel-loader": "^10.0.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "mini-css-extract-plugin": "^2.9.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "^5.6.2",
+    "typescript-declaration-webpack-plugin": "^0.3.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^6.0.1",
+    "webpack-node-externals": "^3.0.0",
+    "wagmi": "2.14.13"
+  },
+  "peerDependencies": {
+    "@real-token/aa-core": "v2.0.0-alpha.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "wagmi": "2.14.13"
+  }
+}
