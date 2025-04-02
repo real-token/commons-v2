@@ -1,0 +1,5 @@
+packages:
+  - "packages/@real-token/aa-modal"
+  - "packages/@real-token/ui-components"
+  - "packages/@real-token/web3"
+  - "packages/@real-token/core"
