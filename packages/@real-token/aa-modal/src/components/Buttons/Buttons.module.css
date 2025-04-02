@@ -1,0 +1,13 @@
+.root {
+    border-color: #828282;
+    background-color: transparent;
+    color: light-dark(black, white);
+    height: 45px;
+}
+
+.root:hover{
+    border-color: #FAAE1D;
+    background-color: #FAAE1D;
+    color: light-dark(black, white);
+    cursor: pointer;
+}
