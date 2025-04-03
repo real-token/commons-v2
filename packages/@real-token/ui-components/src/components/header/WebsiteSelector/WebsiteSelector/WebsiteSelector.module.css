@@ -1,0 +1,29 @@
+.websiteName_MenuOpened {
+  color: black;
+}
+
+.websiteName {
+  color: light-dark(black, white);
+}
+
+.currentWebsiteContainer {
+  border-radius: 5px 5px 0 0;
+}
+
+.currentWebsiteContainer:not([data-disabled="true"]):hover {
+  cursor: pointer;
+}
+
+.currentWebsiteContainer[data-disabled="true"]:hover {
+  cursor: unset;
+}
+
+.websiteContainer {
+  width: 100%;
+  position: absolute;
+  margin-top: -1px;
+  padding: 10px;
+  gap: var(--mantine-spacing-sm);
+  border-radius: 0 0 5px 5px;
+  z-index: 99999999;
+}
