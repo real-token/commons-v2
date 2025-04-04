@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build:all": "pnpm nx run-many -t build -p @real-token/*",
+    "sherif:check": "sherif check",
+    "sherif:fix": "sherif fix",
     "syncpack:list": "syncpack list-mismatches --config .syncpackrc.js",
     "syncpack:fix": "syncpack fix-mismatches --config .syncpackrc.js"
   },
@@ -12,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "sherif": "^1.4.0",
     "syncpack": "^13.0.3",
     "turbo": "^2.4.4"
   },
@@ -22,17 +26,5 @@
     "packages/@real-token/web3",
     "packages/@real-token/core",
     "packages/@real-token/types"
-  ],
-  "dependencies": {
-    "@real-token/aa-core": "v2.0.0-alpha.2",
-    "@mantine/core": "^7.17.3",
-    "@mantine/modals": "^7.17.3",
-    "@mantine/notifications": "^7.17.3",
-    "@types/node": "^22.13.16",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tabler-icons-react": "^1.56.0"
-  }
+  ]
 }
