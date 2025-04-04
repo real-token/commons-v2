@@ -73,8 +73,8 @@
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
     "@real-token/aa-core": "v2.0.0-alpha.2",
-    "react": "*",
-    "react-dom": "*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-i18next": "^15.1.0",
     "wagmi": "2.14.13"
   },

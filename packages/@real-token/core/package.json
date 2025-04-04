@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace"
   },
   "keywords": [],
   "author": "",
@@ -29,9 +31,9 @@
   "dependencies": {
     "@babel/core": "^7.24.7",
     "@babel/runtime": "^7.24.7",
+    "@real-token/types": "workspace:*",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "@real-token/types": "workspace:*"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -50,11 +52,11 @@
     "react-dom": "18.3.1",
     "typescript": "^5.6.2",
     "typescript-declaration-webpack-plugin": "^0.3.0",
+    "wagmi": "2.14.13",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^6.0.1",
-    "webpack-node-externals": "^3.0.0",
-    "wagmi": "2.14.13"
+    "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
     "@real-token/aa-core": "v2.0.0-alpha.2",

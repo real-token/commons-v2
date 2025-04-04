@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace"
   },
   "keywords": [],
   "author": "",
