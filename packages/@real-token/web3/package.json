@@ -1,0 +1,64 @@
+{
+  "name": "@real-token/web3",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack",
+    "yalc:add": "yalc add @real-token/aa-core",
+    "yalc:remove": "yalc remove @real-token/aa-core"
+  },
+  "packageManager": "pnpm@10.7.0",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.25.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/runtime": "^7.24.7",
+    "@rainbow-me/rainbowkit": "^2.2.4",
+    "@real-token/aa-core": "file:.yalc/@real-token/aa-core",
+    "@tanstack/react-query": "^5.72.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "babel-loader": "^10.0.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "mini-css-extract-plugin": "^2.9.1",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
+    "typescript": "^5.6.2",
+    "typescript-declaration-webpack-plugin": "^0.3.0",
+    "wagmi": "^2.14.13",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^6.0.1",
+    "websocket-polyfill": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.4",
+    "@real-token/aa-core": "2.0.0-alpha.2",
+    "@tanstack/react-query": "^5.72.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "wagmi": "^2.14.13"
+  }
+}
