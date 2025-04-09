@@ -1,5 +1,5 @@
 {
-  "name": "ui-components",
+  "name": "@real-token/ui-components",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -54,14 +54,14 @@
     "postcss-preset-env": "^10.0.6",
     "postcss-preset-mantine": "^1.11.0",
     "postcss-simple-vars": "^7.0.1",
-    "react": "*",
-    "react-dom": "*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "style-loader": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^5.6.2",
     "typescript-declaration-webpack-plugin": "^0.3.0",
-    "wagmi": "2.14.13",
+    "wagmi": "^2.14.13",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^6.0.1",
@@ -73,16 +73,16 @@
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
     "@real-token/aa-core": "v2.0.0-alpha.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
-    "wagmi": "2.14.13"
+    "wagmi": "^2.14.13"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.19.0",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.7",
-    "react-cookie": "^8.0.1",
-    "tabler-icons-react": "*"
+    "tabler-icons-react": "*",
+    "react-cookie": "^8.0.1"
   }
 }

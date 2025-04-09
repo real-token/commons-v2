@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace"
   },
   "keywords": [],
   "author": "",
@@ -24,9 +26,9 @@
     }
   },
   "dependencies": {
-    "react-cookie": "^8.0.1",
     "i18next-browser-languagedetector": "^8.0.2",
-    "i18next-resources-for-ts": "^1.2.1"
+    "i18next-resources-for-ts": "^1.2.1",
+    "react-cookie": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -35,25 +37,25 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
     "babel-loader": "^10.0.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "mini-css-extract-plugin": "^2.9.1",
-    "typescript-declaration-webpack-plugin": "^0.3.0",
-    "typescript": "^5.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^12.2.0",
-    "@types/react": "18.3.1",
-    "@types/react-dom": "18.3.1",
+    "react-i18next": "^15.1.0",
+    "typescript": "^5.6.2",
+    "typescript-declaration-webpack-plugin": "^0.3.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^6.0.1",
     "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
+    "i18next": "^22.4.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "i18next": "^22.4.13",
-    "react-i18next": "^12.2.0"
+    "react-i18next": "^15.1.0"
   }
 }

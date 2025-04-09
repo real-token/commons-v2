@@ -5,9 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build:all": "pnpm nx run-many -t build -p @real-token/*",
-    "sherif:check": "sherif check",
-    "sherif:fix": "sherif fix",
+    "build:all": "pnpm turbo run build",
+    "push:all": "pnpm turbo run yalc:push",
+    "sherif:check": "sherif",
+    "sherif:fix": "sherif --fix",
     "syncpack:list": "syncpack list-mismatches --config .syncpackrc.js",
     "syncpack:fix": "syncpack fix-mismatches --config .syncpackrc.js"
   },
@@ -19,12 +20,5 @@
     "syncpack": "^13.0.3",
     "turbo": "^2.4.4"
   },
-  "packageManager": "pnpm@10.7.0+sha1.66453f13fbf9078d3db193718206a8d738afdbdb",
-  "workspaces": [
-    "packages/@real-token/aa-modal",
-    "packages/@real-token/ui-components",
-    "packages/@real-token/web3",
-    "packages/@real-token/core",
-    "packages/@real-token/types"
-  ]
+  "packageManager": "pnpm@10.7.0+sha1.66453f13fbf9078d3db193718206a8d738afdbdb"
 }

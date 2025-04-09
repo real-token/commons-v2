@@ -4,6 +4,7 @@ import {
   MantineThemeOverride,
   ModalProps,
 } from "@mantine/core";
+import { CookiesProvider } from "react-cookie";
 import { ContextModalProps, ModalsProvider } from "@mantine/modals";
 import { Notifications, NotificationsProps } from "@mantine/notifications";
 import {
@@ -34,19 +35,21 @@ export const MantineProviders: FC<MantineProvidersProps> = ({
   const modalStylesUsed = modalStyles ?? defaultModalStyles;
 
   return (
-    <MantineProvider theme={{ ...themeUsed }}>
-      <Notifications {...notificationsProps} />
-      <ModalsProvider
-        modals={{ ...customModals }}
-        modalProps={{
-          centered: true,
-          withCloseButton: false,
-          ...modalProps,
-          styles: modalStylesUsed,
-        }}
-      >
-        {children}
-      </ModalsProvider>
-    </MantineProvider>
+    <CookiesProvider>
+      <MantineProvider theme={{ ...themeUsed }}>
+        <Notifications {...notificationsProps} />
+        <ModalsProvider
+          modals={{ ...customModals }}
+          modalProps={{
+            centered: true,
+            withCloseButton: false,
+            ...modalProps,
+            styles: modalStylesUsed,
+          }}
+        >
+          {children}
+        </ModalsProvider>
+      </MantineProvider>
+    </CookiesProvider>
   );
 };

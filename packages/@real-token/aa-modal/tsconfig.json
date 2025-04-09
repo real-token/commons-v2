@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "commonJs",
+    "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,

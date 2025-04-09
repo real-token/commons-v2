@@ -158,7 +158,13 @@ const esmConfig = merge(commonConfig, {
     module: true,
     globalObject: "this",
   },
-  externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
+  externals: [
+    ...allDeps,
+    /^(@babel\/runtime)/i,
+    nodeExternals({
+      importType: "module",
+    }),
+  ],
   externalsPresets: { node: true },
   experiments: {
     outputModule: true,

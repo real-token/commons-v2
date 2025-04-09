@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || "production";
+
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
@@ -147,12 +149,54 @@ const esmConfig = merge(commonConfig, {
     module: true,
     globalObject: "this",
   },
-  externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
+  externals: [
+    ...allDeps,
+    /^(@babel\/runtime)/i,
+    nodeExternals({
+      importType: "module",
+    }),
+  ],
   externalsPresets: { node: true },
   experiments: {
     outputModule: true,
   },
-  target: "node20",
+  target: "web",
+  module: {
+    rules: [
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            ...babelLoaderOptions,
+            presets: [
+              [
+                "@babel/env",
+                {
+                  modules: false,
+                  bugfixes: true,
+                  targets: { esmodules: true },
+                },
+              ],
+              "@babel/typescript",
+              ["@babel/preset-react", { runtime: "automatic" }],
+            ],
+          },
+        },
+      },
+    ],
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(
+        process.env.NODE_ENV || "production"
+      ),
+    }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
+  ],
 });
 
 module.exports = [cjsConfig, esmConfig];
