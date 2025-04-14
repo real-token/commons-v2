@@ -11,15 +11,18 @@ import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { useMemo } from "react";
+import { RainbowKitProviderProps } from "@rainbow-me/rainbowkit/dist/components/RainbowKitProvider/RainbowKitProvider";
 
 export function RealTokenWeb3Provider({
   children,
   queryClient,
   aaClientConfig,
+  rainbowKitConfig,
 }: {
   children: React.ReactNode;
   queryClient: QueryClient;
   aaClientConfig: AAClientConfig;
+  rainbowKitConfig?: RainbowKitProviderProps;
 }) {
   const { wagmiConfig, authAdapter, web3auth } = useMemo(
     () => getInitialState(aaClientConfig),
@@ -28,7 +31,7 @@ export function RealTokenWeb3Provider({
   return (
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
-        <RainbowKitProvider>
+        <RainbowKitProvider {...rainbowKitConfig}>
           <AAProvider
             config={aaClientConfig}
             authAdapter={authAdapter}
