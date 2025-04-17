@@ -27,7 +27,12 @@ export const AAExternalConnectorDrawer = ({
       {!advancedExternalWalletTermsAccepted ? (
         <Flex direction={"column"} gap={"md"} px={"10%"}>
           <Text>{t("advancedExternalWallet.terms")}</Text>
-          <Button onClick={() => setAdvancedExternalWalletTermsAccepted(true)}>
+          <Button
+            onClick={(event) => {
+              event.stopPropagation();
+              setAdvancedExternalWalletTermsAccepted(true);
+            }}
+          >
             {t("advancedExternalWallet.acceptButton")}
           </Button>
         </Flex>
