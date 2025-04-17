@@ -1,0 +1,19 @@
+.root {
+  border-width: 2px;
+  border-color: var(--color);
+  background-color: transparent;
+  color: light-dark(black, white);
+  height: 45px;
+  .text {
+    color: var(--color);
+  }
+}
+
+.root:hover {
+  border-color: var(--background-color);
+  background-color: var(--background-color);
+  cursor: pointer;
+  .text {
+    color: light-dark(black, white);
+  }
+}

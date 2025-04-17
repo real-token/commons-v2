@@ -1,0 +1,66 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  backdrop-filter: blur(0px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  overflow: hidden;
+  transition: backdrop-filter 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.wrapper[data-state="open"] {
+  visibility: visible;
+  backdrop-filter: blur(4px);
+}
+
+.wrapper[data-state="closed"] {
+  visibility: hidden;
+}
+
+.drawer {
+  background: var(--mantine-color-body);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  will-change: transform;
+}
+
+.wrapper[data-state="open"] .drawer {
+  transform: translateY(0);
+}
+
+.wrapper[data-state="closed"] .drawer {
+  transform: translateY(100%);
+}
+
+.handle {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.handle::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: var(--mantine-color-gray-4);
+  border-radius: 2px;
+}
+
+.content {
+  padding: 16px;
+  max-height: 80vh;
+  overflow-y: auto;
+}

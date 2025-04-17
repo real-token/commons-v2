@@ -11,6 +11,11 @@ export const main = {
     connectExternalWallet: "Advanced connections",
     or: "or",
   },
+  mode: {
+    aa: "RealToken AA",
+    tba: "TBA",
+    external: "Others wallet",
+  },
   help: "I need help",
   privacyPolicy: "We do not share any data related to your social logins.",
   languageSwitcher: {

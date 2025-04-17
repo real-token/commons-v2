@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "add:all": "pnpm turbo run yalc:add",
     "build:all": "pnpm turbo run build",
     "push:all": "pnpm turbo run yalc:push",
     "sherif:check": "sherif",

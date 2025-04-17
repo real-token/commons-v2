@@ -7,6 +7,7 @@
     },
     "yalc:push": {
       "dependsOn": ["^build"]
-    }
+    },
+    "yalc:add": {}
   }
 }

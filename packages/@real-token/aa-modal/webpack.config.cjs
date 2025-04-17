@@ -35,7 +35,14 @@ const babelLoader = {
 };
 
 // CJS-specific configuration
-const allDeps = [...Object.keys(pkg.peerDependencies || {})];
+const allDeps = [
+  ...Object.keys(pkg.peerDependencies || {}).map(
+    (dep) => new RegExp(`^${dep}(/.*)?$`)
+  ),
+  ...Object.keys(pkg.dependencies || {}).map(
+    (dep) => new RegExp(`^${dep}(/.*)?$`)
+  ),
+];
 
 // Common configuration
 const commonConfig = {

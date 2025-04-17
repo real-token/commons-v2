@@ -1,1 +1,2 @@
-export { AaModal } from "./components/AaModal";
+export * from "./components/AaModal";
+export * from "./types";
