@@ -4,9 +4,22 @@ import {
   LoginConfig,
   TorusConfig,
 } from "@real-token/aa-core";
-import { metaMaskWallet, rabbyWallet } from "@rainbow-me/rainbowkit/wallets";
+import {
+  metaMaskWallet,
+  rabbyWallet,
+  walletConnectWallet,
+  coinbaseWallet,
+  ledgerWallet,
+  trustWallet,
+  frameWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import { EthereumLogo } from "@real-token/ui-components";
-
+import {
+  discordLogo,
+  facebookLogo,
+  twitchLogo,
+  googleLogo,
+} from "@real-token/web3";
 const env = import.meta.env.VITE_ENV;
 
 const networks: ChainConfig[] = [
@@ -33,17 +46,46 @@ const loginConfig: LoginConfig = {
     clientId:
       "900675479243-o3mab93vi7nt7ho4nctkfbqs5pmgv61m.apps.googleusercontent.com",
     showOnModal: true,
-    rainbowLogo: "",
+    showOnSocialBackupFactor: true,
+    rainbowLogo: googleLogo,
   },
 };
 
 const stagingLoginModal: LoginConfig = {
+  discord: {
+    name: "discord",
+    verifier: "realt-discord-staging",
+    typeOfLogin: "discord",
+    clientId: "1294468658856460348",
+    rainbowLogo: discordLogo,
+  },
   google: {
-    name: "googe",
+    name: "google",
     verifier: "realt-google-staging",
     typeOfLogin: "google",
     clientId:
       "427962867996-kdhi2rirlqqsghn7uiq1m462b9d04mia.apps.googleusercontent.com",
+    rainbowLogo: googleLogo,
+  },
+  facebook: {
+    name: "facebook",
+    verifier: "realt-facebook-staging",
+    typeOfLogin: "facebook",
+    clientId: "569679122063484",
+    rainbowLogo: facebookLogo,
+  },
+  twitch: {
+    name: "twitch",
+    verifier: "realt-twitchtv-staging",
+    typeOfLogin: "twitch",
+    clientId: "qnw5sbf2xhf39mn334nztn95n64mcm",
+    rainbowLogo: twitchLogo,
+  },
+  email_passwordless: {
+    name: "email_passwordless",
+    verifier: "realt-passwordless-staging",
+    typeOfLogin: "email_passwordless",
+    clientId: import.meta.env.VITE_TORUS_API_KEY!,
     rainbowLogo: "",
   },
 };
@@ -52,14 +94,22 @@ const torusConfig: TorusConfig = {
   mfaLevel: "optional", // TODO en parler à web3auth
   networks,
   enableLogging: true,
-  loginConfig: env == "production" ? loginConfig : stagingLoginModal,
+  loginConfig: loginConfig,
 };
 
 export const aaClient: AAClientConfig = {
   walletList: [
     {
       groupName: "hot wallets",
-      wallets: [metaMaskWallet, rabbyWallet],
+      wallets: [
+        metaMaskWallet,
+        rabbyWallet,
+        walletConnectWallet,
+        coinbaseWallet,
+        ledgerWallet,
+        trustWallet,
+        frameWallet,
+      ],
     },
   ],
   uiConfig: {

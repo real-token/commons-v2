@@ -1,1 +1,5 @@
-export const modals = {};
+import { AaModal } from "./AaModal";
+
+export const modals = {
+  aaModal: AaModal,
+};

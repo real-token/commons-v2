@@ -1,36 +1,41 @@
-import { MantineProvider } from "@mantine/core";
+import { Button } from "@mantine/core";
 
 import "./App.css";
-import { useAA } from "@real-token/aa-core";
 
 import { modals } from "@mantine/modals";
-import { ModalsProvider } from "@mantine/modals";
-import { AaModal } from "@real-token/aa-modal";
+import { CONNECTION_MODE } from "@real-token/aa-modal";
 
 function App() {
   return (
-    <MantineProvider>
-      <ModalsProvider
-        modals={{
-          aaModal: AaModal,
-        }}
-      />
-      <button
-        onClick={() => {
-          modals.openContextModal({
-            modal: "aaModal",
-            innerProps: {
-              forceWallet: {
-                walletAddress: "",
-                forceVersion: "",
+    <Button
+      onClick={() => {
+        modals.openContextModal({
+          modal: "aaModal",
+          innerProps: {
+            connectionMode: {
+              [CONNECTION_MODE.aa]: {
+                connectorsName: ["metaMask", "rabby", "walletConnect"],
+                socialConnectorsName: ["google"],
+                showEmailPasswordless: false,
+              },
+              [CONNECTION_MODE.external]: {
+                connectorsName: [
+                  "metaMask",
+                  "rabby",
+                  "walletConnect",
+                  "coinbase",
+                  "ledger",
+                  "trust",
+                  "frame",
+                ],
               },
             },
-          });
-        }}
-      >
-        {"open"}
-      </button>
-    </MantineProvider>
+          },
+        });
+      }}
+    >
+      {"open"}
+    </Button>
   );
 }
 

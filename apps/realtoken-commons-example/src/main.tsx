@@ -31,7 +31,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             defaultNetworkId: "0x64",
           }}
         >
-          {/* <LanguageInit i={i18n} /> */}
           <Layout
             newWebsite={{
               name: "Realtoken commons example",
