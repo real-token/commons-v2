@@ -31,7 +31,7 @@ export function WalletMenu() {
         />
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item component={WalletProviderMenuItem} />
+        {/* <Menu.Item component={WalletProviderMenuItem} /> */}
         <CopyToClipboardMenuItem />
         <ViewOnExplorerMenuItem />
         <DisconnectMenuItem />

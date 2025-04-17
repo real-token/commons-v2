@@ -77,6 +77,7 @@ export const LanguageSelect = () => {
           >
             {i18n.language ? (
               <Text>
+                {`${i18n.language}`}
                 {data.find((lng) => lng.value == i18n.language)?.label ??
                   i18n.language}
               </Text>

@@ -1,6 +1,6 @@
 import { Group } from "@mantine/core";
 import { WalletMenu, SettingsMenu } from "../../menus";
-import { ConnectButton } from "../ConnectButton/ConnectButton";
+import { ConnectButton } from "../../buttons/ConnectButton/ConnectButton";
 import { NetworkSelector } from "../../buttons/NetworkSelector/NetworkSelector";
 import { useAA } from "@real-token/aa-core";
 

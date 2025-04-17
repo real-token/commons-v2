@@ -16,7 +16,13 @@ export function NetworkMenuItem<
           chainId: Number(network.chainId),
         })
       }
-      leftSection={<network.logo />}
+      leftSection={
+        <network.logo
+          width={20}
+          height={20}
+          color="var(--mantine-color-brand)"
+        />
+      }
       color={chainId === Number(network.chainId) ? "brand" : ""}
     >
       {network.displayName}

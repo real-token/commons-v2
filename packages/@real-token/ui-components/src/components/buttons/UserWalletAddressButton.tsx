@@ -1,15 +1,20 @@
 import { Button, ButtonProps } from "@mantine/core";
 import { useAA } from "@real-token/aa-core";
 import { shortenString } from "@/utils/shortenString";
+import { forwardRef } from "react";
 
-export const UserWalletAddressButton = ({ ...props }: ButtonProps) => {
+export const UserWalletAddressButton = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>((props, ref) => {
   const { walletAddress } = useAA();
   if (!walletAddress) return <></>;
 
   return (
-    <Button aria-label={shortenString(walletAddress)}>
+    <Button ref={ref} aria-label={shortenString(walletAddress)} {...props}>
       {shortenString(walletAddress)}
     </Button>
   );
-};
+});
+
 UserWalletAddressButton.displayName = "UserWalletAddressButton";
