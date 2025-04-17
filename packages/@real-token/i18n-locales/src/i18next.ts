@@ -45,6 +45,11 @@ const initLanguage = ({
           sameSite: "strict",
         },
       },
+      // Map fr-FR to fr to ensure consistent language handling
+      load: "languageOnly",
+      // Normalize language codes to handle fr-FR as fr
+      nonExplicitSupportedLngs: true,
+      supportedLngs: ["en", "fr", "es"],
     });
 
   if (resources) {
