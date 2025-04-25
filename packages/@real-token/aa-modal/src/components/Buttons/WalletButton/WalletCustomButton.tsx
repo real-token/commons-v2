@@ -34,6 +34,8 @@ export const WalletButtonCustom = ({
     });
   }, [connector]);
 
+  console.log(connector);
+
   const { data: iconUrl, isLoading } = useQuery({
     queryKey: ["iconUrl", connector.id],
     queryFn: async () => {

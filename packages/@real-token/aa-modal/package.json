@@ -24,7 +24,8 @@
     "build": "webpack",
     "yalc:publish": "yalc add .",
     "yalc:push": "yalc push --sig --replace",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "clean-install": "rm -rf node_modules"
   },
   "keywords": [],
   "author": "",
@@ -82,8 +83,8 @@
     "postcss-preset-env": "^10.0.6",
     "postcss-preset-mantine": "^1.11.0",
     "postcss-simple-vars": "^7.0.1",
-    "react": "*",
-    "react-dom": "*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
     "typescript": "^5.6.2",

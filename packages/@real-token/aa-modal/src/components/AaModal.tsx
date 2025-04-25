@@ -9,6 +9,9 @@ import { AaModalConfig, defaultAaModalConfig } from "../types/aaModalConfig";
 import { ConnectionMode } from "./ConnectionMode";
 import { TranslationProvider } from "./TranslationProvider";
 import { AaModalProvider } from "./AaModalProvider";
+import { useAA } from "@real-token/aa-core";
+import { modals } from "@mantine/modals";
+import { useCheckConfig } from "../hooks/useCheckConfig";
 
 type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
@@ -24,6 +27,14 @@ export const AaModalContent = ({
   id: string;
 }) => {
   const { connectionMode } = config;
+  useCheckConfig(config);
+
+  const { walletAddress } = useAA();
+  useEffect(() => {
+    if (walletAddress) {
+      modals.close(id);
+    }
+  }, [walletAddress]);
 
   useEffect(() => {
     if (Object.keys(connectionMode ?? {}).length == 0) {
@@ -47,7 +58,6 @@ export const AaModal = (props: ContextModalProps<AaModalProps>) => {
     () => merge({}, defaultAaModalConfig, props.innerProps),
     [props.innerProps]
   ) as AaModalConfig;
-  console.log("config", config);
   return (
     <TranslationProvider>
       <AaModalProvider config={config}>
