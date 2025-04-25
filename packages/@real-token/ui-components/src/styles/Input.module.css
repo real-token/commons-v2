@@ -1,0 +1,23 @@
+.input {
+  border: 1px solid #737c8a;
+  background-color: transparent;
+  color: light-dark(black, white);
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: 16px !important;
+  }
+}
+
+.input::placeholder {
+  color: light-dark(#737c8a, #737c8a);
+  opacity: 1;
+  font-weight: 600;
+}
+
+.input:focus {
+  border: 1px solid light-dark(#156cab, #cd6828);
+}
+
+.inputLabel {
+  color: light-dark(#111111, #fafcff);
+  font-weight: 700;
+}

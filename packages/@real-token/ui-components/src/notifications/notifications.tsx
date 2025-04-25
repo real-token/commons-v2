@@ -1,10 +1,16 @@
 import { Translation } from "react-i18next";
 import { NotificationData } from "@mantine/notifications";
-import { IconCheck } from "@tabler/icons-react";
+import { IconAlertCircle, IconCheck } from "@tabler/icons-react";
 import { asConst } from "@/utils/asConst";
+import {
+  getNotificationErrorMessage,
+  getNotificationErrorParams,
+  getNotificationTitle,
+} from "./utils";
 
 export enum NotificationsID {
-  userCopied = "userCopied",
+  copyAddress = "copyAddress",
+  notAaOwner = "notAaOwner",
 }
 
 export const NOTIFICATIONS = asConst<
@@ -13,19 +19,24 @@ export const NOTIFICATIONS = asConst<
     NotificationData | ((payload: any) => NotificationData)
   >
 >()({
-  [NotificationsID.userCopied]: {
-    id: "user-copied",
+  [NotificationsID.copyAddress]: {
+    id: "copyAddress",
     color: "teal",
     icon: <IconCheck size={14} />,
     title: (
       <Translation ns={"notifications"}>
-        {(t) => t("userCopied.title")}
+        {(t) => t("copyAddress.title")}
       </Translation>
     ),
     message: (
       <Translation ns={"notifications"}>
-        {(t) => t("userCopied.message")}
+        {(t) => t("copyAddress.message")}
       </Translation>
     ),
+  },
+  [NotificationsID.notAaOwner]: {
+    ...getNotificationErrorParams("notAaOwner"),
+    title: getNotificationTitle("notAaOwner.title"),
+    message: getNotificationErrorMessage("notAaOwner.message"),
   },
 });

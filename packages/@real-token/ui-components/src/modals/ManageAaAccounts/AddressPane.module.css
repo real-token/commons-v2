@@ -1,0 +1,18 @@
+.container {
+    border: 1px solid var(--mantine-color-brand-9);
+    border-radius: var(--mantine-radius-sm);
+    padding: var(--mantine-spacing-xs);
+    font-weight: 600;
+}
+
+.container:hover {
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    background-color: var(--mantine-color-brand-9);
+}
+
+.isWallet {
+    color: white;
+    background-color: var(--mantine-color-brand-9);
+}

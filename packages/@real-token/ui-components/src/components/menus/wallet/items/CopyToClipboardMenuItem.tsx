@@ -1,25 +1,21 @@
 import { Menu } from "@mantine/core";
-import { useClipboard } from "@mantine/hooks";
-import { showNotification } from "@mantine/notifications";
-import { useAA } from "@real-token/aa-core";
 import { IconCopy } from "@tabler/icons-react";
-import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { NOTIFICATIONS, NotificationsID } from "@/notifications";
+import { modals } from "@mantine/modals";
+import { CopyAddressModalContent } from "../../../../modals";
 
 export const CopyToClipboardMenuItem = () => {
   const { t } = useTranslation("common", { keyPrefix: "wallet" });
 
-  const { walletAddress } = useAA();
-  const { copy } = useClipboard({ timeout: 500 });
-
-  const onCopy = useCallback(() => {
-    copy(walletAddress);
-    showNotification(NOTIFICATIONS[NotificationsID.userCopied]);
-  }, [walletAddress, copy]);
+  const handleCopy = () => {
+    modals.open({
+      id: "copy-address",
+      children: <CopyAddressModalContent id="copy-address" />,
+    });
+  };
 
   return (
-    <Menu.Item leftSection={<IconCopy size={18} />} onClick={onCopy}>
+    <Menu.Item leftSection={<IconCopy size={18} />} onClick={handleCopy}>
       {t("copy")}
     </Menu.Item>
   );

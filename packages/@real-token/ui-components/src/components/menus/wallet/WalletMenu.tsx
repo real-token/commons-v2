@@ -4,13 +4,17 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import {
   CopyToClipboardMenuItem,
   DisconnectMenuItem,
+  ManageAaAccountsMenuItem,
   ViewOnExplorerMenuItem,
 } from "./items";
 import { UserWalletAddressButton } from "@/components/buttons/UserWalletAddressButton";
-import { WalletProviderMenuItem } from "./items/WalletProviderMenuItem";
+import { CurrentConnectorMenuItem } from "./items/CurrentConnectorMenuItem";
+import { useIsAA } from "@real-token/web3";
 
 export function WalletMenu() {
   const [isOpen, handlers] = useDisclosure(false);
+
+  const isAA = useIsAA();
 
   return (
     <Menu
@@ -31,7 +35,8 @@ export function WalletMenu() {
         />
       </Menu.Target>
       <Menu.Dropdown>
-        {/* <Menu.Item component={WalletProviderMenuItem} /> */}
+        <CurrentConnectorMenuItem />
+        {isAA && <ManageAaAccountsMenuItem />}
         <CopyToClipboardMenuItem />
         <ViewOnExplorerMenuItem />
         <DisconnectMenuItem />
