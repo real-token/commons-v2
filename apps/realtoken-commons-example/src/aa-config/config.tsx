@@ -20,6 +20,7 @@ import {
   twitchLogo,
   googleLogo,
 } from "@real-token/web3";
+
 const env = import.meta.env.VITE_ENV;
 
 const networks: ChainConfig[] = [
@@ -47,7 +48,7 @@ const loginConfig: LoginConfig = {
       "900675479243-o3mab93vi7nt7ho4nctkfbqs5pmgv61m.apps.googleusercontent.com",
     showOnModal: true,
     showOnSocialBackupFactor: true,
-    rainbowLogo: googleLogo,
+    rainbowLogo: async () => googleLogo,
   },
 };
 
@@ -126,7 +127,7 @@ export const aaClient: AAClientConfig = {
   },
   web3auth: {
     apiKey: import.meta.env.VITE_TORUS_API_KEY!,
-    network: "sapphire_devnet",
+    network: "sapphire_mainnet",
   },
   guardians: [
     "0x8422207d24321c9d753c6806ca6b8448bb3dd465",

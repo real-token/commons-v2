@@ -3,6 +3,7 @@ import App from "./App";
 import "./index.css";
 import { resources } from "./i18next/locales";
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
 import { aaClient } from "./aa-config/config";
 import { modals } from "./modals";
 import React from "react";
@@ -23,14 +24,14 @@ const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RealTokenWeb3Provider queryClient={queryClient} aaClientConfig={aaClient}>
-      <MantineProviders modals={modals}>
-        <RealTokenUiProvider<any>
-          values={{
-            showNetworks: SHOW_NETWORKS.ALL,
-            networksConfig: aaClient.torusConfig.networks,
-            defaultNetworkId: "0x64",
-          }}
-        >
+      <RealTokenUiProvider<any>
+        values={{
+          showNetworks: SHOW_NETWORKS.ALL,
+          networksConfig: aaClient.torusConfig.networks,
+          defaultNetworkId: "0x64",
+        }}
+      >
+        <MantineProviders modals={modals}>
           <Layout
             newWebsite={{
               name: "Realtoken commons example",
@@ -41,8 +42,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           >
             <App />
           </Layout>
-        </RealTokenUiProvider>
-      </MantineProviders>
+        </MantineProviders>
+      </RealTokenUiProvider>
     </RealTokenWeb3Provider>
   </React.StrictMode>
 );
