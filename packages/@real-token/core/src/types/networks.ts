@@ -15,4 +15,5 @@ export type RealTokenUiNetworkConfig = ChainConfig & {
   // nativeToken: NetworkToken;
   logo?: Logo;
   color?: string;
+  serverChainId: string;
 };
