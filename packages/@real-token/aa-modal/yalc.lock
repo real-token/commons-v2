@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@real-token/aa-core": {
-      "signature": "34afc3997708b8f104e492b96f75291e",
+      "signature": "340931dbcdebfa362eb33a42b5e16a45",
       "file": true,
       "replaced": "^1.1.10"
     }

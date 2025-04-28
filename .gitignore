@@ -15,6 +15,7 @@ dist-ssr
 .yarnrc
 */**/.npmrc
 */**/.yarnrc
+*/**/yalc.lock
 .nx
 .turbo
 
