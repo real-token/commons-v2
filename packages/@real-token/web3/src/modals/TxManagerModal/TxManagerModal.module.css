@@ -1,0 +1,15 @@
+.link:hover{
+    color: var(--mantine-color-brand-9);
+    cursor: pointer;
+}
+
+.txInfo{
+    background-color: light-dark(#F8F8F8,#4F4F4F);
+    border-radius: var(--mantine-radius-md);
+    padding: var(--mantine-spacing-md);
+    color: light-dark(black,white);
+}
+
+.button{
+    background-color: light-dark(#156CAB, #4F4F4F);
+}
