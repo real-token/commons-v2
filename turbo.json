@@ -3,11 +3,13 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "inputs": ["packages/@real-token/**"],
       "outputs": ["dist/**"]
     },
     "yalc:push": {
       "dependsOn": ["^build"]
     },
-    "yalc:add": {}
+    "yalc:add": {},
+    "clean-install": {}
   }
 }
