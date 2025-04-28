@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack",
     "yalc:publish": "yalc add .",
-    "yalc:push": "yalc push --sig --replace"
+    "yalc:push": "yalc push --sig --replace",
+    "clean-install": "rm -rf node_modules"
   },
   "keywords": [],
   "author": "",
