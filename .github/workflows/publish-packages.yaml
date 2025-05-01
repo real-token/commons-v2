@@ -23,6 +23,7 @@ jobs:
         run: |
           echo "@real-token/aa-core:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> ~/.npmrc
+          cat ~/.npmrc
         env:
           GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
@@ -33,7 +34,7 @@ jobs:
           readPackageManager: "version"
 
       - name: Install dependencies
-        run: pnpm install --filter "./packages/**"
+        run: pnpm install --userconfig ~/.npmrc --filter "./packages/**"
 
       - name: Build packages
         run: pnpm run build:lib
