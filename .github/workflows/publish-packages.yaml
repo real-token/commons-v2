@@ -19,6 +19,13 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
 
+      - name: Configure npm for @real-token/aa-core from GitHub Packages
+        run: |
+          echo "@real-token/aa-core:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> ~/.npmrc
+        env:
+          GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+
       - name: Install PNPM (version from package.json)
         uses: pnpm/action-setup@v3
         with:
