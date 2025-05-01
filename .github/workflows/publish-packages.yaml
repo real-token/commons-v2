@@ -23,7 +23,7 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           run_install: false
-          readPackageManager: true
+          readPackageManager: "version"
 
       - name: Install dependencies
         run: pnpm install --filter "./packages/**"
