@@ -18,7 +18,7 @@
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
     "@rainbow-me/rainbowkit": "^2.2.4",
-    "@real-token/aa-core": "file:.yalc/@real-token/aa-core",
+    "@real-token/aa-core": "v2.0.0-alpha.2",
     "@real-token/aa-modal": "workspace:*",
     "@real-token/core": "workspace:*",
     "@real-token/i18n-locales": "workspace:*",
