@@ -1,0 +1,45 @@
+name: Release to npm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # Utilise la version Node définie dans .nvmrc !
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install PNPM (version from package.json)
+        uses: pnpm/action-setup@v3
+        with:
+          run_install: false
+          readPackageManager: true
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build packages
+        run: pnpm run build:lib
+
+      - name: Create .npmrc for publishing
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+      - name: Publish with Changesets
+        run: pnpm changeset publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push tags on release
+        if: success()
+        run: git push --follow-tags origin main
