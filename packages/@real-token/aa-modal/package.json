@@ -1,6 +1,6 @@
 {
   "name": "@real-token/aa-modal",
-  "version": "1.0.9",
+  "version": "1.0.0",
   "description": "AA Modal component",
   "files": [
     "dist"
