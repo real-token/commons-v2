@@ -20,13 +20,15 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Configure npm for @real-token/aa-core from GitHub Packages
+      - name: Prepare .npmrc for GitHub Packages
         run: |
-          echo "@real-token/aa-core:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> ~/.npmrc
-          cat ~/.npmrc
+          echo "@real-token:registry=https://npm.pkg.github.com" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          cat .npmrc
         env:
           GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install PNPM (version from package.json)
         uses: pnpm/action-setup@v3
@@ -39,9 +41,6 @@ jobs:
 
       - name: Build packages
         run: pnpm run build:lib
-
-      - name: Create .npmrc for publishing
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
       - name: Publish with Changesets
         run: pnpm changeset publish
