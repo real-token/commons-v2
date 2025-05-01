@@ -24,7 +24,6 @@
     "build": "webpack",
     "yalc:publish": "yalc add .",
     "yalc:push": "yalc push --sig --replace",
-    "prepublishOnly": "yarn build",
     "clean-install": "rm -rf node_modules"
   },
   "keywords": [],
