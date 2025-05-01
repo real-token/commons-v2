@@ -75,7 +75,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "v2.0.0-alpha.2",
+    "@real-token/aa-core": "v2.0.0-alpha.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",

@@ -35,7 +35,7 @@
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
     "@rainbow-me/rainbowkit": "^2.2.4",
-    "@real-token/aa-core": "v2.0.0-alpha.2",
+    "@real-token/aa-core": "v2.0.0-alpha.3",
     "@tanstack/react-query": "^5.72.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
@@ -56,7 +56,7 @@
   },
   "peerDependencies": {
     "@rainbow-me/rainbowkit": "^2.2.4",
-    "@real-token/aa-core": "2.0.0-alpha.2",
+    "@real-token/aa-core": "2.0.0-alpha.3",
     "@tanstack/react-query": "^5.72.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
