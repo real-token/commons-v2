@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.5
+
+### Patch Changes
+
+- b919d60: Fix: web3, ui-components, types packages
+
 ## 2.0.4
 
 ### Patch Changes
