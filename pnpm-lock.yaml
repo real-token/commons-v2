@@ -523,7 +523,7 @@ importers:
         specifier: ^7.17.3
         version: 7.17.5(@mantine/core@7.17.5)(@mantine/hooks@7.17.5)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: '*'
+        specifier: v2.0.0-alpha.3
         version: 2.0.0-alpha.3(@rainbow-me/rainbowkit@2.2.4)(@types/react@18.3.20)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.23.2)(wagmi@2.15.1)
       '@real-token/core':
         specifier: workspace:^
@@ -6319,7 +6319,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.27.1
       '@web3auth/auth': 9.6.4(@babel/runtime@7.27.1)
-      '@web3auth/base': 9.5.2(@babel/runtime@7.27.1)
+      '@web3auth/base': 9.7.0(@babel/runtime@7.27.1)
       '@web3auth/base-provider': 9.7.0(@babel/runtime@7.27.1)
       deepmerge: 4.3.1
     transitivePeerDependencies:
@@ -6437,7 +6437,7 @@ packages:
       '@toruslabs/eccrypto': 5.0.4
       '@toruslabs/http-helpers': 7.0.1(@babel/runtime@7.27.1)
       '@web3auth/auth': 9.6.4(@babel/runtime@7.27.1)
-      '@web3auth/base': 9.5.2(@babel/runtime@7.27.1)
+      '@web3auth/base': 9.7.0(@babel/runtime@7.27.1)
       '@web3auth/base-provider': 9.7.0(@babel/runtime@7.27.1)
       assert: 2.1.0
       bignumber.js: 9.3.0
@@ -6466,7 +6466,7 @@ packages:
       '@babel/runtime': 7.27.1
       '@web3auth/auth': 9.6.4(@babel/runtime@7.27.1)
       '@web3auth/auth-adapter': 9.5.2(@babel/runtime@7.27.1)
-      '@web3auth/base': 9.5.2(@babel/runtime@7.27.1)
+      '@web3auth/base': 9.7.0(@babel/runtime@7.27.1)
       '@web3auth/base-provider': 9.7.0(@babel/runtime@7.27.1)
       deepmerge: 4.3.1
     transitivePeerDependencies:
