@@ -1,5 +1,11 @@
 # @real-token/web3
 
+## 2.0.3
+
+### Patch Changes
+
+- 7beabbe: Fix: use tsc to generate types instead of webpack pkugins
+
 ## 2.0.2
 
 ### Patch Changes
