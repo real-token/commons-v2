@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.2
+
+### Patch Changes
+
+- 40dfac6: Fix: generate types with ts intease of webpack plugins
+
 ## 2.0.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.2
+
+### Patch Changes
+
+- 40dfac6: Fix: generate types with ts intease of webpack plugins
+- Updated dependencies [40dfac6]
+  - @real-token/types@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes
