@@ -18,17 +18,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-          registry-url: "https://registry.npmjs.org"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@real-token"
 
-      - name: Prepare .npmrc for GitHub Packages
-        run: |
-          echo "@real-token:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> .npmrc
-          # echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          cat .npmrc
-        env:
-          GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Prepare .npmrc for GitHub Packages
+      #   run: |
+      #     echo "@real-token:registry=https://npm.pkg.github.com" > .npmrc
+      #     echo "//npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}" >> .npmrc
+      #     # echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+      #     cat .npmrc
+      # env:
+      #   GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+      #   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install PNPM (version from package.json)
         uses: pnpm/action-setup@v3
