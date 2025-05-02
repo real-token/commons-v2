@@ -11,7 +11,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc --emitDeclarationOnly && webpack",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace",
+    "clean-install": "rm -rf node_modules"
   },
   "keywords": [],
   "author": "",

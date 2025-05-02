@@ -1,10 +1,8 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
-const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
@@ -75,11 +73,6 @@ const commonConfig = {
     ],
   },
   externals: [...allDeps, /^(@babel\/runtime)/i],
-  // includes: [
-  //   'i18next',
-  //   'i18next-browser-languagedetector',
-  //   'react-i18next'
-  // ],
   optimization: {
     minimize: false,
   },
@@ -92,15 +85,6 @@ const commonConfig = {
       }),
     ],
     fallback: {
-      //   url: require.resolve("url"),
-      //   crypto: require.resolve("crypto-browserify"),
-      //   http: require.resolve("stream-http"),
-      //   https: require.resolve("https-browserify"),
-      //   zlib: require.resolve("browserify-zlib"),
-      //   stream: require.resolve("stream-browserify"),
-      //   vm: require.resolve("vm-browserify"),
-      //   process: require.resolve("process/browser"),
-      //   buffer: require.resolve("buffer"),
       fs: false,
       path: false,
     },
@@ -128,21 +112,6 @@ const cjsConfig = merge(commonConfig, {
   target: "web",
   externalsPresets: { node: true },
   externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        mode: "write-dts",
-        context: path.resolve("."),
-        configFile: "tsconfig.json",
-      },
-    }),
-    new TypescriptDeclarationPlugin(),
-    // new MergeFilesPlugin({
-    //   fileName: "index.d.ts",
-    //   test: /\.d\.ts$/,
-    //   deleteSourceFiles: true,
-    // }),
-  ],
 });
 
 // ESM-specific configuration

@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "webpack",
+    "build": "rm -rf dist && tsc --emitDeclarationOnly && webpack",
     "yalc:add": "yalc add -D @real-token/aa-core",
     "yalc:remove": "yalc remove -D @real-token/aa-core",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace",
     "clean-install": "rm -rf node_modules"
   },
   "main": "./dist/index.cjs.js",

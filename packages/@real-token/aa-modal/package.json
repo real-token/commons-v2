@@ -28,7 +28,7 @@
     }
   },
   "scripts": {
-    "build": "webpack",
+    "build": "rm -rf dist && tsc --emitDeclarationOnly && webpack",
     "yalc:publish": "yalc add .",
     "yalc:push": "yalc push --sig --replace",
     "clean-install": "rm -rf node_modules"

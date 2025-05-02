@@ -1,9 +1,7 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
-const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const pkg = require("./package.json");
 
@@ -104,16 +102,6 @@ const cjsConfig = merge(commonConfig, {
   target: "web",
   externalsPresets: { node: true },
   externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        mode: "write-dts",
-        context: path.resolve("."),
-        configFile: "tsconfig.json",
-      },
-    }),
-    new TypescriptDeclarationPlugin(),
-  ],
 });
 
 // ESM-specific configuration

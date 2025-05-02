@@ -3,10 +3,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || "production";
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
-const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const pkg = require("./package.json");
@@ -83,11 +81,6 @@ const commonConfig = {
     ],
   },
   externals: [...allDeps, /^(@babel\/runtime)/i],
-  // includes: [
-  //   'i18next',
-  //   'i18next-browser-languagedetector',
-  //   'react-i18next'
-  // ],
   optimization: {
     minimize: false,
   },
@@ -95,15 +88,6 @@ const commonConfig = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     fallback: {
-      //   url: require.resolve("url"),
-      //   crypto: require.resolve("crypto-browserify"),
-      //   http: require.resolve("stream-http"),
-      //   https: require.resolve("https-browserify"),
-      //   zlib: require.resolve("browserify-zlib"),
-      //   stream: require.resolve("stream-browserify"),
-      //   vm: require.resolve("vm-browserify"),
-      //   process: require.resolve("process/browser"),
-      //   buffer: require.resolve("buffer"),
       fs: false,
       path: false,
     },
@@ -131,16 +115,6 @@ const cjsConfig = merge(commonConfig, {
   target: "web",
   externalsPresets: { node: true },
   externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        mode: "write-dts",
-        context: path.resolve("."),
-        configFile: "tsconfig.json",
-      },
-    }),
-    new TypescriptDeclarationPlugin(),
-  ],
 });
 
 // ESM-specific configuration
