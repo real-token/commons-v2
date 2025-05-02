@@ -2,6 +2,10 @@
   "name": "@real-token/core",
   "version": "2.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/real-token/commons-v2.git"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
