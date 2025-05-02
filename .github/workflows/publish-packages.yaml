@@ -50,7 +50,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-
-      - name: Push tags on release
-        if: success()
-        run: git push --follow-tags origin main
