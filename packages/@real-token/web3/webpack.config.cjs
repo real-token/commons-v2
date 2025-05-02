@@ -1,5 +1,3 @@
-process.env.NODE_ENV = process.env.NODE_ENV || "production";
-
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
@@ -7,6 +5,8 @@ const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plug
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const pkg = require("./package.json");
 
@@ -47,16 +47,60 @@ const commonConfig = {
         test: /\.svg$/,
         loader: "svg-inline-loader",
       },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              import: true,
+              modules: {
+                namedExport: false,
+              },
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["postcss-preset-env", {}]],
+              },
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
     ],
   },
   externals: [...allDeps, /^(@babel\/runtime)/i],
+  // includes: [
+  //   'i18next',
+  //   'i18next-browser-languagedetector',
+  //   'react-i18next'
+  // ],
   optimization: {
     minimize: false,
   },
   devtool: false,
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    plugins: [
+      new TsconfigPathsPlugin({
+        /* options: see below */
+      }),
+    ],
     fallback: {
+      //   url: require.resolve("url"),
+      //   crypto: require.resolve("crypto-browserify"),
+      //   http: require.resolve("stream-http"),
+      //   https: require.resolve("https-browserify"),
+      //   zlib: require.resolve("browserify-zlib"),
+      //   stream: require.resolve("stream-browserify"),
+      //   vm: require.resolve("vm-browserify"),
+      //   process: require.resolve("process/browser"),
+      //   buffer: require.resolve("buffer"),
       fs: false,
       path: false,
     },
@@ -67,6 +111,7 @@ const commonConfig = {
       Buffer: ["buffer", "Buffer"],
     }),
     new NodePolyfillPlugin(),
+    new MiniCssExtractPlugin(),
   ],
 };
 
@@ -92,6 +137,11 @@ const cjsConfig = merge(commonConfig, {
       },
     }),
     new TypescriptDeclarationPlugin(),
+    // new MergeFilesPlugin({
+    //   fileName: "index.d.ts",
+    //   test: /\.d\.ts$/,
+    //   deleteSourceFiles: true,
+    // }),
   ],
 });
 
@@ -119,43 +169,7 @@ const esmConfig = merge(commonConfig, {
   experiments: {
     outputModule: true,
   },
-  target: "web",
-  module: {
-    rules: [
-      {
-        test: /\.(ts|js)x?$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            ...babelLoaderOptions,
-            presets: [
-              [
-                "@babel/env",
-                {
-                  modules: false,
-                  bugfixes: true,
-                  targets: { esmodules: true },
-                },
-              ],
-              "@babel/typescript",
-              ["@babel/preset-react", { runtime: "automatic" }],
-            ],
-          },
-        },
-      },
-    ],
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(
-        process.env.NODE_ENV || "production"
-      ),
-    }),
-    new webpack.ProvidePlugin({
-      process: "process/browser",
-    }),
-  ],
+  target: "node20",
 });
 
 module.exports = [cjsConfig, esmConfig];
