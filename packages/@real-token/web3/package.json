@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && webpack",
     "yalc:add": "yalc add -D @real-token/aa-core",
