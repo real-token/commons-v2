@@ -43,10 +43,7 @@ jobs:
       - name: Build packages
         run: pnpm run build:lib
 
-      - name: 🚀 Create and publish versions
-        uses: changesets/action@v1
-        with:
-          publish: pnpm changeset publish
+      - name: Publish @realtoken packages
+        run: pnpm --filter "@realtoken/*" publish --no-git-checks
         env:
-          GITHUB_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
