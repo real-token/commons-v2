@@ -2,6 +2,9 @@
   "name": "@real-token/aa-modal",
   "version": "2.0.0",
   "description": "AA Modal component",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "files": [
     "dist"
   ],

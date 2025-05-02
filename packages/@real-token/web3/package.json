@@ -2,6 +2,9 @@
   "name": "@real-token/web3",
   "version": "2.0.0",
   "description": "",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

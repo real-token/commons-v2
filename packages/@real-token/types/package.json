@@ -2,6 +2,9 @@
   "name": "@real-token/types",
   "version": "2.0.0",
   "description": "",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "webpack",
     "yalc:publish": "yalc add .",
