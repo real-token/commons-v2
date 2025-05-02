@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.3
+
+### Patch Changes
+
+- 7beabbe: Fix: use tsc to generate types instead of webpack pkugins
+- Updated dependencies [7beabbe]
+  - @real-token/types@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes
