@@ -25,6 +25,9 @@
     "turbo": "^2.4.4"
   },
   "packageManager": "pnpm@8.7.4",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "@changesets/cli": "^2.29.2"
   }
