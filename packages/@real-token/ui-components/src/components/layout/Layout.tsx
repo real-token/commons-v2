@@ -13,6 +13,7 @@ type LayoutProps = {
   footerParam?: FooterParam;
   footerCustomLinks?: JSX.Element;
   headerBanner?: React.ReactElement;
+  headerButtons?: React.ReactElement;
 };
 
 export function Layout({
@@ -25,6 +26,7 @@ export function Layout({
   footerParam,
   footerCustomLinks,
   headerBanner,
+  headerButtons,
 }: LayoutProps) {
   return (
     <div className={classes.container}>
@@ -35,6 +37,7 @@ export function Layout({
         headerNav={headerNav}
         disableHeaderMultisite={disableHeaderMultisite}
         banner={headerBanner}
+        headerButtons={headerButtons}
       />
       <div className={classes.main}>{children}</div>
       <Footer param={footerParam} customLinks={footerCustomLinks} />

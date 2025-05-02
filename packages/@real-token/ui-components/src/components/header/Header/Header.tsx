@@ -11,6 +11,7 @@ interface HeaderProps {
   newWebsite?: Website;
   disableHeaderMultisite?: boolean;
   banner?: React.ReactElement;
+  headerButtons?: React.ReactElement;
 }
 export function Header({
   currentWebsite,
@@ -18,6 +19,7 @@ export function Header({
   headerNav,
   disableHeaderMultisite = false,
   banner,
+  headerButtons,
 }: HeaderProps) {
   if (disableHeaderMultisite && !newWebsite)
     throw new Error(
@@ -37,7 +39,7 @@ export function Header({
           />
         }
         nav={headerNav ?? undefined}
-        buttons={<HeaderButtons />}
+        buttons={headerButtons ?? <HeaderButtons />}
       />
       <Divider />
     </>
