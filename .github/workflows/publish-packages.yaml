@@ -43,10 +43,13 @@ jobs:
       - name: Build packages
         run: pnpm run build:lib
 
-      - name: Publish with Changesets
-        run: pnpm changeset publish
+      - name: 🚀 Create and publish versions
+        uses: changesets/action@v1
+        with:
+          publish: pnpm changeset publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Push tags on release
         if: success()
