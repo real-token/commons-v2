@@ -37,7 +37,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "*",
+    "@real-token/aa-core": "v2.0.0-alpha.3",
     "@real-token/core": "workspace:^",
     "@real-token/types": "workspace:^",
     "@real-token/web3": "workspace:^",
