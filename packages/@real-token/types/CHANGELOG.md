@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.1
+
+### Patch Changes
+
+- Add types for web3 package
+
 ## 2.0.0
 
 ### Major Changes
