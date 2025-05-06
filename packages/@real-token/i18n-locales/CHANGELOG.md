@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.7
+
+### Patch Changes
+
+- 8c2284e: Fix: types errors on logos
+
 ## 2.0.6
 
 ### Patch Changes

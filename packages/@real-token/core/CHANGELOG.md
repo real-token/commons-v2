@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.7
+
+### Patch Changes
+
+- 8c2284e: Fix: types errors on logos
+- Updated dependencies [8c2284e]
+  - @real-token/types@2.0.7
+
 ## 2.0.6
 
 ### Patch Changes
