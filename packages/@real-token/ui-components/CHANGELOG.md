@@ -1,5 +1,11 @@
 # @real-token/ui-components
 
+## 2.0.6
+
+### Patch Changes
+
+- 18a39f8: Add ActionButton, new network logo
+
 ## 2.0.5
 
 ### Patch Changes

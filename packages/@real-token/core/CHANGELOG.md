@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.6
+
+### Patch Changes
+
+- 18a39f8: Add ActionButton, new network logo
+- Updated dependencies [18a39f8]
+  - @real-token/types@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes
