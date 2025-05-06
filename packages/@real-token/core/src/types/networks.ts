@@ -7,7 +7,7 @@ export enum SHOW_NETWORKS {
   MAINNETS = "mainnets",
 }
 
-export type RealTokenUiNetworkConfig = ChainConfig & {
+export type RealTokenUiNetworkConfig = Omit<ChainConfig, "logo"> & {
   isTestnet: boolean;
   graphPrefix?: {
     // TODO: add all graph prefixes
