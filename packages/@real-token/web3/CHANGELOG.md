@@ -1,5 +1,11 @@
 # @real-token/web3
 
+## 2.0.9
+
+### Patch Changes
+
+- d93f678: fix: chainLogo
+
 ## 2.0.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.9
+
+### Patch Changes
+
+- d93f678: fix: chainLogo
+- Updated dependencies [d93f678]
+  - @real-token/types@2.0.9
+
 ## 2.0.8
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@real-token/ui-components",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "",
   "repository": {
     "type": "git",
@@ -48,9 +48,9 @@
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
     "@real-token/aa-core": "v2.0.0-alpha.3",
-    "@real-token/core": "workspace:^",
-    "@real-token/types": "workspace:^",
-    "@real-token/web3": "workspace:^",
+    "@real-token/core": "workspace:*",
+    "@real-token/types": "workspace:*",
+    "@real-token/web3": "workspace:*",
     "@types/react": "*",
     "@types/react-dom": "*",
     "babel-loader": "^10.0.0",
