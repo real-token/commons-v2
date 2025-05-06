@@ -1,5 +1,5 @@
 import type { ChainConfig } from "@real-token/aa-core";
-import type { SVG } from "@real-token/types";
+import type { Logo } from "@real-token/types";
 
 export enum SHOW_NETWORKS {
   ALL = "all",
@@ -13,7 +13,7 @@ export type RealTokenUiNetworkConfig = ChainConfig & {
     // TODO: add all graph prefixes
   };
   // nativeToken: NetworkToken;
-  logo?: SVG;
+  logo?: Logo;
   color?: string;
   serverChainId: string;
 };

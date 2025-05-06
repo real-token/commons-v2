@@ -1,12 +1,13 @@
-import { SVG } from "@real-token/types";
+import type { Logo, LogoProps } from "@real-token/types";
 
-export const GnosisLogo = ({ height }: SVG) => {
+export const GnosisLogo: Logo = ({ height, width }: LogoProps) => {
   // #04795B
   return (
     <svg
       viewBox="0 0 600 600"
       xmlns="http://www.w3.org/2000/svg"
       height={height ?? undefined}
+      width={width ?? undefined}
     >
       <path
         d="m202.04 332.7c14.204 0 27.316-4.733 37.879-12.925l-86.685-86.654c-8.195 10.377-12.93 23.484-12.93 37.866-0.182 34.042 27.499 61.713 61.736 61.713z"

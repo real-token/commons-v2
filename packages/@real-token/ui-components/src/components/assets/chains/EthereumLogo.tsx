@@ -1,15 +1,10 @@
-import { SVG } from "@real-token/types";
+import type { Logo, LogoProps } from "@real-token/types";
 
-export const EthereumLogo = ({ height }: SVG) => {
-  // #343434
-  // #8C8C8C
-  // #3C3C3B
-  // #8C8C8C
-  // #141414
-  // #393939
+export const EthereumLogo: Logo = ({ height, width }: LogoProps) => {
   return (
     <svg
       height={height ?? undefined}
+      width={width ?? undefined}
       clipRule="evenodd"
       fillRule="evenodd"
       imageRendering="optimizeQuality"

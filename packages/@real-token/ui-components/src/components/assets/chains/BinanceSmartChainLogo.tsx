@@ -1,6 +1,10 @@
-import type { SVG } from "@real-token/types";
+import type { Logo, LogoProps } from "@real-token/types";
 
-export const BinanceSmartChainLogo = ({ height, width, color }: SVG) => {
+export const BinanceSmartChainLogo: Logo = ({
+  height,
+  width,
+  color,
+}: LogoProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
