@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.8
+
+### Patch Changes
+
+- b1c94cb: fix: logo
+- Updated dependencies [b1c94cb]
+  - @real-token/types@2.0.8
+
 ## 2.0.7
 
 ### Patch Changes

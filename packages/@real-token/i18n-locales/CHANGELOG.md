@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.8
+
+### Patch Changes
+
+- b1c94cb: fix: logo
+
 ## 2.0.7
 
 ### Patch Changes
