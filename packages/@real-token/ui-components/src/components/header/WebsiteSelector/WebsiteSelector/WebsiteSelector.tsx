@@ -58,7 +58,7 @@ export const WebsiteSelector = ({
             }}
           />
         ) : undefined}
-        {/* { currentWebsite.logo ? React.createElement(currentWebsite.logo) : undefined } */}
+        {/* { currentWebsite.chainLogo ? React.createElement(currentWebsite.chainLogo) : undefined } */}
         <Title
           order={3}
           className={

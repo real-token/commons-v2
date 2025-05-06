@@ -50,7 +50,7 @@ export const WebsitePane: FC<WebsitePaneProps> = ({ website }) => {
           <IconClock />
         </div>
       ) : undefined}
-      {/* { website.logo ? React.createElement(website.logo) : undefined } */}
+      {/* { website.chainLogo ? React.createElement(website.chainLogo) : undefined } */}
       <div className={websiteNameClassName} data-title={website.name}>
         {website.name}
       </div>

@@ -6,7 +6,7 @@ export function CurrentNetworkLogo() {
     return <></>;
   }
   return (
-    <currentNetwork.logo
+    <currentNetwork.chainLogo
       width={20}
       height={20}
       color="var(--mantine-color-brand)"

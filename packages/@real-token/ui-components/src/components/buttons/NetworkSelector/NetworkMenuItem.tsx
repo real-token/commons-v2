@@ -17,7 +17,7 @@ export function NetworkMenuItem<
         })
       }
       leftSection={
-        <network.logo
+        <network.chainLogo
           width={20}
           height={20}
           color="var(--mantine-color-brand)"

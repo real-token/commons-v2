@@ -55,7 +55,9 @@ export const CopyAddressModalContent = ({
               align={"center"}
               key={`supported-network-${network.chainId}`}
             >
-              {network.logo && <network.logo width={15} height={15} />}
+              {network.chainLogo && (
+                <network.chainLogo width={15} height={15} />
+              )}
               <Text fw={500}>{network.displayName}</Text>
             </Flex>
           ))}
