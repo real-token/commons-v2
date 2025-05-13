@@ -13,23 +13,48 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { useMemo } from "react";
 import { RainbowKitProviderProps } from "@rainbow-me/rainbowkit/dist/components/RainbowKitProvider/RainbowKitProvider";
+import { useListenNewTx } from "../hooks/useListenWcTx";
+import { merge } from "lodash";
+import { useListenAaTx } from "../hooks/useListenAaTx";
+
+type RealTokenWeb3ProviderProps = {
+  listenNewTx?: boolean;
+};
+export const defaultProviderConfig: RealTokenWeb3ProviderProps = {
+  listenNewTx: true,
+};
 
 export function RealTokenWeb3Provider({
   children,
   queryClient,
   aaClientConfig,
   rainbowKitConfig,
+  providerConfig = defaultProviderConfig,
 }: {
   children: React.ReactNode;
   queryClient: QueryClient;
   aaClientConfig: AAClientConfig;
   rainbowKitConfig?: RainbowKitProviderProps;
+  providerConfig?: RealTokenWeb3ProviderProps;
 }) {
   const { wagmiConfig, authAdapter, web3auth } = useMemo(
     () => getInitialState(aaClientConfig),
     [aaClientConfig]
   );
-  console.log("wagmiConfig", wagmiConfig);
+
+  const config = useMemo(() => {
+    if (!providerConfig) return defaultProviderConfig;
+    return merge(
+      {},
+      defaultProviderConfig,
+      providerConfig
+    ) as RealTokenWeb3ProviderProps;
+  }, [providerConfig]);
+
+  useListenNewTx(config.listenNewTx);
+  useListenAaTx(config.listenNewAaTx);
+  // TODO: add listen to aa sign message
+
   return (
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
