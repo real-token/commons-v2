@@ -1,6 +1,6 @@
 import { Flex, Paper, Text } from "@mantine/core";
 import { useCurrentNetwork } from "@real-token/core";
-import { shortenString } from "@real-token/ui-components";
+import { shortenString } from "@/utils/address";
 
 export const InteractionContract = ({
   interactionName,

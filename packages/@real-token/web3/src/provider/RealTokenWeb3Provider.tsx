@@ -18,10 +18,12 @@ import { merge } from "lodash";
 import { useListenAaTx } from "../hooks/useListenAaTx";
 
 type RealTokenWeb3ProviderProps = {
-  listenNewTx?: boolean;
+  listenNewWcTx?: boolean;
+  listenNewAaTx?: boolean;
 };
 export const defaultProviderConfig: RealTokenWeb3ProviderProps = {
-  listenNewTx: true,
+  listenNewWcTx: true,
+  listenNewAaTx: true,
 };
 
 export function RealTokenWeb3Provider({
@@ -51,7 +53,7 @@ export function RealTokenWeb3Provider({
     ) as RealTokenWeb3ProviderProps;
   }, [providerConfig]);
 
-  useListenNewTx(config.listenNewTx);
+  useListenNewTx(config.listenNewWcTx);
   useListenAaTx(config.listenNewAaTx);
   // TODO: add listen to aa sign message
 
