@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.11
+
+### Patch Changes
+
+- aaabad2: fix: aa-core package version
+
 ## 2.0.10
 
 ### Patch Changes

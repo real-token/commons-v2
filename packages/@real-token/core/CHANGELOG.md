@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.11
+
+### Patch Changes
+
+- aaabad2: fix: aa-core package version
+- Updated dependencies [aaabad2]
+  - @real-token/types@2.0.11
+
 ## 2.0.10
 
 ### Patch Changes
