@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.10
+
+### Patch Changes
+
+- 3b0ae7c: feat: decoding to web3 package
+- Updated dependencies [3b0ae7c]
+  - @real-token/types@2.0.10
+
 ## 2.0.9
 
 ### Patch Changes

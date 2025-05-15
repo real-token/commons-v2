@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.10
+
+### Patch Changes
+
+- 3b0ae7c: feat: decoding to web3 package
+
 ## 2.0.9
 
 ### Patch Changes
