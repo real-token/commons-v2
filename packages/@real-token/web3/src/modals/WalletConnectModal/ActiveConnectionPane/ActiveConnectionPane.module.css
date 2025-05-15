@@ -1,0 +1,25 @@
+.connectContainer {
+  padding: var(--mantine-spacing-sm);
+}
+
+.link:hover {
+  color: var(--mantine-color-brand-9);
+}
+
+.websiteLogo {
+  width: 4rem;
+}
+
+.buttonIndex:hover {
+  cursor: pointer;
+}
+
+.button {
+  background-color: light-dark(#156cab, #4f4f4f);
+}
+
+.buttonOutline {
+  --button-color: light-dark(#156cab, #4f4f4f) !important;
+  --mantine-color-brand-outline: light-dark(#156cab, #4f4f4f) !important;
+  color: light-dark(#156cab, white);
+}
