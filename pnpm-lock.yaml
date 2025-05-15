@@ -694,6 +694,12 @@ importers:
       babel-loader:
         specifier: ^10.0.0
         version: 10.0.0(@babel/core@7.27.1)(webpack@5.99.8)
+      css-loader:
+        specifier: ^7.1.2
+        version: 7.1.2(webpack@5.99.8)
+      css-modules-typescript-loader:
+        specifier: ^4.0.1
+        version: 4.0.1
       fork-ts-checker-webpack-plugin:
         specifier: ^9.0.2
         version: 9.1.0(typescript@5.8.3)(webpack@5.99.8)
@@ -712,6 +718,9 @@ importers:
       react-i18next:
         specifier: ^15.1.0
         version: 15.5.1(i18next@23.16.8)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)
+      style-loader:
+        specifier: ^4.0.0
+        version: 4.0.0(webpack@5.99.8)
       tsconfig-paths-webpack-plugin:
         specifier: ^4.2.0
         version: 4.2.0

@@ -59,14 +59,6 @@ const commonConfig = {
               },
             },
           },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [["postcss-preset-env", {}]],
-              },
-            },
-          },
         ],
         include: /\.module\.css$/,
       },
