@@ -10,6 +10,7 @@ function getWorkspacePackages() {
   const { packages } = yaml.parse(workspaceConfig);
 
   const workspacePackages = new Set();
+  const packagePaths = new Map(); // Store package paths for later use
 
   for (const pkgPattern of packages) {
     // Get the actual path without globs
@@ -20,13 +21,14 @@ function getWorkspacePackages() {
           fs.readFileSync(path.join(pkgPath, "package.json"), "utf8")
         );
         workspacePackages.add(packageJson.name);
+        packagePaths.set(packageJson.name, pkgPath);
       } catch (error) {
         console.warn(`Warning: Could not read package.json in ${pkgPath}`);
       }
     }
   }
 
-  return workspacePackages;
+  return { workspacePackages, packagePaths };
 }
 
 // Update dependencies in package.json
@@ -49,39 +51,43 @@ function updateDependencies(deps, workspacePackages) {
   return modified;
 }
 
+// Update a single package.json file
+function updatePackageJson(filePath, workspacePackages) {
+  console.log(`\nChecking ${filePath}`);
+  const packageJson = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+  let modified = false;
+  modified =
+    updateDependencies(packageJson.dependencies, workspacePackages) || modified;
+  modified =
+    updateDependencies(packageJson.devDependencies, workspacePackages) ||
+    modified;
+  modified =
+    updateDependencies(packageJson.peerDependencies, workspacePackages) ||
+    modified;
+
+  if (modified) {
+    fs.writeFileSync(filePath, JSON.stringify(packageJson, null, 2) + "\n");
+    console.log(`Updated ${filePath}`);
+  } else {
+    console.log(`No changes needed in ${filePath}`);
+  }
+}
+
 // Main function
 function main() {
   try {
-    // Get all workspace package names
-    const workspacePackages = getWorkspacePackages();
+    // Get all workspace package names and their paths
+    const { workspacePackages, packagePaths } = getWorkspacePackages();
+    console.log("Workspace packages:", Array.from(workspacePackages));
 
-    // Read root package.json
-    const rootPackageJsonPath = "package.json";
-    const packageJson = JSON.parse(
-      fs.readFileSync(rootPackageJsonPath, "utf8")
-    );
+    // Update root package.json
+    updatePackageJson("package.json", workspacePackages);
 
-    // Update all dependency types
-    let modified = false;
-    modified =
-      updateDependencies(packageJson.dependencies, workspacePackages) ||
-      modified;
-    modified =
-      updateDependencies(packageJson.devDependencies, workspacePackages) ||
-      modified;
-    modified =
-      updateDependencies(packageJson.peerDependencies, workspacePackages) ||
-      modified;
-
-    // Save changes if modified
-    if (modified) {
-      fs.writeFileSync(
-        rootPackageJsonPath,
-        JSON.stringify(packageJson, null, 2) + "\n"
-      );
-      console.log("Updated root package.json");
-    } else {
-      console.log("No changes needed in root package.json");
+    // Update each workspace package's package.json
+    for (const [pkgName, pkgPath] of packagePaths) {
+      const packageJsonPath = path.join(pkgPath, "package.json");
+      updatePackageJson(packageJsonPath, workspacePackages);
     }
   } catch (error) {
     console.error("Error:", error.message);
