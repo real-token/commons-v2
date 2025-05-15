@@ -42,6 +42,7 @@
     "@rabby-wallet/rabby-action": "^0.1.8",
     "@rabby-wallet/rabby-api": "^0.9.11",
     "@tabler/icons-react": "^3.7.0",
+    "buffer": "^6.0.3",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -55,6 +56,7 @@
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
+    "@mantine/notifications": "^7.17.3",
     "@rainbow-me/rainbowkit": "^2.2.4",
     "@real-token/aa-core": "v2.0.0-alpha.7",
     "@real-token/core": "workspace:*",
@@ -79,16 +81,17 @@
     "websocket-polyfill": "^1.0.0"
   },
   "peerDependencies": {
-    "@mantine/modals": "^7.17.3",
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
+    "@mantine/modals": "^7.17.3",
+    "@mantine/notifications": "^7.17.3",
     "@rainbow-me/rainbowkit": "^2.2.4",
-    "@real-token/aa-core": "2.0.0-alpha.3",
+    "@real-token/aa-core": "v2.0.0-alpha.7",
     "@tanstack/react-query": "^5.72.0",
-    "react-i18next": "^15.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "wagmi": "2.14.13",
-    "viem": "2.23.2"
+    "react-i18next": "^15.1.0",
+    "viem": "2.23.2",
+    "wagmi": "2.14.13"
   }
 }

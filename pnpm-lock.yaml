@@ -627,6 +627,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.7.0
         version: 3.31.0(react@18.3.1)
+      buffer:
+        specifier: ^6.0.3
+        version: 6.0.3
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -662,6 +665,9 @@ importers:
         specifier: ^7.17.3
         version: 7.17.7(react@18.3.1)
       '@mantine/modals':
+        specifier: ^7.17.3
+        version: 7.17.7(@mantine/core@7.17.7)(@mantine/hooks@7.17.7)(react-dom@18.3.1)(react@18.3.1)
+      '@mantine/notifications':
         specifier: ^7.17.3
         version: 7.17.7(@mantine/core@7.17.7)(@mantine/hooks@7.17.7)(react-dom@18.3.1)(react@18.3.1)
       '@rainbow-me/rainbowkit':
@@ -7378,7 +7384,7 @@ packages:
     resolution: {integrity: sha512-an2S5quJMiy5bnZKEf6AkfH/7r8CzHvhchU40gxN+OM6HPhe7Z9T1FUychcf2M9PpPOO0Hf7BAEfJkw2TDIBDw==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      readable-stream: 3.6.2
+      readable-stream: 4.7.0
       webextension-polyfill: 0.10.0
 
   /external-editor@3.1.0:

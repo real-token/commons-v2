@@ -79,20 +79,16 @@ const commonConfig = {
   devtool: false,
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    plugins: [
-      new TsconfigPathsPlugin({
-        /* options: see below */
-      }),
-    ],
+    plugins: [new TsconfigPathsPlugin({})],
     fallback: {
       fs: false,
       path: false,
+      buffer: require.resolve("buffer/"),
     },
   },
   plugins: [
     new webpack.ProvidePlugin({
       process: "process/browser.js",
-      Buffer: ["buffer", "Buffer"],
     }),
     new NodePolyfillPlugin(),
     new MiniCssExtractPlugin(),
