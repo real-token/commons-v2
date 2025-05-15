@@ -1,5 +1,19 @@
 # @real-token/core
 
+## 2.0.12
+
+### Patch Changes
+
+- feat(web3): WalletConnectModal; manage active session and session approval
+  feat(web3): WalletConnectButton
+  fix(web3): bundle error
+- Add types for web3 package
+- fix: add "files" option to package.json to include all files in bundle file
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @real-token/types@2.0.12
+
 ## 2.0.11
 
 ### Patch Changes
