@@ -102,20 +102,20 @@ const commonConfig = {
   ],
 };
 
-const cjsConfig = merge(commonConfig, {
-  output: {
-    filename: "index.cjs.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/dist/",
-    library: {
-      type: "commonjs2",
-    },
-    globalObject: "this",
-  },
-  target: "web",
-  externalsPresets: { node: true },
-  externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
-});
+// const cjsConfig = merge(commonConfig, {
+//   output: {
+//     filename: "index.cjs.js",
+//     path: path.resolve(__dirname, "dist"),
+//     publicPath: "/dist/",
+//     library: {
+//       type: "commonjs2",
+//     },
+//     globalObject: "this",
+//   },
+//   target: "web",
+//   externalsPresets: { node: true },
+//   externals: [...allDeps, /^(@babel\/runtime)/i, nodeExternals()],
+// });
 
 // ESM-specific configuration
 const esmConfig = merge(commonConfig, {
@@ -180,4 +180,4 @@ const esmConfig = merge(commonConfig, {
   ],
 });
 
-module.exports = [cjsConfig, esmConfig];
+module.exports = [esmConfig];

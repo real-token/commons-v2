@@ -23,19 +23,13 @@
     "yalc:push": "yalc push --sig --replace",
     "clean-install": "rm -rf node_modules"
   },
-  "main": "./dist/index.cjs.js",
+  "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.esm.js"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs.js"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js"
     }
   },
   "dependencies": {
