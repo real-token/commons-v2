@@ -12,11 +12,18 @@ const currentPkg = require("./package.json");
 const runtimeVersion = currentPkg.peerDependencies["@babel/runtime"];
 const babelLoaderOptions = {
   presets: [
-    ["@babel/env", { modules: false, bugfixes: true }],
+    [
+      "@babel/preset-react",
+      {
+        runtime: "automatic",
+      },
+    ],
     "@babel/typescript",
-    ["@babel/preset-react", { runtime: "automatic" }],
   ],
-  plugins: [["@babel/transform-runtime", { version: runtimeVersion }]],
+  plugins: [
+    "@babel/plugin-proposal-class-properties",
+    "@parcel/babel-plugin-transform-runtime",
+  ],
   babelrc: false,
   configFile: false,
   cacheDirectory: true,
@@ -55,6 +62,7 @@ const commonConfig = {
               importLoaders: 1,
               import: true,
               modules: {
+                auto: true,
                 namedExport: false,
               },
             },
@@ -68,11 +76,16 @@ const commonConfig = {
             },
           },
         ],
-        include: /\.module\.css$/,
       },
     ],
   },
-  externals: [...allDeps, /^(@babel\/runtime)/i],
+  externals: [
+    ...allDeps,
+    /^(@babel\/runtime)/i,
+    nodeExternals({
+      importType: "module",
+    }),
+  ],
   optimization: {
     minimize: false,
   },
@@ -125,20 +138,15 @@ const esmConfig = merge(commonConfig, {
     },
     chunkFormat: "module",
     module: true,
-    globalObject: "this",
+    environment: {
+      module: true,
+    },
   },
-  externals: [
-    ...allDeps,
-    /^(@babel\/runtime)/i,
-    nodeExternals({
-      importType: "module",
-    }),
-  ],
-  externalsPresets: { node: true },
   experiments: {
     outputModule: true,
   },
-  target: "node20",
+  externalsType: "module",
+  target: ["web", "es2020"],
 });
 
 module.exports = [esmConfig];
