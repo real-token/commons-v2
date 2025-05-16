@@ -1,7 +1,9 @@
+"use client";
+
 import { useAA } from "@real-token/aa-core";
 import { modals } from "@mantine/modals";
 import { useEffect, useMemo } from "react";
-import { useTxBrowserTabNotification } from "./useTxBrowserTabNotification";
+// import { useTxBrowserTabNotification } from "./useTxBrowserTabNotification";
 
 type UseListenNewTxProps = (listenNewTx?: boolean) => void;
 
@@ -20,5 +22,5 @@ export const useListenNewTx: UseListenNewTxProps = (listenNewTx = true) => {
     });
   }, [wcTxsToValidate, listenNewTx]);
 
-  useTxBrowserTabNotification(wcTxsToValidate.length);
+  // useTxBrowserTabNotification(wcTxsToValidate.length);
 };

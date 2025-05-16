@@ -25,7 +25,8 @@ export const useNetworksConfig = <
     useRealTokenUIConfig<T>();
 
   const networks = useMemo(() => {
-    if (networksConfig.length === 0 || !networksConfig) return [];
+    if (!networksConfig || (networksConfig && networksConfig.length === 0))
+      return [];
     const config = showNetworks ?? defaultShowNetworks;
     return networksConfig.filter((network) => {
       if (config === SHOW_NETWORKS.ALL) return true;

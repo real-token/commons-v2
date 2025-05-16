@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 type TxBrowserTabNotification = (nbTransactions: number) => void;
@@ -8,6 +10,7 @@ export const useTxBrowserTabNotification: TxBrowserTabNotification = (
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     setOriginalTitle(document.title);
   }, []);
 
@@ -24,6 +27,7 @@ export const useTxBrowserTabNotification: TxBrowserTabNotification = (
   }, [nbTransactions]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (toggle && nbTransactions > 0) {
       document.title = `(${nbTransactions}) Tx`;
     } else {

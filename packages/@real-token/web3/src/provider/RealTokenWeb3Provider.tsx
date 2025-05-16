@@ -13,11 +13,10 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { useMemo } from "react";
 import { RainbowKitProviderProps } from "@rainbow-me/rainbowkit/dist/components/RainbowKitProvider/RainbowKitProvider";
-import { useListenNewTx } from "../hooks/useListenWcTx";
 import { merge } from "lodash";
-import { useListenAaTx } from "../hooks/useListenAaTx";
+import { Web3Provider } from "./Web3Provider";
 
-type RealTokenWeb3ProviderProps = {
+export type RealTokenWeb3ProviderProps = {
   listenNewWcTx?: boolean;
   listenNewAaTx?: boolean;
 };
@@ -53,10 +52,6 @@ export function RealTokenWeb3Provider({
     ) as RealTokenWeb3ProviderProps;
   }, [providerConfig]);
 
-  useListenNewTx(config.listenNewWcTx);
-  useListenAaTx(config.listenNewAaTx);
-  // TODO: add listen to aa sign message
-
   return (
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
@@ -66,7 +61,7 @@ export function RealTokenWeb3Provider({
             authAdapter={authAdapter}
             web3auth={web3auth}
           >
-            {children}
+            <Web3Provider config={config}>{children}</Web3Provider>
           </AAProvider>
         </RainbowKitProvider>
       </WagmiProvider>
