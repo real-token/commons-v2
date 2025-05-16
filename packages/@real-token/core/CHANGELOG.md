@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 2.0.15
+
+### Patch Changes
+
+- 4430ef1: fix: bundling
+- Updated dependencies [4430ef1]
+  - @real-token/types@2.0.15
+
 ## 2.0.14
 
 ### Patch Changes

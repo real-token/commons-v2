@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.15
+
+### Patch Changes
+
+- 4430ef1: fix: bundling
+
 ## 2.0.14
 
 ### Patch Changes
