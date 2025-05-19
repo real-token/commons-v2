@@ -1,5 +1,23 @@
 # @real-token/i18n-locales
 
+## 2.0.16
+
+### Patch Changes
+
+- 321a0c0: feat(aa-core):
+
+  - add env to UiProvider
+  - add aaModalConfig to UiProvider
+
+  feat(ui-components):
+
+  - connect button doing nothing
+
+  fix(aa-modal):
+
+  - export config types
+  - export default config
+
 ## 2.0.15
 
 ### Patch Changes

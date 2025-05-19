@@ -1,5 +1,27 @@
 # @real-token/core
 
+## 2.0.16
+
+### Patch Changes
+
+- 321a0c0: feat(aa-core):
+
+  - add env to UiProvider
+  - add aaModalConfig to UiProvider
+
+  feat(ui-components):
+
+  - connect button doing nothing
+
+  fix(aa-modal):
+
+  - export config types
+  - export default config
+
+- Updated dependencies [321a0c0]
+  - @real-token/aa-modal@2.0.16
+  - @real-token/types@2.0.16
+
 ## 2.0.15
 
 ### Patch Changes
