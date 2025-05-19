@@ -24,17 +24,23 @@ export const defaultAaModalConfig: AaModalConfig = {
   },
   connectionMode: {
     [CONNECTION_MODE.aa]: {
+      connectorsName: ["metaMask", "rabby", "walletConnect"],
+      socialConnectorsName: ["google", "discord", "facebook", "twitch"],
       showEmailPasswordless: true,
-      showExternalWalletConnection: true,
-      showSocialLogins: true,
-      socialConnectorsName: [], // TODO: add default connectors from @real-token/web3 package
-      connectorsName: [], // TODO: add default connectors from @real-token/web3 package
     },
     [CONNECTION_MODE.tba]: {
       connectorsName: [], // TODO: add default connectors from @real-token/web3 package
     },
     [CONNECTION_MODE.external]: {
-      connectorsName: [], // TODO: add default connectors from @real-token/web3 package
+      connectorsName: [
+        "metaMask",
+        "rabby",
+        "walletConnect",
+        "coinbase",
+        "ledger",
+        "trust",
+        "frame",
+      ], // TODO: add default connectors from @real-token/web3 package
     },
   },
 };
