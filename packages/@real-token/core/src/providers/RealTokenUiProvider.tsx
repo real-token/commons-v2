@@ -1,6 +1,8 @@
 import { ReactNode, createContext, useContext } from "react";
 import { RealTokenUiNetworkConfig, SHOW_NETWORKS } from "../types/networks";
 import { NetworkId } from "../constants";
+import { AaModalConfig, defaultAaModalConfig } from "@real-token/aa-modal";
+import { Env } from "../types/env";
 
 interface RealTokenUiContextProps<
   T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
@@ -9,6 +11,8 @@ interface RealTokenUiContextProps<
   showWrongNetworkBanner: boolean;
   networksConfig: T[];
   defaultNetworkId: string;
+  aaModalConfig: AaModalConfig;
+  env: Env;
 }
 
 const DEFAULT_CONFIG: RealTokenUiContextProps = {
@@ -16,6 +20,8 @@ const DEFAULT_CONFIG: RealTokenUiContextProps = {
   showWrongNetworkBanner: true,
   networksConfig: [],
   defaultNetworkId: NetworkId.gnosis,
+  aaModalConfig: defaultAaModalConfig,
+  env: "development",
 };
 
 const RealTokenUiContext = createContext<RealTokenUiContextProps | undefined>(
