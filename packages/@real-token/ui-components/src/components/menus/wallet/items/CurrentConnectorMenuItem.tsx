@@ -40,7 +40,7 @@ export const CurrentConnectorMenuItem = () => {
     },
   });
 
-  if (!connectorInfo) return <></>;
+  if (!connectorInfo || !connector) return <></>;
 
   // TODO: add render function for TBA account
 
