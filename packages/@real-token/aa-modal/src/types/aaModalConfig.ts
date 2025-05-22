@@ -26,6 +26,8 @@ export const defaultAaModalConfig: AaModalConfig = {
     [CONNECTION_MODE.aa]: {
       connectorsName: ["metaMask", "rabby", "walletConnect"],
       socialConnectorsName: ["google", "discord", "facebook", "twitch"],
+      showSocialLogins: true,
+      showExternalWalletConnection: true,
       showEmailPasswordless: true,
     },
     [CONNECTION_MODE.tba]: {
