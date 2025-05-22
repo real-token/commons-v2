@@ -1,5 +1,11 @@
 # @real-token/aa-modal
 
+## 2.0.17
+
+### Patch Changes
+
+- 37da5e1: fix: aa-modal, ui-components crash
+
 ## 2.0.16
 
 ### Patch Changes
