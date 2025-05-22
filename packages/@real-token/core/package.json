@@ -44,7 +44,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
-    "@real-token/aa-core": "v2.0.0-alpha.7",
+    "@real-token/aa-core": "v2.0.0-beta.4",
     "@real-token/aa-modal": "workspace:^",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
@@ -56,7 +56,7 @@
     "wagmi": "2.14.13"
   },
   "peerDependencies": {
-    "@real-token/aa-core": "v2.0.0-alpha.7",
+    "@real-token/aa-core": "v2.0.0-beta.4",
     "@real-token/aa-modal": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
