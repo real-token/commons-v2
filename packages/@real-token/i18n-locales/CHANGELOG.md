@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.18
+
+### Patch Changes
+
+- f747089: fix: i18next, NetworkSelector
+
 ## 2.0.17
 
 ### Patch Changes

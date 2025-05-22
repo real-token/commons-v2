@@ -1,5 +1,14 @@
 # @real-token/core
 
+## 2.0.18
+
+### Patch Changes
+
+- f747089: fix: i18next, NetworkSelector
+- Updated dependencies [f747089]
+  - @real-token/aa-modal@2.0.18
+  - @real-token/types@2.0.18
+
 ## 2.0.17
 
 ### Patch Changes
