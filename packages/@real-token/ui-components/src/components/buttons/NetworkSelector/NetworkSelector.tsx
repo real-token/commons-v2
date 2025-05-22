@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { ActionIcon, Menu } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { NetworkList } from "./NetworkList";
-import { useIsUnsuportedNetwork } from "@real-token/core";
+import { useCurrentNetwork, useIsUnsuportedNetwork } from "@real-token/core";
 import { IconAlertCircle } from "@tabler/icons-react";
 import { CurrentNetworkLogo } from "./CurrentNetworkLogo";
 
@@ -20,6 +20,10 @@ export function NetworkMenuItems() {
 export function NetworkSelector() {
   const [isOpen, handlers] = useDisclosure(false);
   const isUnsuportedNetwork = useIsUnsuportedNetwork();
+  const currentNetwork = useCurrentNetwork();
+  if (!currentNetwork) {
+    return null;
+  }
 
   return (
     <Menu
