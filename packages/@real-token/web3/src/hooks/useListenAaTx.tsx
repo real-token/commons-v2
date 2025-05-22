@@ -15,7 +15,7 @@ export const useListenAaTx: UseListenAaTxProps = (listenNewAaTx = true) => {
   useEffect(() => {
     if (wcTxsToValidate.length == 0 || !listenNewAaTx) return;
     modals.openContextModal({
-      modal: "wcTxManagerModal",
+      modal: "aaTxManagerModal",
       innerProps: {},
     });
   }, [wcTxsToValidate, listenNewAaTx]);
