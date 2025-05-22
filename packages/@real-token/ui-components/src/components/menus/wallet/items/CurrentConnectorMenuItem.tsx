@@ -21,7 +21,7 @@ export const CurrentConnectorMenuItem = () => {
 
   const { data: userInfo } = useQuery<any, Error, any, any>({
     queryKey: ["user-info", walletAddress],
-    enabled: isAA,
+    enabled: isAA && !!walletAddress,
     queryFn: async () => {
       const userInfo = await getUserInfo();
       return userInfo;
@@ -30,7 +30,8 @@ export const CurrentConnectorMenuItem = () => {
 
   const connectorInfo = connector?.rkDetails as RkDetails;
   const { data: icon } = useQuery<string, Error, string, string[]>({
-    queryKey: ["current-connector-icon", connectorInfo.id],
+    queryKey: ["current-connector-icon", connectorInfo?.id],
+    enabled: !!connectorInfo,
     queryFn: async () => {
       if (connectorInfo.iconUrl instanceof Function) {
         const iconUrl = await connectorInfo.iconUrl();
