@@ -40,9 +40,8 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "v2.0.0-beta.4",
+    "@real-token/aa-core": "v2.0.0-beta.19",
     "@real-token/core": "workspace:*",
-    "@real-token/types": "workspace:*",
     "@real-token/web3": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "@types/react": "*",
@@ -60,12 +59,14 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "v2.0.0-beta.4",
+    "@real-token/aa-core": "v2.0.0-beta.19",
+    "@real-token/core": "workspace:*",
+    "@real-token/web3": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
-    "viem": "2.23.2",
+    "viem": "2.29",
     "wagmi": "2.14.13"
   },
   "dependencies": {
@@ -74,6 +75,7 @@
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.7",
     "react-cookie": "^8.0.1",
-    "tabler-icons-react": "*"
+    "tabler-icons-react": "*",
+    "@real-token/types": "workspace:*"
   }
 }
