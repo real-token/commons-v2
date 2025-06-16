@@ -6,7 +6,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 export const DEFAULT_NS = "common";
 export const FALLBACK_LNG = "en";
-export const COOKIE_NAME = "react-i18next";
+export const COOKIE_NAME = "commons-v2-locale";
 
 interface InitLanguageProps {
   resources?: Resource;
