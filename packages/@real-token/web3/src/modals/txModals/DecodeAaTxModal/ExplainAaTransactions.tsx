@@ -29,7 +29,7 @@ export const ExplainAaTransactions = ({
   );
 
   const confirm = useCallback(() => {
-    confirmTx(index, "wc");
+    confirmTx(index, "aa");
     if (index == 0 && txs.length == 0) modals.closeAll();
   }, [confirmTx, index, txs]);
 
@@ -54,7 +54,7 @@ export const ExplainAaTransactions = ({
           <Button
             w={{ base: "100%", md: "auto" }}
             color={"red"}
-            onClick={() => refuseTx(index, "wc")}
+            onClick={() => refuseTx(index, "aa")}
           >
             {"Reject"}
           </Button>

@@ -1,22 +1,21 @@
 import { useAA } from "@real-token/aa-core";
 import { modals } from "@mantine/modals";
 import { useEffect, useMemo } from "react";
-import { useTxBrowserTabNotification } from "./useTxBrowserTabNotification";
 
 type UseListenAaTxProps = (listenNewAaTx?: boolean) => void;
 
 export const useListenAaTx: UseListenAaTxProps = (listenNewAaTx = true) => {
   const { txs } = useAA();
 
-  const wcTxsToValidate = useMemo(() => {
-    return txs.wc;
+  const aaTxsToValidate = useMemo(() => {
+    return txs.aa;
   }, [txs]);
 
   useEffect(() => {
-    if (wcTxsToValidate.length == 0 || !listenNewAaTx) return;
+    if (aaTxsToValidate.length == 0 || !listenNewAaTx) return;
     modals.openContextModal({
       modal: "aaTxManagerModal",
       innerProps: {},
     });
-  }, [wcTxsToValidate, listenNewAaTx]);
+  }, [aaTxsToValidate, listenNewAaTx]);
 };

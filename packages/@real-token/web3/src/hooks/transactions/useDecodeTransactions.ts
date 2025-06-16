@@ -27,8 +27,8 @@ export const useDecodeTransactions: UseDecodeTransactions = (tx) => {
     isError,
     refetch,
   } = useQuery({
-    queryKey: ["decodeAaTransaction", tx.data],
-    enabled: !!walletAddress && !!chainId,
+    queryKey: ["decodeAaTransaction", tx?.data],
+    enabled: !!walletAddress && !!chainId && !!tx,
     retry: 1,
     queryFn: async () => {
       if (!walletAddress) throw new Error("Wallet address is required");
@@ -49,8 +49,16 @@ export const useDecodeTransactions: UseDecodeTransactions = (tx) => {
 
       const origin = window.location.origin;
 
+      const txParsed = {
+        ...tx,
+        from: walletAddress,
+        value: tx.value ? BigNumber(tx.value).toString(10) : "0x0",
+      };
+
+      console.log(txParsed);
+
       const decodeResult = await handleSendTransaction(
-        tx,
+        txParsed,
         chainConfig.serverChainId,
         chainId,
         walletAddress,
