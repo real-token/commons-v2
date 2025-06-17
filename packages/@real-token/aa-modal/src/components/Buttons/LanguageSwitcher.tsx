@@ -2,9 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import { Combobox, Flex, InputBase, useCombobox } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
+import { getI18nextInstance } from "../TranslationProvider";
 
 export const LanguageSwitcher = () => {
-  const { t, i18n } = useTranslation("main");
+  const { t } = useTranslation("main");
+
+  const i18n = getI18nextInstance();
 
   const [value, setValue] = useState<string | null>(i18n.language);
 

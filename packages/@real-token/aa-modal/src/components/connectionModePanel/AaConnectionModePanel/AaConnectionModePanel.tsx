@@ -1,21 +1,22 @@
 import { AaConnectorModeConfig } from "../../../types";
-import { WalletButton } from "@rainbow-me/rainbowkit";
-import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
 import { Flex, Divider, Text, Button } from "@mantine/core";
 import { EmailPasswordless } from "./EmailPasswordless";
 import { useTranslation } from "react-i18next";
 import { SocialLogins } from "./SocialLogins";
 import { SocialCustomButton } from "../../SocialCustomButton";
 import { IconWallet } from "@tabler/icons-react";
-import { CustomDrawer } from "../../CustomDrawer/CustomDrawer";
 import { useState } from "react";
 import classes from "../../AaModal.module.css";
 import { AAExternalConnectorDrawer } from "./AAExternalConnectorDrawer";
 
 export const AaConnectionModePanel = ({
   config,
+  socialsConnectors,
+  advancedConnectors,
 }: {
   config: AaConnectorModeConfig;
+  socialsConnectors: string[];
+  advancedConnectors: string[];
 }) => {
   const { t } = useTranslation("main");
   const [drawerOpened, setDrawerOpened] = useState(false);
@@ -39,7 +40,7 @@ export const AaConnectionModePanel = ({
             <SocialCustomButton socialConnectorName="google">
               <Text fw={600}>{t("providers.continueWithGoogle")}</Text>
             </SocialCustomButton>
-            <SocialLogins connectors={config.socialConnectorsName || []} />
+            <SocialLogins connectors={socialsConnectors} />
           </Flex>
           <Divider />
         </>
@@ -50,12 +51,12 @@ export const AaConnectionModePanel = ({
       </Text>
       <Divider label={t("providers.or")} />
       <Flex gap={"sm"} w={"100%"} justify={"center"}>
-        {config.showExternalWalletConnection ? (
+        {config.showAdvancedWalletConnection ? (
           <>
             <AAExternalConnectorDrawer
               drawerOpened={drawerOpened}
               setDrawerOpened={setDrawerOpened}
-              config={config}
+              connectors={advancedConnectors}
             />
             <Button
               size={"xs"}
@@ -67,7 +68,13 @@ export const AaConnectionModePanel = ({
             </Button>
           </>
         ) : undefined}
-        <Button size={"xs"} color={"#156CAB"}>
+        <Button
+          size={"xs"}
+          color={"#156CAB"}
+          onClick={() => {
+            window.open("https://realt.co", "_blank");
+          }}
+        >
           {t("help")}
         </Button>
       </Flex>

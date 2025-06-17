@@ -4,18 +4,25 @@ import { Tabs } from "@mantine/core";
 import { AaModalConfig } from "../types/aaModalConfig";
 import { AaConnectionModePanel } from "./connectionModePanel/AaConnectionModePanel/AaConnectionModePanel";
 import { ExternalConnectionModelPanel } from "./connectionModePanel/ExternalConnectionModelPanel/ExternalConnectionModelPanel";
+import { ParsedConnectorsConfig } from "../hooks/useParsedConnectorsConfig";
+import { useTranslation } from "react-i18next";
 
-export const ConnectionMode = ({ config }: { config: AaModalConfig }) => {
-  const { connectionMode } = config;
-
+export const ConnectionMode = ({
+  config,
+  parsedConnectorsConfig,
+}: {
+  config: AaModalConfig;
+  parsedConnectorsConfig: ParsedConnectorsConfig;
+}) => {
+  const { t } = useTranslation("main");
   const [value, setValue] = useState<CONNECTION_MODE>(CONNECTION_MODE.aa);
 
   const displayedOptions: CONNECTION_MODE[] = useMemo(() => {
-    return Object.keys(connectionMode ?? {})
+    return Object.keys(config.connectionModeVisibility ?? {})
       .map((key) => key as CONNECTION_MODE)
       .filter(
         (key) =>
-          config.connectionMode?.[key].connectorsName.length > 0 &&
+          config.connectionModeVisibility?.[key] &&
           config.connectionModeVisibility?.[
             key as keyof typeof config.connectionModeVisibility
           ]
@@ -28,13 +35,15 @@ export const ConnectionMode = ({ config }: { config: AaModalConfig }) => {
         [
           CONNECTION_MODE.aa,
           <AaConnectionModePanel
-            config={config.connectionMode[CONNECTION_MODE.aa]}
+            config={config.connectionModeConfig[CONNECTION_MODE.aa]}
+            socialsConnectors={parsedConnectorsConfig.aa_socials}
+            advancedConnectors={parsedConnectorsConfig.aa_advanced}
           />,
         ],
         [
           CONNECTION_MODE.external,
           <ExternalConnectionModelPanel
-            config={config.connectionMode[CONNECTION_MODE.external]}
+            connectors={parsedConnectorsConfig.external}
           />,
         ],
         [CONNECTION_MODE.tba, <></>],
@@ -57,11 +66,11 @@ export const ConnectionMode = ({ config }: { config: AaModalConfig }) => {
       <Tabs.List>
         {displayedOptions.map((option) => (
           <Tabs.Tab key={option} value={option}>
-            {
+            {t(
               connectionModeOptions[
                 option as keyof typeof connectionModeOptions
               ]
-            }
+            )}
           </Tabs.Tab>
         ))}
       </Tabs.List>

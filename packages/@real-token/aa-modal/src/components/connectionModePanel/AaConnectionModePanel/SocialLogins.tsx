@@ -3,14 +3,11 @@ import { useState } from "react";
 import { Flex, SimpleGrid, Text } from "@mantine/core";
 import { SocialCustomButton } from "../../SocialCustomButton";
 import { ModalButtonCompact } from "../../Buttons/ModalButton/ModalButtonCompact";
-import { LoginConfig } from "@real-token/aa-core";
-
-type LoginProvider = keyof LoginConfig;
 
 const MAX_PROVIDERS_SHOWN = 4;
 
 interface SocialLoginsProps {
-  connectors: LoginProvider[];
+  connectors: string[];
   forceWallet?: any;
 }
 export const SocialLogins = ({
@@ -42,6 +39,7 @@ export const SocialLogins = ({
           <SocialCustomButton
             socialConnectorName={provider}
             variant="compact"
+            key={`aa-social-${provider}`}
           />
         ))}
       {providers.length > MAX_PROVIDERS_SHOWN ? (

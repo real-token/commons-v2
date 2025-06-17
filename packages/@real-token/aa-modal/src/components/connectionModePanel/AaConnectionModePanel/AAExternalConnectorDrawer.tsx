@@ -10,11 +10,11 @@ import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButto
 export const AAExternalConnectorDrawer = ({
   drawerOpened,
   setDrawerOpened,
-  config,
+  connectors,
 }: {
   drawerOpened: boolean;
   setDrawerOpened: (value: boolean) => void;
-  config: AaConnectorModeConfig;
+  connectors: string[];
 }) => {
   const { t } = useTranslation("main");
   const [
@@ -38,9 +38,9 @@ export const AAExternalConnectorDrawer = ({
         </Flex>
       ) : (
         <Flex direction="column" gap="md">
-          {config.connectorsName.map((connectorName, index) => (
+          {connectors.map((connectorName, index) => (
             <WalletButton.Custom
-              key={`aa-${index}-${connectorName}`}
+              key={`aa-advanced-${connectorName}`}
               wallet={connectorName}
             >
               {(props) => {

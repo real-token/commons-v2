@@ -10,9 +10,10 @@ export const EmailPasswordless = () => {
   const { login } = useAA();
   const config = useAaModalConfig();
 
-  const { getInputProps, error } = useField({
+  const { getInputProps, error, isDirty } = useField({
     initialValue: "",
     validate: (value) => (value.length > 0 ? null : "Email is required"),
+    validateOnChange: true,
   });
 
   return (
@@ -43,7 +44,11 @@ export const EmailPasswordless = () => {
               type="email"
               error={error}
             />
-            <Button onClick={() => onClick()} loading={!ready}>
+            <Button
+              onClick={() => onClick()}
+              loading={!ready}
+              disabled={!isDirty() || !!error}
+            >
               {t("emailPasswordless.title")}
             </Button>
           </Flex>

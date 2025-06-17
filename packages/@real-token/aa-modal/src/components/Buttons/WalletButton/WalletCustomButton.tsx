@@ -69,16 +69,16 @@ export const WalletButtonCustom = ({
         leftSection={<Avatar src={iconUrl} size={"sm"} />}
         color={connector.iconBackground}
         loading={!connectorReady}
-        style={{
-          "--color": connector.iconAccent,
-          "--background-color": connector.iconBackground,
-        }}
+        // style={{
+        //   "--color": connector.iconAccent,
+        //   "--background-color": connector.iconBackground,
+        // }}
         classNames={{
           root: classes.root,
         }}
         w={"100%"}
       >
-        <Text fw={500} c={connector.iconAccent} className={classes.text}>
+        <Text fw={500} className={classes.text}>
           {connector.name}
         </Text>
       </Button>

@@ -1,4 +1,4 @@
-import { LoginConfig, useAA } from "@real-token/aa-core";
+import { LoginMethodConfigWithRainbowLogo, useAA } from "@real-token/aa-core";
 import { ReactNode } from "react";
 import {
   IconBrandGoogle,
@@ -13,7 +13,7 @@ import { ModalButton } from "./Buttons/ModalButton/ModalButton";
 import { ModalButtonCompact } from "./Buttons/ModalButton/ModalButtonCompact";
 import { useAaModalConfig } from "./AaModalProvider";
 
-type LoginProvider = keyof LoginConfig;
+type LoginProvider = keyof LoginMethodConfigWithRainbowLogo;
 
 const loginProvidersToLogo: Map<LoginProvider, ReactNode> = new Map([
   ["google", <IconBrandGoogle />],
@@ -29,7 +29,7 @@ export const SocialCustomButton = ({
   children,
   variant = "default",
 }: {
-  socialConnectorName: LoginProvider;
+  socialConnectorName: string;
   children?: ReactNode;
   variant?: "default" | "compact";
 }) => {

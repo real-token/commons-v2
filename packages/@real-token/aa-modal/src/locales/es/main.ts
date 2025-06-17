@@ -11,6 +11,11 @@ export const main = {
     connectExternalWallet: "Conexiones avanzadas",
     or: "o",
   },
+  mode: {
+    aa: "RealToken AA",
+    tba: "TBA",
+    external: "Otras billeteras",
+  },
   help: "Necesito ayuda",
   privacyPolicy:
     "No compartimos ningún dato relacionado con tus inicios de sesión sociales.",

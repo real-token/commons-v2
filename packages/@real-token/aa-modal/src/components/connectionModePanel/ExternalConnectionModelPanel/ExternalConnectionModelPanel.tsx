@@ -1,17 +1,16 @@
-import { Flex, Grid } from "@mantine/core";
-import { ConnectorModeConfig } from "../../../types";
+import { Grid } from "@mantine/core";
 import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
 import { WalletButton } from "@rainbow-me/rainbowkit";
 
 export const ExternalConnectionModelPanel = ({
-  config,
+  connectors,
 }: {
-  config: ConnectorModeConfig;
+  connectors: string[];
 }) => {
-  const nbrConnectors = config.connectorsName.length;
+  const nbrConnectors = connectors.length;
   return (
     <Grid gutter={"md"}>
-      {config.connectorsName.map((connectorName, index) => (
+      {connectors.map((connectorName, index) => (
         <WalletButton.Custom
           key={`external-${index}-${connectorName}`}
           wallet={connectorName}
