@@ -1,5 +1,31 @@
 # @real-token/types
 
+## 2.0.19
+
+### Patch Changes
+
+- 434832c: fix(aa-modal):
+
+  - Tabs translations not working
+  - LanguageSwitcher not working at init
+  - Remove connectors name from config. Connectors are now get from aa-core trough wagmi.
+  - PostCSS not in esbuild causing wrong css style applied to components
+
+  fix(commons-website-examples):
+
+  - Update deps
+  - Fix development server: Buffer polyfill
+
+  fix(web3):
+
+  - Decoding crashing
+  - WC Decoding decodes AA transactions instead of WC
+
+  All fix:
+
+  - Upgrade aa-core to last version
+  - Upgrade wagmi peerDeps version
+
 ## 2.0.18
 
 ### Patch Changes
