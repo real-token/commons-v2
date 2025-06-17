@@ -25,22 +25,15 @@ function App() {
           modals.openContextModal({
             modal: "aaModal",
             innerProps: {
-              connectionMode: {
+              connectionModeVisibility: {
+                [CONNECTION_MODE.aa]: true,
+                [CONNECTION_MODE.external]: true,
+              },
+              connectionModeConfig: {
                 [CONNECTION_MODE.aa]: {
-                  connectorsName: ["metaMask", "rabby", "walletConnect"],
-                  socialConnectorsName: ["google"],
-                  showEmailPasswordless: false,
-                },
-                [CONNECTION_MODE.external]: {
-                  connectorsName: [
-                    "metaMask",
-                    "rabby",
-                    "walletConnect",
-                    "coinbase",
-                    "ledger",
-                    "trust",
-                    "frame",
-                  ],
+                  showAdvancedWalletConnection: true,
+                  showSocialLogins: true,
+                  showEmailPasswordless: true,
                 },
               },
             },

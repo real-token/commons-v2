@@ -1,8 +1,7 @@
 import {
   AAClientConfig,
-  ChainConfig,
-  LoginConfig,
   TorusConfig,
+  LoginMethodConfigWithRainbowLogo,
 } from "@real-token/aa-core";
 import {
   metaMaskWallet,
@@ -14,18 +13,16 @@ import {
   frameWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import { EthereumLogo } from "@real-token/ui-components";
-import {
-  discordLogo,
-  facebookLogo,
-  twitchLogo,
-  googleLogo,
-} from "@real-token/web3";
+import { googleLogo, discordLogo } from "@real-token/web3";
+import { RealTokenUiNetworkConfig } from "@real-token/core";
+import { REALTOKEN_AA_GROUP_NAME } from "@real-token/aa-modal";
 
 const env = import.meta.env.VITE_ENV;
 
-const networks: ChainConfig[] = [
+export const networks: RealTokenUiNetworkConfig[] = [
   {
-    logo: EthereumLogo,
+    logo: "",
+    chainLogo: EthereumLogo,
     blockExplorerUrl: "https://sepolia.etherscan.io/",
     isTestnet: true,
     wsTarget: import.meta.env.VITE_SEPOLIA_WSS_URL!,
@@ -36,58 +33,31 @@ const networks: ChainConfig[] = [
     chainNamespace: "eip155",
     ticker: "ETH",
     tickerName: "Sepolia ETH",
+    serverChainId: "eth",
   },
 ];
 
-const loginConfig: LoginConfig = {
+const loginConfig: LoginMethodConfigWithRainbowLogo = {
   google: {
     name: "google",
-    verifier: "realt-google",
-    typeOfLogin: "google",
-    clientId:
-      "900675479243-o3mab93vi7nt7ho4nctkfbqs5pmgv61m.apps.googleusercontent.com",
-    showOnModal: true,
-    showOnSocialBackupFactor: true,
+    authConnectionId: "realt-google",
+    authConnection: "google",
+    groupedAuthConnectionId: "",
     rainbowLogo: async () => googleLogo,
   },
-};
-
-const stagingLoginModal: LoginConfig = {
   discord: {
     name: "discord",
-    verifier: "realt-discord-staging",
-    typeOfLogin: "discord",
-    clientId: "1294468658856460348",
-    rainbowLogo: discordLogo,
-  },
-  google: {
-    name: "google",
-    verifier: "realt-google-staging",
-    typeOfLogin: "google",
-    clientId:
-      "427962867996-kdhi2rirlqqsghn7uiq1m462b9d04mia.apps.googleusercontent.com",
-    rainbowLogo: googleLogo,
-  },
-  facebook: {
-    name: "facebook",
-    verifier: "realt-facebook-staging",
-    typeOfLogin: "facebook",
-    clientId: "569679122063484",
-    rainbowLogo: facebookLogo,
-  },
-  twitch: {
-    name: "twitch",
-    verifier: "realt-twitchtv-staging",
-    typeOfLogin: "twitch",
-    clientId: "qnw5sbf2xhf39mn334nztn95n64mcm",
-    rainbowLogo: twitchLogo,
+    authConnectionId: "realt-discord",
+    authConnection: "discord",
+    groupedAuthConnectionId: "",
+    rainbowLogo: async () => discordLogo,
   },
   email_passwordless: {
     name: "email_passwordless",
-    verifier: "realt-passwordless-staging",
-    typeOfLogin: "email_passwordless",
-    clientId: import.meta.env.VITE_TORUS_API_KEY!,
-    rainbowLogo: "",
+    authConnectionId: "realt-email_passwordless",
+    authConnection: "email_passwordless",
+    groupedAuthConnectionId: "",
+    rainbowLogo: async () => "",
   },
 };
 
@@ -100,17 +70,17 @@ const torusConfig: TorusConfig = {
 
 export const aaClient: AAClientConfig = {
   walletList: [
+    // {
+    //   groupName: REALTOKEN_AA_GROUP_NAME.AA_ADVANCED,
+    //   wallets: [ledgerWallet],
+    // },
     {
-      groupName: "hot wallets",
-      wallets: [
-        metaMaskWallet,
-        rabbyWallet,
-        walletConnectWallet,
-        coinbaseWallet,
-        ledgerWallet,
-        trustWallet,
-        frameWallet,
-      ],
+      groupName: REALTOKEN_AA_GROUP_NAME.EXTERNAL,
+      wallets: [rabbyWallet],
+    },
+    {
+      groupName: REALTOKEN_AA_GROUP_NAME.AA_ADVANCED_AND_EXTERNAL,
+      wallets: [metaMaskWallet],
     },
   ],
   uiConfig: {
@@ -128,6 +98,7 @@ export const aaClient: AAClientConfig = {
   web3auth: {
     apiKey: import.meta.env.VITE_TORUS_API_KEY!,
     network: "sapphire_mainnet",
+    uxMode: "popup",
   },
   guardians: [
     "0x8422207d24321c9d753c6806ca6b8448bb3dd465",

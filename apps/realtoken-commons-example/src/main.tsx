@@ -4,7 +4,7 @@ import "./index.css";
 import { resources } from "./i18next/locales";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
-import { aaClient } from "./aa-config/config";
+import { aaClient, networks } from "./aa-config/config";
 import { modals } from "./modals";
 import React from "react";
 import { initLanguage } from "@real-token/i18n-locales";
@@ -15,19 +15,18 @@ import { QueryClient } from "@tanstack/react-query";
 
 initLanguage({ resources, debug: true });
 
-const showAllNetworks = process.env.NEXT_PUBLIC_SHOW_ONLY_TESTNET == "false";
-
-const env = process.env.NEXT_PUBLIC_ENV ?? "development";
+// const showAllNetworks = process.env.NEXT_PUBLIC_SHOW_ONLY_TESTNET == "false";
+// const env = process.env.NEXT_PUBLIC_ENV ?? "development";
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RealTokenWeb3Provider queryClient={queryClient} aaClientConfig={aaClient}>
-      <RealTokenUiProvider<any>
+      <RealTokenUiProvider
         values={{
           showNetworks: SHOW_NETWORKS.ALL,
-          networksConfig: aaClient.torusConfig.networks,
+          networksConfig: networks,
           defaultNetworkId: "0x64",
         }}
       >
