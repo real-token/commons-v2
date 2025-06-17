@@ -44,7 +44,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
-    "@real-token/aa-core": "v2.0.0-beta.19",
+    "@real-token/aa-core": "v2.0.0-beta.20",
     "@real-token/aa-modal": "workspace:^",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
@@ -53,13 +53,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.6.2",
-    "wagmi": "2.14.13"
+    "wagmi": "2.15.6"
   },
   "peerDependencies": {
-    "@real-token/aa-core": "v2.0.0-beta.19",
+    "@real-token/aa-core": "v2.0.0-beta.20",
     "@real-token/aa-modal": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "wagmi": "2.14.13"
+    "wagmi": "2.15.6"
   }
 }
