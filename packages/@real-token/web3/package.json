@@ -52,7 +52,7 @@
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
     "@rainbow-me/rainbowkit": "^2.2.4",
-    "@real-token/aa-core": "v2.0.0-beta.4",
+    "@real-token/aa-core": "v2.0.0-beta.19",
     "@real-token/core": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "@types/lodash": "^4.17.16",

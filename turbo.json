@@ -3,7 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["packages/@real-token/**"],
+      "inputs": ["packages/@real-token/src/**"],
       "outputs": ["dist/**"]
     },
     "yalc:push": {
