@@ -38,7 +38,7 @@ export function RealTokenWeb3Provider({
   rainbowKitConfig?: RainbowKitProviderProps;
   providerConfig?: RealTokenWeb3ProviderProps;
 }) {
-  const { wagmiConfig, authAdapter, web3auth } = useMemo(
+  const { wagmiConfig, web3auth } = useMemo(
     () => getInitialState(aaClientConfig),
     [aaClientConfig]
   );
@@ -56,11 +56,7 @@ export function RealTokenWeb3Provider({
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
         <RainbowKitProvider {...rainbowKitConfig}>
-          <AAProvider
-            config={aaClientConfig}
-            authAdapter={authAdapter}
-            web3auth={web3auth}
-          >
+          <AAProvider config={aaClientConfig} web3auth={web3auth}>
             <Web3Provider config={config}>{children}</Web3Provider>
           </AAProvider>
         </RainbowKitProvider>
