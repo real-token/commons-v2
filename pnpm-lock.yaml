@@ -43,11 +43,11 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@rainbow-me/rainbowkit':
-        specifier: ^2.2.4
+        specifier: ^2.2.6
         version: 2.2.7(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-modal':
         specifier: workspace:*
         version: link:../../packages/@real-token/aa-modal
@@ -195,11 +195,11 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@rainbow-me/rainbowkit':
-        specifier: ^2.2.4
-        version: 2.2.7(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: 2.2.6
+        version: 2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@tanstack/react-query':
         specifier: ^5.72.0
         version: 5.80.7(react@18.3.1)
@@ -277,8 +277,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-modal':
         specifier: workspace:^
         version: link:../aa-modal
@@ -381,8 +381,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.23
@@ -460,8 +460,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -557,8 +557,8 @@ importers:
         specifier: ^2.2.4
         version: 2.2.7(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.20
-        version: 2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.22
+        version: 2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -3780,6 +3780,33 @@ packages:
       url-parse: 1.5.10
     dev: false
 
+  /@rainbow-me/rainbowkit@2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6):
+    resolution: {integrity: sha512-mJhKC+5BCyC+/O2rL3q8iJDrhb58p7o4kp26yWcmY/Aeur3M5OooETcHFe/LhWR2EGbBKRq2pzM75BIlrf4/PA==}
+    engines: {node: '>=12.4'}
+    peerDependencies:
+      '@tanstack/react-query': '>=5.0.0'
+      react: '>=18'
+      react-dom: '>=18'
+      viem: 2.x
+      wagmi: ^2.9.0
+    dependencies:
+      '@tanstack/react-query': 5.80.7(react@18.3.1)
+      '@vanilla-extract/css': 1.15.5
+      '@vanilla-extract/dynamic': 2.1.2
+      '@vanilla-extract/sprinkles': 1.6.3(@vanilla-extract/css@1.15.5)
+      clsx: 2.1.1
+      qrcode: 1.5.4
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-remove-scroll: 2.6.2(@types/react@18.3.23)(react@18.3.1)
+      ua-parser-js: 1.0.40
+      viem: 2.29.4(typescript@5.8.3)(zod@3.22.4)
+      wagmi: 2.15.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
+    transitivePeerDependencies:
+      - '@types/react'
+      - babel-plugin-macros
+    dev: true
+
   /@rainbow-me/rainbowkit@2.2.7(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
     resolution: {integrity: sha512-sOOMYYPbAKLiciV6X1Zd0+9Veuoh6SFze4FaWDN2iwqB+TzErH2PNUzK5rKgLDrBwTcWjKAwqJw/TIHRw+Pphw==}
     engines: {node: '>=12.4'}
@@ -3807,16 +3834,85 @@ packages:
       - babel-plugin-macros
       - typescript
 
-  /@real-token/aa-core@2.0.0-beta.20(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
-    resolution: {integrity: sha512-aBRMbMs56F7ieT3pVxwu8uxuX8IbSuVCCAzBdK6iFOldMJiMZ8Y1oQ1Px9KJoo2xXGzhLSBX5XQb2J3C9dbdjQ==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.0.0-beta.20/961ea5ee0adb8877640ad41948a3db7105dd0e8f}
+  /@real-token/aa-core@2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
+    resolution: {integrity: sha512-nOhCqM553Z9Hn2dxJvzzOuR2ji+YZzw0f1FrgNQKv1Fnhvkti+vohrBYmJqzMpSSXDTOExA/VqQagdgCf6Vtxg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.0.0-beta.22/8374e09b1ac93e56a23570a1bed0a8f8c41ef1cf}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
-      '@rainbow-me/rainbowkit': ^2.2.4
+      '@rainbow-me/rainbowkit': 2.2.6
       react: ^18.0.0
       react-dom: ^18.0.0
       viem: ^2.29
-      wagmi: ^2.15.6
+      wagmi: ^2.9.0
+    dependencies:
+      '@babel/runtime': 7.27.6
+      '@etherspot/modular-sdk': 2.0.6
+      '@etherspot/prime-sdk': 1.9.2(graphql@15.10.1)(react-dom@18.3.1)(react@18.3.1)(subscriptions-transport-ws@0.9.19)
+      '@rainbow-me/rainbowkit': 2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6)
+      '@real-token/web3auth-wagmi-connector': 7.1.4(@wagmi/core@2.17.3)(@web3auth/modal@10.0.3)(viem@2.29.4)
+      '@reown/walletkit': 1.2.6(typescript@5.8.3)
+      '@solana/web3.js': 1.98.2(typescript@5.8.3)
+      '@tanstack/react-query': 5.80.7(react@18.3.1)
+      '@wagmi/core': 2.17.3(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0)(viem@2.29.4)
+      '@walletconnect/core': 2.21.3(typescript@5.8.3)
+      '@walletconnect/jsonrpc-utils': 1.0.8
+      '@walletconnect/modal': 2.7.0(@types/react@18.3.23)(react@18.3.1)
+      '@walletconnect/types': 2.21.3
+      '@walletconnect/utils': 2.21.3(typescript@5.8.3)
+      '@web3auth/modal': 10.0.3(@babel/runtime@7.27.6)(@solana/web3.js@1.98.2)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
+      graphql: 15.10.1
+      prettier: 3.5.3
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      subscriptions-transport-ws: 0.9.19(graphql@15.10.1)
+      viem: 2.29.4(typescript@5.8.3)(zod@3.22.4)
+      wagmi: 2.15.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@coinbase/wallet-sdk'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@sentry/core'
+      - '@tanstack/query-core'
+      - '@types/react'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/kv'
+      - aws4fetch
+      - bufferutil
+      - db0
+      - encoding
+      - immer
+      - ioredis
+      - ox
+      - react-native
+      - supports-color
+      - typescript
+      - uploadthing
+      - use-sync-external-store
+      - utf-8-validate
+      - vue
+      - zod
+    dev: true
+
+  /@real-token/aa-core@2.0.0-beta.22(@rainbow-me/rainbowkit@2.2.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
+    resolution: {integrity: sha512-nOhCqM553Z9Hn2dxJvzzOuR2ji+YZzw0f1FrgNQKv1Fnhvkti+vohrBYmJqzMpSSXDTOExA/VqQagdgCf6Vtxg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.0.0-beta.22/8374e09b1ac93e56a23570a1bed0a8f8c41ef1cf}
+    engines: {node: '>=22.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@rainbow-me/rainbowkit': 2.2.6
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      viem: ^2.29
+      wagmi: ^2.9.0
     dependencies:
       '@babel/runtime': 7.27.6
       '@etherspot/modular-sdk': 2.0.6
@@ -3882,9 +3978,6 @@ packages:
       '@wagmi/core': 2.17.3
       '@web3auth/modal': ^10.0.3
       viem: ^2.29
-    peerDependenciesMeta:
-      '@web3auth/modal':
-        optional: true
     dependencies:
       '@wagmi/core': 2.17.3(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0)(viem@2.29.4)
       '@web3auth/modal': 10.0.3(@babel/runtime@7.27.6)(@solana/web3.js@1.98.2)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
@@ -5072,6 +5165,25 @@ packages:
     dependencies:
       '@types/node': 22.15.32
 
+  /@vanilla-extract/css@1.15.5:
+    resolution: {integrity: sha512-N1nQebRWnXvlcmu9fXKVUs145EVwmWtMD95bpiEKtvehHDpUhmO1l2bauS7FGYKbi3dU1IurJbGpQhBclTr1ng==}
+    dependencies:
+      '@emotion/hash': 0.9.2
+      '@vanilla-extract/private': 1.0.9
+      css-what: 6.1.0
+      cssesc: 3.0.0
+      csstype: 3.1.3
+      dedent: 1.6.0
+      deep-object-diff: 1.1.9
+      deepmerge: 4.3.1
+      lru-cache: 10.4.3
+      media-query-parser: 2.0.2
+      modern-ahocorasick: 1.1.0
+      picocolors: 1.1.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
   /@vanilla-extract/css@1.17.3:
     resolution: {integrity: sha512-jHivr1UPoJTX5Uel4AZSOwrCf4mO42LcdmnhJtUxZaRWhW4FviFbIfs0moAWWld7GOT+2XnuVZjjA/K32uUnMQ==}
     dependencies:
@@ -5090,6 +5202,12 @@ packages:
     transitivePeerDependencies:
       - babel-plugin-macros
 
+  /@vanilla-extract/dynamic@2.1.2:
+    resolution: {integrity: sha512-9BGMciD8rO1hdSPIAh1ntsG4LPD3IYKhywR7VOmmz9OO4Lx1hlwkSg3E6X07ujFx7YuBfx0GDQnApG9ESHvB2A==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.9
+    dev: true
+
   /@vanilla-extract/dynamic@2.1.4:
     resolution: {integrity: sha512-7+Ot7VlP3cIzhJnTsY/kBtNs21s0YD7WI1rKJJKYP56BkbDxi/wrQUWMGEczKPUDkJuFcvbye+E2ub1u/mHH9w==}
     dependencies:
@@ -5097,6 +5215,14 @@ packages:
 
   /@vanilla-extract/private@1.0.9:
     resolution: {integrity: sha512-gT2jbfZuaaCLrAxwXbRgIhGhcXbRZCG3v4TTUnjw0EJ7ArdBRxkq4msNJkbuRkCgfIK5ATmprB5t9ljvLeFDEA==}
+
+  /@vanilla-extract/sprinkles@1.6.3(@vanilla-extract/css@1.15.5):
+    resolution: {integrity: sha512-oCHlQeYOBIJIA2yWy2GnY5wE2A7hGHDyJplJo4lb+KEIBcJWRnDJDg8ywDwQS5VfWJrBBO3drzYZPFpWQjAMiQ==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
+    dependencies:
+      '@vanilla-extract/css': 1.15.5
+    dev: true
 
   /@vanilla-extract/sprinkles@1.6.4(@vanilla-extract/css@1.17.3):
     resolution: {integrity: sha512-lW3MuIcdIeHKX81DzhTnw68YJdL1ial05exiuvTLJMdHXQLKcVB93AncLPajMM6mUhaVVx5ALZzNHMTrq/U9Hg==}
@@ -9642,6 +9768,16 @@ packages:
       encode-utf8: 1.0.3
       pngjs: 5.0.0
       yargs: 15.4.1
+
+  /qrcode@1.5.4:
+    resolution: {integrity: sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dependencies:
+      dijkstrajs: 1.0.3
+      pngjs: 5.0.0
+      yargs: 15.4.1
+    dev: true
 
   /qs@6.12.0:
     resolution: {integrity: sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==}
