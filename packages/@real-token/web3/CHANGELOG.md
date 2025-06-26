@@ -1,5 +1,13 @@
 # @real-token/web3
 
+## 2.0.20
+
+### Patch Changes
+
+- aa77c0c: fix web3, upgrade deps versions
+- Updated dependencies [aa77c0c]
+  - @real-token/core@2.0.20
+
 ## 2.0.19
 
 ### Patch Changes

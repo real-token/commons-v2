@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.20
+
+### Patch Changes
+
+- aa77c0c: fix web3, upgrade deps versions
+
 ## 2.0.19
 
 ### Patch Changes
