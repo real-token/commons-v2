@@ -56,7 +56,11 @@ export function RealTokenWeb3Provider({
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
         <RainbowKitProvider {...rainbowKitConfig}>
-          <AAProvider config={aaClientConfig} web3auth={web3auth}>
+          <AAProvider
+            config={aaClientConfig}
+            web3auth={web3auth}
+            wagmiConfig={wagmiConfig}
+          >
             <Web3Provider config={config}>{children}</Web3Provider>
           </AAProvider>
         </RainbowKitProvider>
