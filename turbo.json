@@ -3,11 +3,19 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["packages/@real-token/src/**"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "src/**/*",
+        "package.json",
+        "tsconfig.json",
+        "webpack.config.cjs",
+        "build.mjs"
+      ],
       "outputs": ["dist/**"]
     },
     "yalc:push": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["dist/**"]
     },
     "yalc:add": {},
     "clean-install": {}
