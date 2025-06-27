@@ -9,7 +9,7 @@ export const ManageAaAccountsMenuItem = () => {
 
   const openModal = () => {
     modals.openContextModal({
-      modal: "manageAaAccountsModal",
+      modal: "manageAaAccounts",
       title: <Text size={"xl"}>{t("manageWallet.title")}</Text>,
       innerProps: {},
     });

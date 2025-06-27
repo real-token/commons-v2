@@ -415,6 +415,9 @@ importers:
       '@babel/runtime':
         specifier: ^7.24.7
         version: 7.27.6
+      '@mantine/form':
+        specifier: ^7.17.3
+        version: 7.17.8(react@18.3.1)
       '@real-token/types':
         specifier: workspace:*
         version: link:../types
@@ -3890,6 +3893,9 @@ packages:
       '@wagmi/core': 2.17.3
       '@web3auth/modal': ^10.0.3
       viem: ^2.29
+    peerDependenciesMeta:
+      '@web3auth/modal':
+        optional: true
     dependencies:
       '@wagmi/core': 2.17.3(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0)(viem@2.29.4)
       '@web3auth/modal': 10.0.3(@babel/runtime@7.27.6)(@solana/web3.js@1.98.2)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)

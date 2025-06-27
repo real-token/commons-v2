@@ -10,6 +10,7 @@ import {
 import { UserWalletAddressButton } from "@/components/buttons/UserWalletAddressButton";
 import { CurrentConnectorMenuItem } from "./items/CurrentConnectorMenuItem";
 import { useIsAA } from "@real-token/web3";
+import { WatchAddressButton } from "./items/WatchAddressMenuItem";
 
 export function WalletMenu() {
   const [isOpen, handlers] = useDisclosure(false);
@@ -37,6 +38,7 @@ export function WalletMenu() {
       <Menu.Dropdown>
         <CurrentConnectorMenuItem />
         {isAA && <ManageAaAccountsMenuItem />}
+        {/* <WatchAddressButton /> */}
         <CopyToClipboardMenuItem />
         <ViewOnExplorerMenuItem />
         <DisconnectMenuItem />
