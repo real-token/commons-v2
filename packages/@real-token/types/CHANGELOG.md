@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.21
+
+### Patch Changes
+
+- 85db506: fix(core): RealTokenUiProvider merge config with lodash
+
 ## 2.0.20
 
 ### Patch Changes

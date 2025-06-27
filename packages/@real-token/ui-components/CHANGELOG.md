@@ -1,5 +1,15 @@
 # @real-token/ui-components
 
+## 2.0.21
+
+### Patch Changes
+
+- 85db506: fix(core): RealTokenUiProvider merge config with lodash
+- Updated dependencies [85db506]
+  - @real-token/core@2.0.21
+  - @real-token/types@2.0.21
+  - @real-token/web3@2.0.21
+
 ## 2.0.20
 
 ### Patch Changes
