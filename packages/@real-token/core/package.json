@@ -34,6 +34,7 @@
     "@babel/core": "^7.24.7",
     "@babel/runtime": "^7.24.7",
     "@real-token/types": "workspace:*",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -46,6 +47,7 @@
     "@babel/runtime": "^7.24.7",
     "@real-token/aa-core": "v2.0.0-beta.22",
     "@real-token/aa-modal": "workspace:^",
+    "@types/lodash": "^4.17.16",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "esbuild": "^0.20.2",

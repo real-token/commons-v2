@@ -3,9 +3,10 @@ import { RealTokenUiNetworkConfig, SHOW_NETWORKS } from "../types/networks";
 import { NetworkId } from "../constants";
 import { AaModalConfig, defaultAaModalConfig } from "@real-token/aa-modal";
 import { Env } from "../types/env";
+import { merge } from "lodash";
 
 interface RealTokenUiContextProps<
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 > {
   showNetworks: SHOW_NETWORKS;
   showWrongNetworkBanner: boolean;
@@ -29,7 +30,7 @@ const RealTokenUiContext = createContext<RealTokenUiContextProps | undefined>(
 );
 
 export function useRealTokenUIConfig<
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 >(): RealTokenUiContextProps<T> {
   const context = useContext(RealTokenUiContext) as
     | RealTokenUiContextProps<T>
@@ -43,17 +44,18 @@ export function useRealTokenUIConfig<
 }
 
 interface RealTokenUiProviderProps<
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 > {
   children: ReactNode;
   values: Partial<RealTokenUiContextProps<T>>;
 }
 
 export function RealTokenUiProvider<
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 >({ children, values }: RealTokenUiProviderProps<T>) {
+  const mergedConfig = merge({}, DEFAULT_CONFIG, values);
   return (
-    <RealTokenUiContext.Provider value={{ ...DEFAULT_CONFIG, ...values }}>
+    <RealTokenUiContext.Provider value={mergedConfig}>
       {children}
     </RealTokenUiContext.Provider>
   );
