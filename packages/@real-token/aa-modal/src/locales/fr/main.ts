@@ -16,6 +16,21 @@ export const main = {
     tba: "TBA",
     external: "Autres portefeuilles",
   },
+  readOnly: {
+    title: "Surveiller une adresse",
+    description:
+      "Surveiller une adresse vous permettra de voir tous les actifs de l'adresse spécifiée, mais ne vous permettra pas d'envoyer des transactions. CECI est un mode lecture seule.",
+    label: "Entrez l'adresse ou l'ENS",
+    button: "Surveiller",
+    form: {
+      placeholder: "0x... ou realteam.eth",
+      error: {
+        required: "L'adresse ou le nom ENS est requis",
+        address: "Adresse invalide",
+        ens: "Nom ENS invalide",
+      },
+    },
+  },
   help: "J'ai besoin d'aide",
   privacyPolicy:
     "Nous ne partageons aucune donnée liée à vos connexions sociales.",

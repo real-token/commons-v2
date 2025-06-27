@@ -10,6 +10,10 @@ export type AaConnectorModeConfig = {
   showAdvancedWalletConnection?: boolean;
 };
 
+export type ExternalConnectorModeConfig = {
+  showReadOnly?: boolean;
+};
+
 export const connectionModeOptions: Record<CONNECTION_MODE, string> = {
   [CONNECTION_MODE.aa]: "mode.aa",
   [CONNECTION_MODE.tba]: "mode.tba",

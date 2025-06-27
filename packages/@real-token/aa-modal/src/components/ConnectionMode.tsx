@@ -44,6 +44,7 @@ export const ConnectionMode = ({
           CONNECTION_MODE.external,
           <ExternalConnectionModelPanel
             connectors={parsedConnectorsConfig.external}
+            config={config.connectionModeConfig[CONNECTION_MODE.external]}
           />,
         ],
         [CONNECTION_MODE.tba, <></>],

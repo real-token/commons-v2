@@ -16,6 +16,21 @@ export const main = {
     tba: "TBA",
     external: "Others wallet",
   },
+  readOnly: {
+    title: "Watch an address",
+    description:
+      "Watching an address will allow you see all assets of the specified adress. But will not allow you to send transactions. THIS is a read only mode.",
+    label: "Enter the address or ENS",
+    button: "Watch",
+    form: {
+      placeholder: "0x... or realteam.eth",
+      error: {
+        required: "Address or ENS name is required",
+        address: "Invalid address",
+        ens: "Invalid ENS name",
+      },
+    },
+  },
   help: "I need help",
   privacyPolicy: "We do not share any data related to your social logins.",
   languageSwitcher: {

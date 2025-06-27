@@ -1,4 +1,8 @@
-import { AaConnectorModeConfig, CONNECTION_MODE } from "./connectionMode";
+import {
+  AaConnectorModeConfig,
+  CONNECTION_MODE,
+  ExternalConnectorModeConfig,
+} from "./connectionMode";
 import { LoginFunctionParams } from "@real-token/aa-core";
 
 export type AaModalConfig = Omit<LoginFunctionParams, "toggleAA"> & {
@@ -9,6 +13,7 @@ export type AaModalConfig = Omit<LoginFunctionParams, "toggleAA"> & {
   };
   connectionModeConfig: {
     [CONNECTION_MODE.aa]: AaConnectorModeConfig;
+    [CONNECTION_MODE.external]: ExternalConnectorModeConfig;
   };
 };
 
@@ -16,13 +21,16 @@ export const defaultAaModalConfig: AaModalConfig = {
   connectionModeVisibility: {
     [CONNECTION_MODE.aa]: true,
     [CONNECTION_MODE.tba]: false,
-    [CONNECTION_MODE.external]: false,
+    [CONNECTION_MODE.external]: true,
   },
   connectionModeConfig: {
     [CONNECTION_MODE.aa]: {
       showAdvancedWalletConnection: false,
       showSocialLogins: true,
       showEmailPasswordless: false,
+    },
+    [CONNECTION_MODE.external]: {
+      showReadOnly: true,
     },
   },
 };
