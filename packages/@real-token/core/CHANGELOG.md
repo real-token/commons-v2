@@ -1,5 +1,34 @@
 # @real-token/core
 
+## 2.0.23
+
+### Patch Changes
+
+- a9eeeaf: fix(monorepo):
+
+  - trubopack config, cache now working
+
+  feat(ui-component):
+
+  - CopyToAddress, ManageAaAccounts, WatchAddress wallet menu items, WatchWalletModal
+
+  feat(web3):
+
+  - readOnly connector and rainbow-kit wallet
+  - hook and modals to check last sdk version
+
+  feat(aa-modal):
+
+  - ReadOnly connection mode
+
+  feat(i18n-locales):
+
+  - modals translations
+
+- Updated dependencies [a9eeeaf]
+  - @real-token/aa-modal@2.0.23
+  - @real-token/types@2.0.23
+
 ## 2.0.22
 
 ### Patch Changes
