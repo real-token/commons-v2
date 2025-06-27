@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 2.0.22
+
+### Patch Changes
+
+- e5d91ae: chore: upgrade aa-core to v2.0.0-beta.23
+
 ## 2.0.21
 
 ### Patch Changes
