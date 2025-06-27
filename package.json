@@ -20,13 +20,11 @@
   "license": "ISC",
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.2",
     "sherif": "^1.4.0",
     "syncpack": "^13.0.3",
     "turbo": "^2.4.4",
     "yaml": "^2.7.1"
   },
-  "packageManager": "pnpm@8.7.4",
-  "dependencies": {
-    "@changesets/cli": "^2.29.2"
-  }
+  "packageManager": "pnpm@8.7.4"
 }

@@ -17,8 +17,8 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@rainbow-me/rainbowkit": "^2.2.6",
-    "@real-token/aa-core": "v2.0.0-beta.22",
+    "@rainbow-me/rainbowkit": "2.2.6",
+    "@real-token/aa-core": "v2.0.0-beta.23",
     "@real-token/aa-modal": "workspace:*",
     "@real-token/core": "workspace:*",
     "@real-token/i18n-locales": "workspace:*",
@@ -34,7 +34,7 @@
     "react-i18next": "^15.1.0",
     "viem": "2.29",
     "vite-plugin-node-polyfills": "^0.23.0",
-    "wagmi": "^2.15.6"
+    "wagmi": "2.15.6"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",

@@ -40,7 +40,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "v2.0.0-beta.22",
+    "@real-token/aa-core": "v2.0.0-beta.23",
     "@real-token/core": "workspace:*",
     "@real-token/web3": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
@@ -48,10 +48,10 @@
     "@types/react-dom": "*",
     "esbuild": "^0.20.2",
     "esbuild-css-modules-plugin": "^3.1.0",
-    "typescript": "^5.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
+    "typescript": "^5.6.2",
     "wagmi": "2.15.6"
   },
   "peerDependencies": {
@@ -59,7 +59,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "v2.0.0-beta.22",
+    "@real-token/aa-core": "v2.0.0-beta.23",
     "@real-token/core": "workspace:*",
     "@real-token/web3": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
@@ -71,11 +71,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.24.7",
+    "@real-token/types": "workspace:*",
     "@tabler/icons-react": "^3.19.0",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.7",
     "react-cookie": "^8.0.1",
-    "tabler-icons-react": "*",
-    "@real-token/types": "workspace:*"
+    "tabler-icons-react": "*"
   }
 }
