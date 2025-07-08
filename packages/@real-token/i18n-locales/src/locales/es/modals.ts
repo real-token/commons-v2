@@ -42,6 +42,63 @@ const modals = {
       website: "Ir al sitio web realt.co",
     },
   },
+
+  walletConnect: {
+    connect: "Conectar",
+    disconnect: "Desconectar",
+    refuse: "Rechazar",
+    confirm: "Confirmar",
+    confirmAll: "Confirmar todo",
+    sign: "Firmar",
+    activeConnections: "Conexiones activas ({{count}})",
+    txToValidate: "{{count}} transacción(es) para validar",
+    transaction: "Transacción",
+    from: "De",
+    contractInteraction: "Interacción de contrato",
+    data: "Datos",
+    name: "Nombre",
+    params: "Parámetros",
+    disabled: {
+      info: "WalletConnect no es compatible con la versión de tu cartera {{version}}.",
+      action:
+        "Por favor, actualiza a la última versión {{version}} visitando el sitio web de realt.co y contactando al soporte (burbuja naranja en la esquina inferior derecha)",
+      button: "Ir al sitio web realt.co",
+    },
+    sessionProposal: {
+      wantToConnect: '"{{name}}" quiere conectarse',
+      buttons: {
+        approve: "Aprobar",
+        reject: "Rechazar",
+      },
+      securityAlert: {
+        title: "Riesgo de seguridad conocido",
+        domainMismatch:
+          "Este sitio web tiene un dominio que no coincide con el remitente de esta solicitud. Aprobar puede llevar a la pérdida de fondos.",
+        domainMismatchTitle: "Dominio no coincide",
+        unknownDomain:
+          "No se puede verificar este dominio. Revisa cuidadosamente la solicitud antes de aprobar.",
+        unknownDomainTitle: "Dominio desconocido",
+        isScam:
+          "Este dominio está marcado como inseguro por varios proveedores de seguridad. Rechaza la conexión para evitar posibles riesgos de seguridad.",
+        isScamTitle: "Riesgo de seguridad conocido",
+        securityRisk: "Riesgo de seguridad",
+      },
+      permissions: {
+        title: "Permisos solicitados",
+        eth_sendTransaction: "Enviar transacciones",
+        personal_sign: "Firmar mensajes",
+        eth_sign: "Firmar transacciones",
+        eth_signTypedData: "Firmar datos tipados",
+        eth_signTypedData_v4: "Firmar datos tipados v4",
+        moveFundsWithoutPermissions: "Mover fondos sin permisos",
+      },
+      notifications: {
+        title: "Propuesta de sesión",
+        accepted: "Sesión aceptada",
+        refused: "Sesión rechazada",
+      },
+    },
+  },
 } as const;
 
 export default modals;

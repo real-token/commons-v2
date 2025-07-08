@@ -1,3 +1,5 @@
+import notifications from "./notifications";
+
 const modals = {
   copyAddress: {
     title: "Available Networks",
@@ -40,6 +42,62 @@ const modals = {
     buttons: {
       understand: "I understand",
       website: "Go to realt.co website",
+    },
+  },
+  walletConnect: {
+    connect: "Connect",
+    disconnect: "Disconnect",
+    refuse: "Refuse",
+    confirm: "Confirm",
+    confirmAll: "Confirm all",
+    sign: "Sign",
+    activeConnections: "Active connections ({{count}})",
+    txToValidate: "{{count}} transaction(s) to validate",
+    transaction: "Transaction",
+    from: "From",
+    contractInteraction: "Contract interaction",
+    data: "Data",
+    name: "Name",
+    params: "Params",
+    disabled: {
+      info: "WalletConnect is not supported on your wallet version {{version}}.",
+      action:
+        "Please upgrade to last version {{version}} by going to realt.co website and contacting support (orange bubble in right bottom corner)",
+      button: "Go to realt.co website",
+    },
+    sessionProposal: {
+      wantToConnect: '"{{name}}" wants to connect',
+      buttons: {
+        approve: "Approve",
+        reject: "Reject",
+      },
+      securityAlert: {
+        title: "Known security risk",
+        domainMismatch:
+          "This website has a domain that does not match the sender of this request. Approving may lead to loss of funds.",
+        domainMismatchTitle: "Domain mismatch",
+        unknownDomain:
+          "This domain cannot be verified. Check the request carefully before approving.",
+        unknownDomainTitle: "Unknown domain",
+        isScam:
+          "This domain is flagged as unsafe by multiple security providers. Refuse to connect to prevent any potential security risks.",
+        isScamTitle: "Known security risk",
+        securityRisk: "Security risk",
+      },
+      permissions: {
+        title: "Permissions requested",
+        eth_sendTransaction: "Send transactions",
+        personal_sign: "Sign messages",
+        eth_sign: "Sign transactions",
+        eth_signTypedData: "Sign typed data",
+        eth_signTypedData_v4: "Sign typed data v4",
+        moveFundsWithoutPermissions: "Move funds without permissions",
+      },
+      notifications: {
+        title: "Session proposal",
+        accepted: "Session accepted",
+        refused: "Session refused",
+      },
     },
   },
 } as const;

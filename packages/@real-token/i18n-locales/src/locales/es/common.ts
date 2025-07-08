@@ -1,47 +1,48 @@
 const common = {
   footer: {
-    copyright: "© {{year}} RealToken. All rights reserved.",
+    copyright: "© {{year}} RealToken. Todos los derechos reservados.",
   },
   select: {
-    noOption: "No options",
+    noOption: "Sin opciones",
   },
   settings: {
-    title: "Language",
-    french: "French",
-    english: "English",
-    spanish: "Spanish",
-    light: "Light",
-    dark: "Dark",
+    title: "Idioma",
+    french: "Francés",
+    english: "Inglés",
+    spanish: "Español",
+    light: "Claro",
+    dark: "Oscuro",
   },
   wallet: {
-    title: "Connect wallet",
-    control: "Connect wallet",
-    copy: "Copy address",
-    viewOn: "View on explorer",
-    disconnect: "Disconnect",
-    network: "Network",
+    title: "Conectar billetera",
+    control: "Conectar billetera",
+    copy: "Copiar dirección",
+    viewOn: "Ver en el explorador",
+    disconnect: "Desconectar",
+    network: "Red",
     DisabledGnosisSafe:
-      'Direct connection to Safe is not possible, to connect to a GnosisSafe, please go to safe.global and connect to your Safe. In the "App" section, add a "custom app" using the url of the yam website (https://yam.realtoken.network). You will be able to have the YAM directly in the interface of your Safe',
+      'La conexión directa a Safe no es posible. Para conectarte a un GnosisSafe, por favor ve a safe.global y conéctate a tu Safe. En la sección "App", agrega una "aplicación personalizada" usando la URL del sitio web de yam (https://yam.realtoken.network). Podrás tener YAM directamente en la interfaz de tu Safe.',
     readOnly: {
-      title: "Watch an address",
-      description: "You can watch an address but can't do anything else.",
-      inputPlaceholder: "Address or ENS domain you want to watch",
-      wrongAddressFormat: "Address or ENS domain not valid",
-      button: "Watch address",
+      title: "Vigilar una dirección",
+      description:
+        "Puedes vigilar una dirección pero no puedes hacer nada más.",
+      inputPlaceholder: "Dirección o dominio ENS que deseas vigilar",
+      wrongAddressFormat: "Dirección o dominio ENS no válido",
+      button: "Vigilar dirección",
     },
   },
   header: {
     notAllowedNetwork:
-      "You are currently connected to YAM on unsupported Network, ",
-    switchNetwork: "click here to switch to {{networkName}}",
+      "Actualmente estás conectado a YAM en una red no soportada, ",
+    switchNetwork: "haz clic aquí para cambiar a {{networkName}}",
   },
   general: {
-    loading: "loading...",
-    comingSoon: "Coming soon...",
+    loading: "cargando...",
+    comingSoon: "Próximamente...",
     noConnectedWallet:
-      "Please connect a wallet to load the application (Help : at the botton right)",
-    nextButton: "Next",
-    noAdminError: "You are not an admin.",
+      "Por favor conecta una billetera para cargar la aplicación (Ayuda: abajo a la derecha)",
+    nextButton: "Siguiente",
+    noAdminError: "No eres un administrador.",
   },
   actionButton: {
     watchOnly:
