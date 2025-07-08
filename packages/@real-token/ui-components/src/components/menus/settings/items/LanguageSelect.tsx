@@ -10,8 +10,8 @@ import {
   useCombobox,
 } from "@mantine/core";
 import { IconLanguage } from "@tabler/icons-react";
-import { useCookies } from "react-cookie";
 import { US, FR, ES, FlagComponent } from "country-flag-icons/react/3x2";
+import { COOKIE_NAME } from "@real-token/i18n-locales";
 
 interface Language {
   image: FlagComponent;
@@ -22,13 +22,11 @@ interface Language {
 export const LanguageSelect = () => {
   const { i18n, t } = useTranslation("common", { keyPrefix: "settings" });
 
-  const [_, setCookie] = useCookies(["react-i18next"]);
-
   const updateLocale = useCallback(
     (updatedLocale: string | null) => {
       if (updatedLocale && i18n.language !== updatedLocale) {
-        setCookie("react-i18next", updatedLocale);
         i18n.changeLanguage(updatedLocale);
+        document.cookie = `${COOKIE_NAME}=${updatedLocale}; path=/`;
       }
     },
     [i18n]
