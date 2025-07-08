@@ -5,19 +5,16 @@ import { I18nextProvider, initReactI18next } from "react-i18next";
 
 export const COOKIE_NAME = "aa-modal-locale";
 
-const languageDetector = new LngDetector(null, {
-  convertDetectedLanguage: "Iso15897",
-});
-
 // Singleton implementation
 let i18nextAaModalInstance: typeof i18next | null = null;
 
 export const getI18nextInstance = () => {
   if (i18nextAaModalInstance === null) {
     i18nextAaModalInstance = i18next.createInstance();
+    const languageDetector = new LngDetector(null);
     i18nextAaModalInstance
-      .use(initReactI18next)
       .use(languageDetector)
+      .use(initReactI18next)
       .init({
         resources: resources,
         defaultNS: "en",
@@ -35,9 +32,11 @@ export const getI18nextInstance = () => {
             path: "/",
             sameSite: "strict",
           },
+          convertDetectedLanguage: (lng) => lng.split("-")[0].toLowerCase(),
         },
         load: "languageOnly",
         nonExplicitSupportedLngs: true,
+        cleanCode: true,
         supportedLngs: ["en", "fr", "es"],
       });
   }

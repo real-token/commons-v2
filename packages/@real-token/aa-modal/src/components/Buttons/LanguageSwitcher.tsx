@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Combobox, Flex, InputBase, useCombobox } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
-import { getI18nextInstance } from "../TranslationProvider";
+import { COOKIE_NAME, getI18nextInstance } from "../TranslationProvider";
 
 export const LanguageSwitcher = () => {
   const { t } = useTranslation("main");
@@ -10,16 +10,6 @@ export const LanguageSwitcher = () => {
   const i18n = getI18nextInstance();
 
   const [value, setValue] = useState<string | null>(i18n.language);
-
-  useEffect(() => {
-    i18n.on("languageChanged", (lng) => {
-      console.log("languageChanged", lng);
-      setValue(lng);
-    });
-    return () => {
-      i18n.off("languageChanged");
-    };
-  }, []);
 
   const languages = useMemo(() => {
     return [
@@ -53,6 +43,7 @@ export const LanguageSwitcher = () => {
       key={item.countryCode}
       onClick={() => {
         i18n.changeLanguage(item.lng);
+        document.cookie = `${COOKIE_NAME}=${item.lng}; path=/`;
         combobox.closeDropdown();
       }}
       selected={selectedItem?.lng === item.lng}
