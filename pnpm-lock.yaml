@@ -45,8 +45,8 @@ importers:
         specifier: 2.2.6
         version: 2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-modal':
         specifier: workspace:*
         version: link:../../packages/@real-token/aa-modal
@@ -197,8 +197,8 @@ importers:
         specifier: 2.2.6
         version: 2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@tanstack/react-query':
         specifier: ^5.72.0
         version: 5.80.7(react@18.3.1)
@@ -279,8 +279,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-modal':
         specifier: workspace:^
         version: link:../aa-modal
@@ -386,8 +386,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.23
@@ -418,6 +418,9 @@ importers:
       '@mantine/form':
         specifier: ^7.17.3
         version: 7.17.8(react@18.3.1)
+      '@real-token/i18n-locales':
+        specifier: workspace:*
+        version: link:../i18n-locales
       '@real-token/types':
         specifier: workspace:*
         version: link:../types
@@ -468,8 +471,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -518,6 +521,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.19.0
         version: 3.34.0(react@18.3.1)
+      bignumber.js:
+        specifier: ^9.3.0
+        version: 9.3.0
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -565,8 +571,8 @@ importers:
         specifier: 2.2.6
         version: 2.2.6(@tanstack/react-query@5.80.7)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/aa-core':
-        specifier: v2.0.0-beta.23
-        version: 2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
+        specifier: v2.0.0-beta.25
+        version: 2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -3818,8 +3824,8 @@ packages:
       - '@types/react'
       - babel-plugin-macros
 
-  /@real-token/aa-core@2.0.0-beta.23(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
-    resolution: {integrity: sha512-Nd1hbp3sF0HTB4rrk6yqwLfv5tuL7AkeBZuKTeJUpqKMjFaxb3fVU++9KMX3svGVPC+o5Cv5jn01D5oBhwlLVg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.0.0-beta.23/61ad1c14abd48ea172af77b3348361ecc5858253}
+  /@real-token/aa-core@2.0.0-beta.25(@rainbow-me/rainbowkit@2.2.6)(@types/react@18.3.23)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.15.6):
+    resolution: {integrity: sha512-Md4pVwDC6J17dzNnKSFdBRP1ApjONJuAmGEOq9uwqvf+YIegT1GDg0oN4IJ73pUpapfDFnR495/zLszm0NLDPA==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.0.0-beta.25/6058a77ef25cd28088905cfd5306837c696bc40f}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -3893,9 +3899,6 @@ packages:
       '@wagmi/core': 2.17.3
       '@web3auth/modal': ^10.0.3
       viem: ^2.29
-    peerDependenciesMeta:
-      '@web3auth/modal':
-        optional: true
     dependencies:
       '@wagmi/core': 2.17.3(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0)(viem@2.29.4)
       '@web3auth/modal': 10.0.3(@babel/runtime@7.27.6)(@solana/web3.js@1.98.2)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
