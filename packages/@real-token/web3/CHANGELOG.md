@@ -1,5 +1,13 @@
 # @real-token/web3
 
+## 2.0.24
+
+### Patch Changes
+
+- ee1e839: fix: language detector, web3
+- Updated dependencies [ee1e839]
+  - @real-token/core@2.0.24
+
 ## 2.0.23
 
 ### Patch Changes
