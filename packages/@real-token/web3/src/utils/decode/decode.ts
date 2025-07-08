@@ -44,6 +44,12 @@ export const handleSendTransaction = async (
     chain_id: serverChainId,
     tx: {
       ...tx,
+      data: tx.data || "0x0",
+      value: tx.value
+        ? typeof tx.value === "string" && tx.value.startsWith("0x")
+          ? tx.value
+          : "0x" + BigInt(tx.value).toString(16)
+        : "0x0",
       nonce: "0x1",
       chainId: parseInt(chainId.toString()),
     },
@@ -57,6 +63,12 @@ export const handleSendTransaction = async (
       ...tx,
       nonce: "0x1",
       chainId: parseInt(chainId.toString()),
+      value: tx.value
+        ? typeof tx.value === "string" && tx.value.startsWith("0x")
+          ? tx.value
+          : "0x" + BigInt(tx.value).toString(16)
+        : "0x0",
+      data: tx.data || "0x0",
     },
     user_addr: addr,
     origin: origin || "",

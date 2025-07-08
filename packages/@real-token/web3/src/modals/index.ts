@@ -4,9 +4,9 @@ import { WalletConnectModal } from "./WalletConnectModal/WalletConnectModal";
 import { NotUsingLastSdkVersion } from "./NotUsingLastSdkVersion/NotUsingLastSdkVersion";
 
 export const modals = {
+  walletConnect: WalletConnectModal,
   wcTxManagerModal: DecodeWalletConnectTxModal,
   aaTxManagerModal: DecodeAaTxModal,
-  walletConnectModal: WalletConnectModal,
   notUsingLastSdkVersion: NotUsingLastSdkVersion,
   // TODO: add sign aa message modal
 };

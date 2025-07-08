@@ -1,9 +1,10 @@
-import { Badge } from '@mantine/core';
+import { Badge } from "@mantine/core";
 import {
   IconAlertCircle,
   IconAlertTriangleFilled,
   IconInfoCircle,
-} from '@tabler/icons-react';
+} from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 export const ValidationStatusBadge = ({
   validationStatus,
@@ -12,13 +13,18 @@ export const ValidationStatusBadge = ({
   validationStatus: string;
   isScam: boolean;
 }) => {
-  if (validationStatus == 'VALID') return null;
+  const { t } = useTranslation("modals", {
+    keyPrefix: "walletConnect.sessionProposal.securityAlert",
+  });
+  if (validationStatus == "VALID") return null;
 
-  const color = validationStatus == 'INVALID' ? 'red' : 'orange';
+  const color = validationStatus == "INVALID" ? "red" : "orange";
   const label =
-    validationStatus == 'INVALID' ? 'Domain mismatch' : 'Cannot verify';
+    validationStatus == "INVALID"
+      ? t("domainMismatchTitle")
+      : t("unknownDomainTitle");
   const icon =
-    validationStatus == 'INVALID' ? (
+    validationStatus == "INVALID" ? (
       <IconAlertCircle size={16} />
     ) : (
       <IconInfoCircle size={16} />
@@ -26,10 +32,10 @@ export const ValidationStatusBadge = ({
 
   return (
     <Badge
-      color={isScam ? 'red' : color}
+      color={isScam ? "red" : color}
       leftSection={isScam ? <IconAlertTriangleFilled size={16} /> : icon}
     >
-      {isScam ? 'Security risk' : label}
+      {isScam ? t("securityRisk") : label}
     </Badge>
   );
 };

@@ -1,9 +1,10 @@
-import { Alert } from '@mantine/core';
+import { Alert } from "@mantine/core";
 import {
   IconAlertCircle,
   IconAlertTriangleFilled,
   IconInfoCircle,
-} from '@tabler/icons-react';
+} from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 export const SecurityAlert = ({
   validationStatus,
@@ -12,30 +13,31 @@ export const SecurityAlert = ({
   validationStatus: string;
   isScam: boolean;
 }) => {
-  if (validationStatus == 'VALID') return null;
-  const color = validationStatus == 'INVALID' ? 'red' : 'orange';
+  const { t } = useTranslation("modals", {
+    keyPrefix: "walletConnect.sessionProposal.securityAlert",
+  });
+  if (validationStatus == "VALID") return null;
+  const color = validationStatus == "INVALID" ? "red" : "orange";
   const label =
-    validationStatus == 'INVALID'
-      ? 'This website has a domain that does not match the sender of this request. Approving may lead to loss of funds.'
-      : 'This domain cannot be verified. Check the request carefully before approving.';
+    validationStatus == "INVALID" ? t("domainMismatch") : t("unknownDomain");
   const title =
-    validationStatus == 'INVALID' ? 'Domain mismatch' : 'Unknown domain';
+    validationStatus == "INVALID"
+      ? t("domainMismatchTitle")
+      : t("unknownDomainTitle");
   const icon =
-    validationStatus == 'INVALID' ? (
+    validationStatus == "INVALID" ? (
       <IconAlertCircle size={24} />
     ) : (
       <IconInfoCircle size={24} />
     );
   return (
     <Alert
-      color={isScam ? 'red' : color}
-      variant={'light'}
+      color={isScam ? "red" : color}
+      variant={"light"}
       icon={isScam ? <IconAlertTriangleFilled size={24} /> : icon}
-      title={isScam ? 'Known security risk' : title}
+      title={isScam ? t("isScamTitle") : title}
     >
-      {isScam
-        ? 'This domain is flagged as unsafe by multiple security providers. Refuse to connect to prevent any potential security risks.'
-        : label}
+      {isScam ? t("isScam") : label}
     </Alert>
   );
 };

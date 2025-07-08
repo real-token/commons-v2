@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { handleSendTransaction } from "@/utils/decode/decode";
 import { useNetworksConfig } from "@real-token/core";
 import { useChainId } from "wagmi";
+import { BigNumber } from "bignumber.js";
 
 type UseDecodeTransactions = (
   tx: AddTransactionParams,
@@ -37,8 +38,8 @@ export const useDecodeTransactions: UseDecodeTransactions = (tx) => {
       const parsedChainId = chainId.toString().includes(":")
         ? chainId.toString().split(":")[1]
         : chainId.toString().includes("0x")
-        ? chainId.toString().split("0x")[1]
-        : chainId;
+          ? chainId.toString().split("0x")[1]
+          : chainId;
 
       const chainConfig = networks.find(
         (network) =>

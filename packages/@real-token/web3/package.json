@@ -36,6 +36,7 @@
     "@rabby-wallet/rabby-action": "^0.1.8",
     "@rabby-wallet/rabby-api": "^0.9.11",
     "@tabler/icons-react": "^3.19.0",
+    "bignumber.js": "^9.3.0",
     "buffer": "^6.0.3",
     "lodash": "^4.17.21"
   },

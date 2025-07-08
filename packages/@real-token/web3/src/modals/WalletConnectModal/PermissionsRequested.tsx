@@ -1,12 +1,13 @@
-import { Flex, Paper, Text } from '@mantine/core';
-import { IconCheck, IconX } from '@tabler/icons-react';
+import { Flex, Paper, Text } from "@mantine/core";
+import { IconCheck, IconX } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 const permissionsToText = new Map([
-  ['eth_sendTransaction', 'Send transactions'],
-  ['personal_sign', 'Sign messages'],
-  ['eth_sign', 'Sign transactions'],
-  ['eth_signTypedData', 'Sign typed data'],
-  ['eth_signTypedData_v4', 'Sign typed data v4'],
+  ["eth_sendTransaction", "eth_sendTransaction"],
+  ["personal_sign", "personal_sign"],
+  ["eth_sign", "eth_sign"],
+  ["eth_signTypedData", "eth_signTypedData"],
+  ["eth_signTypedData_v4", "eth_signTypedData_v4"],
 ]);
 
 export const PermissionsRequested = ({
@@ -14,21 +15,26 @@ export const PermissionsRequested = ({
 }: {
   permissions: string[];
 }) => {
+  const { t } = useTranslation("modals", {
+    keyPrefix: "walletConnect.sessionProposal.permissions",
+  });
   return (
-    <Paper withBorder p={'xs'} radius={'md'}>
-      <Flex direction={'column'} gap={'xs'}>
-        <Text fw={600}>{'Permissions requested'}</Text>
-        <Flex direction={'column'} gap={'xs'}>
+    <Paper withBorder p={"xs"} radius={"md"}>
+      <Flex direction={"column"} gap={"xs"}>
+        <Text fw={600}>{t("title")}</Text>
+        <Flex direction={"column"} gap={"xs"}>
           {permissions.map((permission) => (
-            <Flex gap={4} align={'center'}>
+            <Flex gap={4} align={"center"}>
               <IconCheck size={16} />
-              <Text fz={14}>{permissionsToText.get(permission)}</Text>
+              <Text fz={14}>
+                {t(permissionsToText.get(permission) ?? "unknown")}
+              </Text>
             </Flex>
           ))}
-          <Flex gap={4} align={'center'}>
-            <IconX size={16} color={'var(--mantine-color-dimmed)'} />
-            <Text c={'dimmed'} fz={14}>
-              {'Move funds whitout permissions'}
+          <Flex gap={4} align={"center"}>
+            <IconX size={16} color={"var(--mantine-color-dimmed)"} />
+            <Text c={"dimmed"} fz={14}>
+              {t("moveFundsWithoutPermissions")}
             </Text>
           </Flex>
         </Flex>
