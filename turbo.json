@@ -18,6 +18,7 @@
       "inputs": ["dist/**"]
     },
     "yalc:add": {},
-    "clean-install": {}
+    "clean-install": {},
+    "clean-build": {}
   }
 }

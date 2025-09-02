@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && node build.mjs",
+    "clean-build": "rm -rf dist",
     "yalc:publish": "yalc add .",
     "yalc:push": "yalc push --sig --replace",
     "clean-install": "rm -rf node_modules"
@@ -52,7 +53,8 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "typescript": "^5.6.2",
-    "wagmi": "2.16.1"
+    "wagmi": "2.16.1",
+    "@web3auth/modal": "^10.0.3"
   },
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
@@ -68,7 +70,8 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "viem": "2.29",
-    "wagmi": "2.16.1"
+    "wagmi": "2.16.1",
+    "@web3auth/modal": "^10.0.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.7",

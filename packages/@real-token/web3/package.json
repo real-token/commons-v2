@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && node build.mjs",
+    "clean-build": "rm -rf dist",
     "yalc:add": "yalc add -D @real-token/aa-core",
     "yalc:remove": "yalc remove -D @real-token/aa-core",
     "yalc:publish": "yalc add .",
@@ -37,7 +38,6 @@
     "@rabby-wallet/rabby-api": "^0.9.11",
     "@real-token/types": "workspace:^",
     "@tabler/icons-react": "^3.19.0",
-    "@web3auth/modal": "^10.0.3",
     "abitype": "^1.0.8",
     "bignumber.js": "^9.3.0",
     "buffer": "^6.0.3",
@@ -69,7 +69,8 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "typescript": "^5.6.2",
-    "wagmi": "2.16.1"
+    "wagmi": "2.16.1",
+    "@web3auth/modal": "^10.0.3"
   },
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
@@ -83,6 +84,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "viem": "2.29",
-    "wagmi": "2.16.1"
+    "wagmi": "2.16.1",
+    "@web3auth/modal": "^10.0.3"
   }
 }

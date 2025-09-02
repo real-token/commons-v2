@@ -488,6 +488,9 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.3.7(@types/react@18.3.23)
+      '@web3auth/modal':
+        specifier: ^10.0.3
+        version: 10.2.0(@babel/runtime@7.27.6)(@solana/web3.js@1.98.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
@@ -524,9 +527,6 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.19.0
         version: 3.34.0(react@packages+@real-token+web3+@web3auth+modal+react)
-      '@web3auth/modal':
-        specifier: ^10.0.3
-        version: 10.2.0(@babel/runtime@7.27.6)(@solana/web3.js@1.98.4)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)
       abitype:
         specifier: ^1.0.8
         version: 1.0.8(typescript@5.8.3)(zod@3.22.4)
@@ -597,6 +597,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.7(@types/react@18.3.23)
+      '@web3auth/modal':
+        specifier: ^10.0.3
+        version: 10.2.0(@babel/runtime@7.27.6)(@solana/web3.js@1.98.4)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
@@ -3339,6 +3342,7 @@ packages:
       '@hcaptcha/loader': 2.0.1
       react: link:packages/@real-token/web3/@web3auth/modal/react
       react-dom: 18.3.1(react@packages+@real-token+web3+@web3auth+modal+react)
+    dev: true
 
   /@jridgewell/gen-mapping@0.3.8:
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -7210,6 +7214,7 @@ packages:
       - uploadthing
       - utf-8-validate
       - zod
+    dev: true
 
   /@web3auth/no-modal@10.2.0(@babel/runtime@7.27.6)(color@5.0.0)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4):
     resolution: {integrity: sha512-G6mm8u8uS3DqkOlDVNg8XIS0wIrWwf++WWn2dgr7+zrxHsp4tWu0CtvtF/h4+ZRiJNUhUnEd3DqGPfbBhtdJTQ==}
@@ -7386,6 +7391,7 @@ packages:
       - uploadthing
       - utf-8-validate
       - zod
+    dev: true
 
   /@web3auth/ws-embed@5.0.22(@babel/runtime@7.27.6)(color@5.0.0):
     resolution: {integrity: sha512-1GkNq02z0fRESQdUaYuzgzK4LQdpBfHigE+0VfO2CVvAYaqx458Rn9SlnlI5clHDXZgb3OYa1co1pF16PzoLWQ==}
@@ -10634,6 +10640,7 @@ packages:
       loose-envify: 1.4.0
       react: link:packages/@real-token/web3/@web3auth/modal/react
       scheduler: 0.23.2
+    dev: true
 
   /react-i18next@15.5.3(i18next@22.5.1)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3):
     resolution: {integrity: sha512-ypYmOKOnjqPEJZO4m1BI0kS8kWqkBNsKYyhVUfij0gvjy9xJNoG/VcGkxq5dRlVwzmrmY1BQMAmpbbUBLwC4Kw==}
@@ -10751,6 +10758,7 @@ packages:
       react: link:packages/@real-token/web3/@web3auth/modal/react
       react-dom: 18.3.1(react@packages+@real-token+web3+@web3auth+modal+react)
       typescript: 5.8.3
+    dev: true
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -10795,6 +10803,7 @@ packages:
       qrcode-generator: 1.5.0
       react: link:packages/@real-token/web3/@web3auth/modal/react
       react-dom: 18.3.1(react@packages+@real-token+web3+@web3auth+modal+react)
+    dev: true
 
   /react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
