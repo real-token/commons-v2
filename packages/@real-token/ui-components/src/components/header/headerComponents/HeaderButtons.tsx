@@ -1,9 +1,12 @@
 import { Group } from "@mantine/core";
 import { WalletMenu, SettingsMenu } from "../../menus";
-import { ConnectButton } from "../../buttons/ConnectButton/ConnectButton";
 import { NetworkSelector } from "../../buttons/NetworkSelector/NetworkSelector";
 import { useAA } from "@real-token/aa-core";
-import { AaWalletConnectButton, useIsAA } from "@real-token/web3";
+import {
+  AaWalletConnectButton,
+  AaConnectButton,
+  useIsAA,
+} from "@real-token/web3";
 
 export function HeaderButtons() {
   const { walletAddress } = useAA();
@@ -13,7 +16,7 @@ export function HeaderButtons() {
     <Group gap={10}>
       {isAA && walletAddress && <AaWalletConnectButton />}
       <NetworkSelector />
-      {walletAddress ? <WalletMenu /> : <ConnectButton />}
+      {walletAddress ? <WalletMenu /> : <AaConnectButton />}
       <SettingsMenu />
     </Group>
   );
