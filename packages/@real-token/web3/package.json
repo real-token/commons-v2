@@ -35,10 +35,14 @@
   "dependencies": {
     "@rabby-wallet/rabby-action": "^0.1.8",
     "@rabby-wallet/rabby-api": "^0.9.11",
+    "@real-token/types": "workspace:^",
     "@tabler/icons-react": "^3.19.0",
+    "@web3auth/modal": "^10.0.3",
+    "abitype": "^1.0.8",
     "bignumber.js": "^9.3.0",
     "buffer": "^6.0.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "p-queue": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -52,8 +56,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@rainbow-me/rainbowkit": "2.2.6",
-    "@real-token/aa-core": "v2.0.0-beta.25",
+    "@real-token/aa-core": "v2.1.0-alpha.3",
     "@real-token/core": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "@types/lodash": "^4.17.16",
@@ -61,26 +64,25 @@
     "@types/react-dom": "^18.3.1",
     "esbuild": "^0.20.2",
     "esbuild-css-modules-plugin": "^3.1.0",
-    "react": "^18.3.1",
+    "react": "link:@web3auth/modal/react",
     "react-cookie": "^8.0.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "typescript": "^5.6.2",
-    "wagmi": "2.15.6"
+    "wagmi": "2.16.1"
   },
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@rainbow-me/rainbowkit": "2.2.6",
-    "@real-token/aa-core": "v2.0.0-beta.25",
+    "@real-token/aa-core": "2.1.0-alpha.3",
     "@real-token/core": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
     "viem": "2.29",
-    "wagmi": "2.15.6"
+    "wagmi": "2.16.1"
   }
 }

@@ -34,6 +34,7 @@
     "@babel/core": "^7.24.7",
     "@babel/runtime": "^7.24.7",
     "@mantine/form": "^7.17.3",
+    "@mantine/notifications": "^7.17.3",
     "@tabler/icons-react": "^3.19.0",
     "clsx": "^2.1.1",
     "i18next": "^23.16.2",
@@ -47,13 +48,13 @@
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@rainbow-me/rainbowkit": "2.2.6",
-    "@real-token/aa-core": "v2.0.0-beta.25",
+    "@real-token/aa-core": "2.1.0-alpha.3",
     "@tanstack/react-query": "^5.72.0",
+    "@web3auth/modal": "^10.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "viem": "2.29",
-    "wagmi": "2.15.6"
+    "wagmi": "2.16.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -66,13 +67,13 @@
     "@mantine/core": "^7.17.3",
     "@mantine/form": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@rainbow-me/rainbowkit": "2.2.6",
-    "@real-token/aa-core": "v2.0.0-beta.25",
+    "@real-token/aa-core": "2.1.0-alpha.3",
     "@tanstack/react-query": "^5.72.0",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.16",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "@web3auth/modal": "^10.0.3",
     "esbuild": "^0.20.2",
     "esbuild-css-modules-plugin": "^3.1.0",
     "esbuild-postcss": "^0.0.4",
@@ -82,7 +83,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.6.2",
-    "wagmi": "2.15.6"
+    "wagmi": "2.16.1"
   },
   "browser": {
     "fs": false,
