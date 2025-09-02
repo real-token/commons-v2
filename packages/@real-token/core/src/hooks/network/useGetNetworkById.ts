@@ -1,5 +1,4 @@
 import { useNetworksConfig } from "./useNetworksConfig";
-import { useChainId } from "wagmi";
 import { useMemo } from "react";
 import { RealTokenUiNetworkConfig } from "../../types/networks";
 
@@ -9,11 +8,12 @@ import { RealTokenUiNetworkConfig } from "../../types/networks";
  * @returns The network or undefined if not found
  */
 export function useGetNetworkById<
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 >(chainId: number): T | undefined {
   const networks = useNetworksConfig<T>();
   return useMemo(
-    () => networks.find((network) => Number(network.chainId) === chainId),
+    () =>
+      networks.find((network) => Number(network.chainId) === Number(chainId)),
     [networks, chainId]
   );
 }

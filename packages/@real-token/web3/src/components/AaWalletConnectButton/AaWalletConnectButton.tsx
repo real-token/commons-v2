@@ -2,6 +2,7 @@ import { Button, Pill } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import { useAA } from "@real-token/aa-core";
 import { useChainId } from "wagmi";
+import WalletConnectIcon from "./wallet-connect.svg";
 
 interface TxToValidateProps {
   count: number;
@@ -37,7 +38,7 @@ export const AaWalletConnectButton = () => {
     <Button
       color="#156CAB"
       leftSection={
-        <img src={"wallet-connect.svg"} width={16} alt="wallet connect" />
+        <img src={WalletConnectIcon} width={16} alt="wallet connect" />
       }
       onClick={() => openModal()}
       rightSection={<TxToValidate count={txs.wc.length} />}

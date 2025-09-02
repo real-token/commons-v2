@@ -8,6 +8,7 @@ import { IconWallet } from "@tabler/icons-react";
 import { useState } from "react";
 import classes from "../../AaModal.module.css";
 import { AAExternalConnectorDrawer } from "./AAExternalConnectorDrawer";
+import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
 
 export const AaConnectionModePanel = ({
   config,
@@ -15,8 +16,8 @@ export const AaConnectionModePanel = ({
   advancedConnectors,
 }: {
   config: AaConnectorModeConfig;
-  socialsConnectors: string[];
-  advancedConnectors: string[];
+  socialsConnectors: AUTH_CONNECTION_TYPE[];
+  advancedConnectors: AUTH_CONNECTION_TYPE[];
 }) => {
   const { t } = useTranslation("main");
   const [drawerOpened, setDrawerOpened] = useState(false);

@@ -17,7 +17,7 @@ import { SHOW_NETWORKS, RealTokenUiNetworkConfig } from "../../types/networks";
  * ```
  */
 export const useNetworksConfig = <
-  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig
+  T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,
 >(
   showNetworks?: SHOW_NETWORKS
 ) => {

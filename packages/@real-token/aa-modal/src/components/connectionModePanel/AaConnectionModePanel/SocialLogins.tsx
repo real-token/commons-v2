@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Flex, SimpleGrid, Text } from "@mantine/core";
 import { SocialCustomButton } from "../../SocialCustomButton";
 import { ModalButtonCompact } from "../../Buttons/ModalButton/ModalButtonCompact";
+import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
 
 const MAX_PROVIDERS_SHOWN = 4;
 
 interface SocialLoginsProps {
-  connectors: string[];
+  connectors: AUTH_CONNECTION_TYPE[];
   forceWallet?: any;
 }
 export const SocialLogins = ({

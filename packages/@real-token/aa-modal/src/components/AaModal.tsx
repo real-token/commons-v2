@@ -1,3 +1,5 @@
+// import "@mantine/notifications/styles.css";
+
 import { useEffect } from "react";
 import { ContextModalProps } from "@mantine/modals";
 import { Flex } from "@mantine/core";
@@ -12,6 +14,7 @@ import { AaModalProvider } from "./AaModalProvider";
 import { useAA } from "@real-token/aa-core";
 import { modals } from "@mantine/modals";
 import { useParsedConnectorsConfig } from "../hooks/useParsedConnectorsConfig";
+import { Notifications } from "@mantine/notifications";
 
 type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
@@ -57,6 +60,7 @@ export const AaModal = (props: ContextModalProps<AaModalProps>) => {
   return (
     <TranslationProvider>
       <AaModalProvider config={config}>
+        <Notifications position="bottom-right" />
         <AaModalContent config={config} id={props.id} />
       </AaModalProvider>
     </TranslationProvider>

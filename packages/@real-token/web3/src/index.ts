@@ -5,4 +5,4 @@ export * from "./hooks";
 export * from "./modals";
 export * from "./components";
 export * from "./connectors";
-export * from "./rainbowKitWallet";
+export * from "./config";

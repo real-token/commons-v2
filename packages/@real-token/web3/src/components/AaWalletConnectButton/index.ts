@@ -1,2 +1,1 @@
 export * from "./AaWalletConnectButton";
-export * from "./AaConnectButton";

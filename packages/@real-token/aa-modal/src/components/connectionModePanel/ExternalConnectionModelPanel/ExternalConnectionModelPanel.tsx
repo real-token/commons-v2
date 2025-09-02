@@ -1,14 +1,14 @@
 import { Divider, Flex, Grid } from "@mantine/core";
 import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
-import { WalletButton } from "@rainbow-me/rainbowkit";
 import { ReadOnly } from "./ReadOnly";
 import { ExternalConnectorModeConfig } from "../../../types";
+import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
 
 export const ExternalConnectionModelPanel = ({
   connectors,
   config,
 }: {
-  connectors: string[];
+  connectors: AUTH_CONNECTION_TYPE[];
   config: ExternalConnectorModeConfig;
 }) => {
   const nbrConnectors = connectors.length;
@@ -16,28 +16,15 @@ export const ExternalConnectionModelPanel = ({
     <Flex direction="column" gap="lg">
       <Grid gutter={"md"}>
         {connectors.map((connectorName, index) => (
-          <WalletButton.Custom
-            key={`external-${index}-${connectorName}`}
-            wallet={connectorName}
-          >
-            {(props) => {
-              const hideConnector =
-                props.connector.installed !== undefined &&
-                props.connector.installed === false;
-              if (hideConnector) return null;
-              return (
-                <Grid.Col
-                  span={{
-                    base: 12,
-                    md: 12,
-                    lg: nbrConnectors == 1 && index == 0 ? 12 : 6,
-                  }}
-                >
-                  <WalletButtonCustom {...props} />
-                </Grid.Col>
-              );
+          <Grid.Col
+            span={{
+              base: 12,
+              md: 12,
+              lg: nbrConnectors == 1 && index == 0 ? 12 : 6,
             }}
-          </WalletButton.Custom>
+          >
+            <WalletButtonCustom connector={connectorName} />
+          </Grid.Col>
         ))}
       </Grid>
       <ReadOnly />

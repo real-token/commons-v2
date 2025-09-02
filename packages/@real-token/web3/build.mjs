@@ -19,7 +19,9 @@ await esbuild.build({
   format: "esm",
   target: ["es2020"],
   platform: "browser",
-  external,
+  external: external.filter(
+    (dep) => !dep.includes("@rabby-wallet/rabby-action")
+  ),
   plugins: [
     cssModulesPlugin({
       inject: true,

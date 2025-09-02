@@ -2,10 +2,9 @@ import { Flex, Text, Button } from "@mantine/core";
 import { CustomDrawer } from "../../CustomDrawer/CustomDrawer";
 import { advancedExternalWalletTermsAcceptedAtom } from "../../../state";
 import { useAtom } from "jotai";
-import { AaConnectorModeConfig } from "../../../types";
 import { useTranslation } from "react-i18next";
-import { WalletButton } from "@rainbow-me/rainbowkit";
 import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
+import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
 
 export const AAExternalConnectorDrawer = ({
   drawerOpened,
@@ -14,7 +13,7 @@ export const AAExternalConnectorDrawer = ({
 }: {
   drawerOpened: boolean;
   setDrawerOpened: (value: boolean) => void;
-  connectors: string[];
+  connectors: AUTH_CONNECTION_TYPE[];
 }) => {
   const { t } = useTranslation("main");
   const [
@@ -39,14 +38,11 @@ export const AAExternalConnectorDrawer = ({
       ) : (
         <Flex direction="column" gap="md">
           {connectors.map((connectorName, index) => (
-            <WalletButton.Custom
+            <WalletButtonCustom
               key={`aa-advanced-${connectorName}`}
-              wallet={connectorName}
-            >
-              {(props) => {
-                return <WalletButtonCustom {...props} isAA={true} />;
-              }}
-            </WalletButton.Custom>
+              connector={connectorName}
+              isAA={true}
+            />
           ))}
         </Flex>
       )}
