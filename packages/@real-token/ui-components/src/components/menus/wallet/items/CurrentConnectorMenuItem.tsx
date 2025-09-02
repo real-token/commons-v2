@@ -3,6 +3,7 @@ import { useAA } from "@real-token/aa-core";
 import { useAccount } from "wagmi";
 import { useQuery } from "wagmi/query";
 import { useIsAA } from "@real-token/web3";
+import { useWeb3AuthUser } from "@web3auth/modal/react";
 
 interface RkDetails {
   id: string;
@@ -14,8 +15,9 @@ interface RkDetails {
 }
 
 export const CurrentConnectorMenuItem = () => {
-  const { getUserInfo, walletAddress } = useAA();
+  const { walletAddress } = useAA();
   const { connector } = useAccount();
+  const { getUserInfo } = useWeb3AuthUser();
 
   const isAA = useIsAA();
 
@@ -41,7 +43,7 @@ export const CurrentConnectorMenuItem = () => {
     },
   });
 
-  if (!connectorInfo || !connector) return <></>;
+  if (!connectorInfo || !connector || !userInfo) return <></>;
 
   // TODO: add render function for TBA account
 
