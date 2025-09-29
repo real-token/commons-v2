@@ -1,19 +1,15 @@
 import { useMemo, useState } from "react";
-import { CONNECTION_MODE, connectionModeOptions } from "../types";
 import { Tabs } from "@mantine/core";
-import { AaModalConfig } from "../types/aaModalConfig";
+import {
+  AaModalConfig,
+  CONNECTION_MODE,
+  connectionModeOptions,
+} from "@real-token/types";
 import { AaConnectionModePanel } from "./connectionModePanel/AaConnectionModePanel/AaConnectionModePanel";
 import { ExternalConnectionModelPanel } from "./connectionModePanel/ExternalConnectionModelPanel/ExternalConnectionModelPanel";
-import { ParsedConnectorsConfig } from "../hooks/useParsedConnectorsConfig";
 import { useTranslation } from "react-i18next";
 
-export const ConnectionMode = ({
-  config,
-  parsedConnectorsConfig,
-}: {
-  config: AaModalConfig;
-  parsedConnectorsConfig: ParsedConnectorsConfig;
-}) => {
+export const ConnectionMode = ({ config }: { config: AaModalConfig }) => {
   const { t } = useTranslation("main");
   const [value, setValue] = useState<CONNECTION_MODE>(CONNECTION_MODE.aa);
 
@@ -36,17 +32,9 @@ export const ConnectionMode = ({
           CONNECTION_MODE.aa,
           <AaConnectionModePanel
             config={config.connectionModeConfig[CONNECTION_MODE.aa]}
-            socialsConnectors={parsedConnectorsConfig.aa_socials}
-            advancedConnectors={parsedConnectorsConfig.aa_advanced}
           />,
         ],
-        [
-          CONNECTION_MODE.external,
-          <ExternalConnectionModelPanel
-            connectors={parsedConnectorsConfig.external}
-            config={config.connectionModeConfig[CONNECTION_MODE.external]}
-          />,
-        ],
+        [CONNECTION_MODE.external, <ExternalConnectionModelPanel />],
         [CONNECTION_MODE.tba, <></>],
       ]);
     }, [config]);

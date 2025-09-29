@@ -1,16 +1,8 @@
-.root {
-  border-width: 2px;
-  border-color: light-dark(black, white);
-  background-color: transparent;
-  height: 45px;
+.inner {
+  justify-content: start;
+  width: 100%;
 }
 
-.root:hover {
-  border-color: var(--background-color);
-  background-color: var(--background-color);
-  cursor: pointer;
-}
-
-.text {
-  color: light-dark(black, white);
+.label {
+  width: 100%;
 }

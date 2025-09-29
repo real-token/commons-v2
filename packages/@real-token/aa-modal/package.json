@@ -42,6 +42,7 @@
     "i18next-browser-languagedetector": "^8.0.2",
     "jotai": "^2.10.4",
     "lodash": "^4.17.21",
+    "qrcode.react": "^4.2.0",
     "react-country-flag": "^3.1.0",
     "react-i18next": "^15.1.0",
     "tslib": "^2.7.0"
@@ -49,7 +50,7 @@
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@real-token/aa-core": "2.1.0-alpha.3",
+    "@real-token/aa-core": "2.1.0-alpha.4",
     "@tanstack/react-query": "^5.72.0",
     "@web3auth/modal": "^10.0.3",
     "react": "^18.3.1",
@@ -68,7 +69,8 @@
     "@mantine/core": "^7.17.3",
     "@mantine/form": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@real-token/aa-core": "2.1.0-alpha.3",
+    "@real-token/aa-core": "2.1.0-alpha.4",
+    "@real-token/types": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.16",

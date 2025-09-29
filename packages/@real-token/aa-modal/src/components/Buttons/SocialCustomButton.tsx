@@ -8,12 +8,13 @@ import {
   IconBrandTwitter,
   IconBrandApple,
 } from "@tabler/icons-react";
-import { ModalButton } from "./Buttons/ModalButton/ModalButton";
-import { ModalButtonCompact } from "./Buttons/ModalButton/ModalButtonCompact";
-import { useAaModalConfig } from "./AaModalProvider";
+import { ModalButton } from "./ModalButton/ModalButton";
+import { ModalButtonCompact } from "./ModalButton/ModalButtonCompact";
+import { useAaModalConfig } from "../AaModalProvider";
 import { AUTH_CONNECTION_TYPE, WALLET_CONNECTORS } from "@web3auth/modal";
 import { useWeb3AuthConnect } from "@web3auth/modal/react";
 import { notifications } from "@mantine/notifications";
+import { useMutation } from "@tanstack/react-query";
 
 const loginProvidersToLogo: Map<AUTH_CONNECTION_TYPE, ReactNode> = new Map([
   ["google", <IconBrandGoogle />],
@@ -34,9 +35,9 @@ export const SocialCustomButton = ({
   variant?: "default" | "compact";
 }) => {
   const { login } = useAA();
-  const config = useAaModalConfig();
+  const { config } = useAaModalConfig();
 
-  const { connectTo, loading, isConnected, error } = useWeb3AuthConnect();
+  const { connectTo, error } = useWeb3AuthConnect();
 
   useEffect(() => {
     if (!error) return;
@@ -48,34 +49,41 @@ export const SocialCustomButton = ({
     });
   }, [error]);
 
-  const onClick = async () => {
-    try {
-      await login({
-        toggleAA: true,
-        forceVersion: config.forceVersion,
-        walletAddress: config.walletAddress,
+  const { mutateAsync } = useMutation({
+    mutationFn: async () => {
+      try {
+        await login({
+          toggleAA: true,
+          forceVersion: config.forceVersion,
+          walletAddress: config.walletAddress,
+        });
+        await connectTo(WALLET_CONNECTORS.AUTH, {
+          authConnection: socialConnectorName,
+        });
+      } catch (error) {
+        throw error;
+      }
+    },
+    onError: (error) => {
+      console.error(error);
+      notifications.show({
+        title: "Error when connecting",
+        message: (error as Error).message,
+        color: "red",
       });
-      await connectTo(WALLET_CONNECTORS.AUTH, {
-        authConnection: socialConnectorName,
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const ready = isConnected && !loading;
+    },
+  });
 
   if (variant == "compact") {
     return (
-      <ModalButtonCompact onClick={onClick} loading={!ready} w={"100%"}>
+      <ModalButtonCompact onClick={() => mutateAsync()} w={"100%"}>
         {loginProvidersToLogo.get(socialConnectorName)}
       </ModalButtonCompact>
     );
   } else {
     return (
       <ModalButton
-        onClick={onClick}
-        loading={!ready}
+        onClick={() => mutateAsync()}
         leftSection={loginProvidersToLogo.get(socialConnectorName)}
         variant={variant}
       >

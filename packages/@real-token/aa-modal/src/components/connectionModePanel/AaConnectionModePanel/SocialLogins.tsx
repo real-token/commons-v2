@@ -1,7 +1,7 @@
 import { IconMinus, IconPlus } from "@tabler/icons-react";
 import { useState } from "react";
 import { Flex, SimpleGrid, Text } from "@mantine/core";
-import { SocialCustomButton } from "../../SocialCustomButton";
+import { SocialCustomButton } from "../../Buttons/SocialCustomButton";
 import { ModalButtonCompact } from "../../Buttons/ModalButton/ModalButtonCompact";
 import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
 
@@ -9,14 +9,8 @@ const MAX_PROVIDERS_SHOWN = 4;
 
 interface SocialLoginsProps {
   connectors: AUTH_CONNECTION_TYPE[];
-  forceWallet?: any;
 }
-export const SocialLogins = ({
-  connectors,
-  forceWallet,
-}: SocialLoginsProps) => {
-  if (!connectors) return null;
-
+export const SocialLogins = ({ connectors }: SocialLoginsProps) => {
   // remove google because it's in main position
   // remove email_passwordless because it's need other configuration
   const providers = connectors.filter(

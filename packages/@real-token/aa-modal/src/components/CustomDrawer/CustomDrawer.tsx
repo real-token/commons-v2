@@ -1,8 +1,10 @@
 import classes from "./CustomDrawer.module.css";
-import { Paper } from "@mantine/core";
+import { Button, Flex, Paper, Title } from "@mantine/core";
+import { IconX } from "@tabler/icons-react";
 
 interface CustomDrawerProps {
   isOpen: boolean;
+  title?: string;
   onClose: () => void;
   children: React.ReactNode;
 }
@@ -10,6 +12,7 @@ interface CustomDrawerProps {
 export const CustomDrawer = ({
   isOpen,
   onClose,
+  title,
   children,
 }: CustomDrawerProps) => {
   return (
@@ -24,7 +27,18 @@ export const CustomDrawer = ({
         withBorder={true}
         radius="md"
       >
-        <div className={classes.handle} onClick={onClose} />
+        {/** Header */}
+        <Flex justify={title ? "space-between" : "flex-end"} align={"center"}>
+          {title ? <Title order={3}>{title}</Title> : undefined}
+          <Button
+            onClick={onClose}
+            variant={"transparent"}
+            style={{ width: "fit-content" }}
+          >
+            <IconX size={24} />
+          </Button>
+        </Flex>
+        {/** Content */}
         <div className={classes.content}>{children}</div>
       </Paper>
     </div>

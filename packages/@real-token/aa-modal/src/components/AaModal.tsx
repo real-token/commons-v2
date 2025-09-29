@@ -7,14 +7,14 @@ import { LanguageSwitcher } from "./Buttons/LanguageSwitcher";
 import { RealTokenLogo } from "../assets/RealtokenLogo/RealTokenLogo";
 import { merge } from "lodash";
 import { useMemo } from "react";
-import { AaModalConfig, defaultAaModalConfig } from "../types/aaModalConfig";
+import { AaModalConfig, defaultAaModalConfig } from "@real-token/types";
 import { ConnectionMode } from "./ConnectionMode";
 import { TranslationProvider } from "./TranslationProvider";
 import { AaModalProvider } from "./AaModalProvider";
 import { useAA } from "@real-token/aa-core";
 import { modals } from "@mantine/modals";
-import { useParsedConnectorsConfig } from "../hooks/useParsedConnectorsConfig";
 import { Notifications } from "@mantine/notifications";
+import { useWalletConnect } from "../hooks/useWalletConnect";
 
 type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
@@ -36,18 +36,13 @@ export const AaModalContent = ({
     }
   }, [walletAddress]);
 
-  const parsedConnectorsConfig = useParsedConnectorsConfig(config);
-
   return (
     <Flex direction={"column"} gap={"md"} w={"100%"}>
       <Flex justify={"space-between"} align={"center"}>
         <RealTokenLogo />
         <LanguageSwitcher />
       </Flex>
-      <ConnectionMode
-        config={config}
-        parsedConnectorsConfig={parsedConnectorsConfig}
-      />
+      <ConnectionMode config={config} />
     </Flex>
   );
 };
@@ -57,9 +52,18 @@ export const AaModal = (props: ContextModalProps<AaModalProps>) => {
     () => merge({}, defaultAaModalConfig, props.innerProps),
     [props.innerProps]
   ) as AaModalConfig;
+
+  const { isLoading, uri } = useWalletConnect();
+
   return (
     <TranslationProvider>
-      <AaModalProvider config={config}>
+      <AaModalProvider
+        config={{
+          config,
+          isLoading,
+          walletConnectUri: uri,
+        }}
+      >
         <Notifications position="bottom-right" />
         <AaModalContent config={config} id={props.id} />
       </AaModalProvider>

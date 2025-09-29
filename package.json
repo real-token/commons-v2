@@ -8,6 +8,7 @@
     "add:all": "pnpm turbo run yalc:add",
     "build:lib": "pnpm turbo run build --filter=./packages/@real-token/**/*",
     "push:all": "pnpm turbo run yalc:push",
+    "test": "pnpm build:lib && pnpm push:all",
     "clean-install": "rm -rf node_modules",
     "clean-install:all": "pnpm turbo run clean-install && rm -rf pnpm-lock.yaml",
     "clean-build": "pnpm turbo run clean-build",

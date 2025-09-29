@@ -1,6 +1,7 @@
 export const main = {
   button: {
     back: "Retour",
+    installed: "Installé",
   },
   signin: {
     title: "Se connecter",
@@ -44,8 +45,33 @@ export const main = {
       'En cliquant sur "accepter" vous confirmez avoir compris que le propriétaire du compte AA sera l\'adresse avec laquelle vous êtes connecté sur le portefeuille externe utilisé.',
     acceptButton: "Accepter",
   },
+  externalConnectionModelPanel: {
+    search: "Rechercher un portefeuille",
+    error: "Erreur lors de la connexion",
+  },
   emailPasswordless: {
     title: "Se connecter avec email",
     subtitle: "Entrez votre email",
+  },
+  aaChoiceModal: {
+    title: "Choisissez votre mode de connexion",
+    aa: "Connecter avec le portefeuille Realtoken",
+    external: "Connecter avec un portefeuille externe",
+  },
+  qrCodeDrawer: {
+    description:
+      "Scannez le code QR avec un portefeuille compatible WalletConnect ou cliquez pour copier le lien.",
+    button: "Copier le lien",
+    getWallet: "Obtenir un portefeuille",
+    noWallet: "Vous n'avez pas {{name}} ?",
+    notifications: {
+      copiedToClipboard: "Copié dans le presse-papiers",
+      linkCopiedToClipboard: "Lien copié dans le presse-papiers",
+    },
+  },
+  walletInstallationDrawer: {
+    title: "Obtenir un portefeuille",
+    installMobile: "Installer l'application {{name}}",
+    installDesktop: "Installer l'extension {{name}}",
   },
 };

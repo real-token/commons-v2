@@ -1,6 +1,7 @@
 export const main = {
   button: {
     back: "Back",
+    installed: "Installed",
   },
   signin: {
     title: "Sign in",
@@ -43,8 +44,33 @@ export const main = {
       'By clicking on "accept" you confirm with understanding that the owner of the AA account will be the address with which you are connected to the external wallet used.',
     acceptButton: "Accept",
   },
+  externalConnectionModelPanel: {
+    search: "Search for a wallet",
+    error: "Error when connecting",
+  },
   emailPasswordless: {
     title: "Connect with email",
     subtitle: "Enter your email",
+  },
+  aaChoiceModal: {
+    title: "Choose your connection mode",
+    aa: "Connect with RealToken Wallet",
+    external: "Connect with External Wallet",
+  },
+  qrCodeDrawer: {
+    description:
+      "Scan the QR code with a WalletConnect supported wallet or click to copy link.",
+    button: "Copy link",
+    getWallet: "Get wallet",
+    noWallet: "Don't have {{name}}?",
+    notifications: {
+      copiedToClipboard: "Copied to clipboard",
+      linkCopiedToClipboard: "Link copied to clipboard",
+    },
+  },
+  walletInstallationDrawer: {
+    title: "Get wallet",
+    installMobile: "Install {{name}} app",
+    installDesktop: "Install {{name}} extension",
   },
 };

@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext } from "react";
 import { RealTokenUiNetworkConfig, SHOW_NETWORKS } from "../types/networks";
 import { NetworkId } from "../constants";
-import { AaModalConfig, defaultAaModalConfig } from "@real-token/aa-modal";
+import { AaModalConfig, defaultAaModalConfig } from "@real-token/types";
 import { Env } from "../types/env";
 import { merge } from "lodash";
 

@@ -1,19 +1,16 @@
 import { Flex, Text, Button } from "@mantine/core";
-import { CustomDrawer } from "../../CustomDrawer/CustomDrawer";
-import { advancedExternalWalletTermsAcceptedAtom } from "../../../state";
+import { CustomDrawer } from "../CustomDrawer/CustomDrawer";
+import { advancedExternalWalletTermsAcceptedAtom } from "../../state";
 import { useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
-import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
-import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
+import { ExternalConnectionModelPanel } from "../connectionModePanel/ExternalConnectionModelPanel/ExternalConnectionModelPanel";
 
 export const AAExternalConnectorDrawer = ({
   drawerOpened,
   setDrawerOpened,
-  connectors,
 }: {
   drawerOpened: boolean;
   setDrawerOpened: (value: boolean) => void;
-  connectors: AUTH_CONNECTION_TYPE[];
 }) => {
   const { t } = useTranslation("main");
   const [
@@ -37,13 +34,7 @@ export const AAExternalConnectorDrawer = ({
         </Flex>
       ) : (
         <Flex direction="column" gap="md">
-          {connectors.map((connectorName, index) => (
-            <WalletButtonCustom
-              key={`aa-advanced-${connectorName}`}
-              connector={connectorName}
-              isAA={true}
-            />
-          ))}
+          <ExternalConnectionModelPanel />
         </Flex>
       )}
     </CustomDrawer>

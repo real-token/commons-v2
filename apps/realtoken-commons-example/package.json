@@ -17,7 +17,7 @@
     "@mantine/hooks": "^7.17.3",
     "@mantine/modals": "^7.17.3",
     "@mantine/notifications": "^7.17.3",
-    "@real-token/aa-core": "2.1.0-alpha.3",
+    "@real-token/aa-core": "file:.yalc/@real-token/aa-core",
     "@real-token/aa-modal": "workspace:*",
     "@real-token/core": "workspace:*",
     "@real-token/i18n-locales": "workspace:*",

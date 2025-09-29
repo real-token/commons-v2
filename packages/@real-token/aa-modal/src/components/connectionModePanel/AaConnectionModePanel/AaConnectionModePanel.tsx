@@ -1,26 +1,24 @@
-import { AaConnectorModeConfig } from "../../../types";
+import { AaConnectorModeConfig } from "@real-token/types";
 import { Flex, Divider, Text, Button } from "@mantine/core";
 import { EmailPasswordless } from "./EmailPasswordless";
 import { useTranslation } from "react-i18next";
 import { SocialLogins } from "./SocialLogins";
-import { SocialCustomButton } from "../../SocialCustomButton";
+import { SocialCustomButton } from "../../Buttons/SocialCustomButton";
 import { IconWallet } from "@tabler/icons-react";
 import { useState } from "react";
 import classes from "../../AaModal.module.css";
-import { AAExternalConnectorDrawer } from "./AAExternalConnectorDrawer";
-import { AUTH_CONNECTION_TYPE } from "@web3auth/modal";
+import { useSocialConnectors } from "../../../hooks/useSocialConnectors";
+import { AAExternalConnectorDrawer } from "../../drawers/AAExternalConnectorDrawer";
 
 export const AaConnectionModePanel = ({
   config,
-  socialsConnectors,
-  advancedConnectors,
 }: {
   config: AaConnectorModeConfig;
-  socialsConnectors: AUTH_CONNECTION_TYPE[];
-  advancedConnectors: AUTH_CONNECTION_TYPE[];
 }) => {
   const { t } = useTranslation("main");
   const [drawerOpened, setDrawerOpened] = useState(false);
+
+  const socialsConnectors = useSocialConnectors();
 
   if (!config) return null;
   return (
@@ -57,7 +55,6 @@ export const AaConnectionModePanel = ({
             <AAExternalConnectorDrawer
               drawerOpened={drawerOpened}
               setDrawerOpened={setDrawerOpened}
-              connectors={advancedConnectors}
             />
             <Button
               size={"xs"}

@@ -1,6 +1,7 @@
 export const main = {
   button: {
     back: "Atrás",
+    installed: "Instalado",
   },
   signin: {
     title: "Iniciar sesión",
@@ -44,8 +45,33 @@ export const main = {
       'Al hacer clic en "aceptar" confirmas con la comprensión de que el propietario de la cuenta AA será la dirección con la que estás conectado a la billetera externa utilizada.',
     acceptButton: "Aceptar",
   },
+  externalConnectionModelPanel: {
+    search: "Buscar una billetera",
+    error: "Error al conectar",
+  },
   emailPasswordless: {
     title: "Conecta con tu email",
     subtitle: "Introduce tu email",
+  },
+  aaChoiceModal: {
+    title: "Elige tu modo de conexión",
+    aa: "Conecta con tu billetera Realtoken",
+    external: "Conecta con una billetera externa",
+  },
+  qrCodeDrawer: {
+    description:
+      "Escanea el código QR con una billetera compatible con WalletConnect o haz clic para copiar el enlace.",
+    button: "Copiar enlace",
+    getWallet: "Obtener billetera",
+    noWallet: "¿No tienes {{name}}?",
+    notifications: {
+      copiedToClipboard: "Copiado al portapapeles",
+      linkCopiedToClipboard: "Enlace copiado al portapapeles",
+    },
+  },
+  walletInstallationDrawer: {
+    title: "Obtener billetera",
+    installMobile: "Instalar la aplicación {{name}}",
+    installDesktop: "Instalar la extensión {{name}}",
   },
 };

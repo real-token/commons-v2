@@ -1,7 +1,11 @@
 import React, { createContext, useContext, ReactNode } from "react";
-import { AaModalConfig } from "../types/aaModalConfig";
+import { AaModalConfig } from "@real-token/types";
 
-type AaModalContextType = AaModalConfig;
+type AaModalContextType = {
+  config: AaModalConfig;
+  isLoading: boolean;
+  walletConnectUri: string | undefined;
+};
 
 const AaModalContext = createContext<AaModalContextType | undefined>(undefined);
 
@@ -15,7 +19,7 @@ export const useAaModalConfig = () => {
 
 interface AaModalProviderProps {
   children: ReactNode;
-  config: AaModalConfig;
+  config: AaModalContextType;
 }
 
 export const AaModalProvider: React.FC<AaModalProviderProps> = ({
