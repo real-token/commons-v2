@@ -1,5 +1,11 @@
 # @real-token/aa-modal
 
+## 2.0.25
+
+### Patch Changes
+
+- ddf130a: feat: upgrade aa-modal to use web3auth instead of rainbow
+
 ## 2.0.24
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @real-token/core
 
+## 2.0.25
+
+### Patch Changes
+
+- ddf130a: feat: upgrade aa-modal to use web3auth instead of rainbow
+- Updated dependencies [ddf130a]
+  - @real-token/aa-modal@2.0.25
+  - @real-token/types@2.0.25
+
 ## 2.0.24
 
 ### Patch Changes
