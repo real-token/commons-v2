@@ -62,15 +62,15 @@
     "@types/lodash": "^4.17.16",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "@web3auth/modal": "^10.0.3",
     "esbuild": "^0.20.2",
     "esbuild-css-modules-plugin": "^3.1.0",
     "react": "link:@web3auth/modal/react",
     "react-cookie": "^8.0.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^15.1.0",
+    "react-i18next": "16.0.0",
     "typescript": "^5.6.2",
-    "wagmi": "2.16.1",
-    "@web3auth/modal": "^10.0.3"
+    "wagmi": "2.16.1"
   },
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
@@ -80,11 +80,12 @@
     "@real-token/aa-core": "2.1.0-alpha.4",
     "@real-token/core": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
+    "@web3auth/modal": "^10.0.3",
+    "i18next": "25.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^15.1.0",
+    "react-i18next": "16.0.0",
     "viem": "2.29",
-    "wagmi": "2.16.1",
-    "@web3auth/modal": "^10.0.3"
+    "wagmi": "2.16.1"
   }
 }
