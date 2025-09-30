@@ -1,5 +1,14 @@
 # @real-token/web3
 
+## 2.0.26
+
+### Patch Changes
+
+- 60a85b6: chore: upgrade deps for translations (i18next)
+- Updated dependencies [60a85b6]
+  - @real-token/core@2.0.26
+  - @real-token/types@2.0.26
+
 ## 2.0.25
 
 ### Patch Changes

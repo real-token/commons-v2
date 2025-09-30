@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 2.0.26
+
+### Patch Changes
+
+- 60a85b6: chore: upgrade deps for translations (i18next)
+
 ## 2.0.25
 
 ### Patch Changes
