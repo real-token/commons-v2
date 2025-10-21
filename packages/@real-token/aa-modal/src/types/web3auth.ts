@@ -67,6 +67,7 @@ export interface Web3AuthPrivateAccess {
       uri: string;
     };
   }[];
+  status: string;
 }
 
 // Helper function pour accéder aux propriétés privées de façon typée

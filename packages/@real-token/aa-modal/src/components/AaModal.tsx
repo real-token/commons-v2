@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { ContextModalProps } from "@mantine/modals";
-import { Flex } from "@mantine/core";
+import { Flex, LoadingOverlay, Text } from "@mantine/core";
 import { LanguageSwitcher } from "./Buttons/LanguageSwitcher";
 import { RealTokenLogo } from "../assets/RealtokenLogo/RealTokenLogo";
 import { merge } from "lodash";
@@ -15,6 +15,8 @@ import { useAA } from "@real-token/aa-core";
 import { modals } from "@mantine/modals";
 import { Notifications } from "@mantine/notifications";
 import { useWalletConnect } from "../hooks/useWalletConnect";
+import { useModalStatus } from "../hooks/useModalStatus";
+import { IconCircleCheck } from "@tabler/icons-react";
 
 type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
@@ -36,13 +38,33 @@ export const AaModalContent = ({
     }
   }, [walletAddress]);
 
+  const { isLoading, isConnected } = useModalStatus();
+
   return (
     <Flex direction={"column"} gap={"md"} w={"100%"}>
-      <Flex justify={"space-between"} align={"center"}>
-        <RealTokenLogo />
-        <LanguageSwitcher />
-      </Flex>
-      <ConnectionMode config={config} />
+      {isConnected ? (
+        <Flex
+          direction={"column"}
+          align={"center"}
+          gap={"md"}
+          justify={"center"}
+          w={"100%"}
+          h={"100%"}
+          mih={"70vh"}
+        >
+          <IconCircleCheck size={46} color="#37b24d" />
+          <Text>{"Connected"}</Text>
+        </Flex>
+      ) : (
+        <>
+          <LoadingOverlay visible={isLoading} />
+          <Flex justify={"space-between"} align={"center"}>
+            <RealTokenLogo />
+            <LanguageSwitcher />
+          </Flex>
+          <ConnectionMode config={config} />
+        </>
+      )}
     </Flex>
   );
 };
