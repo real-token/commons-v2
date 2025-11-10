@@ -42,8 +42,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/aa-modal':
         specifier: workspace:*
         version: link:../../packages/@real-token/aa-modal
@@ -197,8 +197,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/types':
         specifier: workspace:*
         version: link:../types
@@ -285,8 +285,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/aa-modal':
         specifier: workspace:^
         version: link:../aa-modal
@@ -392,8 +392,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.23
@@ -480,8 +480,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -536,6 +536,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.19.0
         version: 3.34.0(react@packages+@real-token+web3+@web3auth+modal+react)
+      '@types/uuid':
+        specifier: ^11.0.0
+        version: 11.0.0
       abitype:
         specifier: ^1.0.8
         version: 1.0.8(typescript@5.8.3)(zod@3.22.4)
@@ -554,6 +557,9 @@ importers:
       p-queue:
         specifier: ^8.1.0
         version: 8.1.0
+      uuid:
+        specifier: ^13.0.0
+        version: 13.0.0
       viem:
         specifier: '2.29'
         version: 2.29.4(typescript@5.8.3)(zod@3.22.4)
@@ -592,8 +598,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.4
-        version: 2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.10
+        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -4084,8 +4090,8 @@ packages:
       url-parse: 1.5.10
     dev: false
 
-  /@real-token/aa-core@2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
-    resolution: {integrity: sha512-wqFUumYmTxR8TtpwcmzCrFVkxJ0JvYcQxHXXv/80hVU/NqCEBYuBciqFg52rScLEOwfnQSsSLJyBpnraSsNITw==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.4/fafa6a1ed4e275617142acf2e26855f61ec3cc8c}
+  /@real-token/aa-core@2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
+    resolution: {integrity: sha512-UPMdfAb4eNTyivks7RSD/M82QtwSUGS8Q15aXBcsseyNMsKP4+uZrD1YTCu9JzWV0YzlSIulZektPjB4pDi1cg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.10/77910d7f3f2fa5dd5dab7f18a238e41e9e9f0e76}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -4144,8 +4150,8 @@ packages:
       - utf-8-validate
       - zod
 
-  /@real-token/aa-core@2.1.0-alpha.4(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
-    resolution: {integrity: sha512-wqFUumYmTxR8TtpwcmzCrFVkxJ0JvYcQxHXXv/80hVU/NqCEBYuBciqFg52rScLEOwfnQSsSLJyBpnraSsNITw==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.4/fafa6a1ed4e275617142acf2e26855f61ec3cc8c}
+  /@real-token/aa-core@2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@packages+@real-token+web3+@web3auth+modal+react)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
+    resolution: {integrity: sha512-UPMdfAb4eNTyivks7RSD/M82QtwSUGS8Q15aXBcsseyNMsKP4+uZrD1YTCu9JzWV0YzlSIulZektPjB4pDi1cg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.10/77910d7f3f2fa5dd5dab7f18a238e41e9e9f0e76}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -5622,6 +5628,13 @@ packages:
 
   /@types/trusted-types@2.0.7:
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
+  /@types/uuid@11.0.0:
+    resolution: {integrity: sha512-HVyk8nj2m+jcFRNazzqyVKiZezyhDKrGUA3jlEcg/nZ6Ms+qHwocba1Y/AaVaznJTAM9xpdFSh+ptbNrhOGvZA==}
+    deprecated: This is a stub types definition. uuid provides its own type definitions, so you do not need this installed.
+    dependencies:
+      uuid: 13.0.0
+    dev: false
 
   /@types/uuid@8.3.4:
     resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
@@ -12155,6 +12168,11 @@ packages:
       is-generator-function: 1.1.0
       is-typed-array: 1.1.15
       which-typed-array: 1.1.19
+
+  /uuid@13.0.0:
+    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
+    hasBin: true
+    dev: false
 
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}

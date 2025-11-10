@@ -50,7 +50,7 @@
   "peerDependencies": {
     "@mantine/core": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@real-token/aa-core": "2.1.0-alpha.6",
+    "@real-token/aa-core": "2.1.0-alpha.10",
     "@tanstack/react-query": "^5.72.0",
     "@web3auth/modal": "^10.0.3",
     "react": "^18.3.1",
@@ -69,7 +69,7 @@
     "@mantine/core": "^7.17.3",
     "@mantine/form": "^7.17.3",
     "@mantine/modals": "^7.17.3",
-    "@real-token/aa-core": "2.1.0-alpha.6",
+    "@real-token/aa-core": "2.1.0-alpha.10",
     "@real-token/types": "workspace:*",
     "@tanstack/react-query": "^5.72.0",
     "@types/lodash": "^4.17.16",

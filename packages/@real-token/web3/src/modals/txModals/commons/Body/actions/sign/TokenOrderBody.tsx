@@ -2,7 +2,7 @@ import { Flex, Card, Text, Textarea } from "@mantine/core";
 import { TransactionTypeHeader } from "../../../TransactionDecodeView/TransactionTypeHeader";
 import { ParseCommonResponse } from "@rabby-wallet/rabby-api/dist/types";
 import { Tx } from "@/types/Tx";
-import { useExtractMessageFromTypedData } from "@/hooks/transactions/useExtractMessageFromTypedData";
+import { useExtractMessageFromTypedData } from "@/hooks/transactions/decode/useExtractMessageFromTypedData";
 import { TransactionChainName } from "../../../TransactionDecodeView/TransactionChainName";
 import { TokenAmount } from "../../../TransactionDecodeView/TokenAmount";
 import { SwapTokenOrderAction } from "@/types/TxResponse";

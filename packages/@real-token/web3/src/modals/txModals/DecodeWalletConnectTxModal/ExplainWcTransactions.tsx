@@ -8,20 +8,23 @@ import { Button, Flex, Group } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import {
   EIP155_SIGNING_METHODS,
+  TxType,
   useAA,
   WcTransactionType,
 } from "@real-token/aa-core";
 import { useCallback, useMemo, useState } from "react";
 import { useChainId } from "wagmi";
 import { ExplainWcSignMessage } from "./ExplainWcSignMessage";
-import { useDecodeWalletConnectTransactions } from "@/hooks/transactions/useDecodeWalletConnectTransactions";
+import { useDecodeWalletConnectTransactions } from "@/hooks/transactions/decode/useDecodeWalletConnectTransactions";
+import { useTxManager } from "../../../context/TxManagerContext";
+import { generateId } from "../../../utils/generateId";
 
 export const ExplainWcTransactions = ({
   txs,
 }: {
   txs: WcTransactionType[];
 }) => {
-  const { confirmTx, refuseTx, refuseAllTxs, confirmAllTxs } = useAA();
+  const txManager = useTxManager();
 
   const [index, setIndex] = useState<number>(0);
 
@@ -38,9 +41,22 @@ export const ExplainWcTransactions = ({
     useDecodeWalletConnectTransactions(tx, chainId);
 
   const confirm = useCallback(() => {
-    confirmTx(index, "wc");
+    // Pas besoin de générer un nouvel ID, on utilise l'index et le type
+    // Le manager trouvera la transaction correspondante
+    // txManager.emitTransactionConfirm({
+    //   transactionId: tx.event.id,
+    //   type: TxType.WC,
+    // });
+
     if (index == 0 && txs.length == 0) modals.closeAll();
-  }, [confirmTx, index, txs]);
+  }, [txManager, index, txs]);
+
+  const refuse = useCallback(() => {
+    // txManager.emitTransactionRefused({
+    //   index,
+    //   type: TxType.WC,
+    // });
+  }, [txManager, index]);
 
   return (
     <Flex direction={"column"} gap={"md"}>
@@ -78,7 +94,7 @@ export const ExplainWcTransactions = ({
           <Button
             w={{ base: "100%", md: "auto" }}
             color={"red"}
-            onClick={() => refuseTx(index, "wc")}
+            onClick={refuse}
           >
             {"Reject"}
           </Button>
