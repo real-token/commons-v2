@@ -1,5 +1,19 @@
 # @real-token/ui-components
 
+## 3.0.0
+
+### Major Changes
+
+- ba3e40a: chore: release stable version
+
+### Patch Changes
+
+- Updated dependencies [ba3e40a]
+  - @real-token/types@3.0.0
+  - @real-token/core@3.0.0
+  - @real-token/web3@3.0.0
+  - @real-token/i18n-locales@3.0.0
+
 ## 2.0.26
 
 ### Patch Changes

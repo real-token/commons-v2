@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 3.0.0
+
+### Major Changes
+
+- ba3e40a: chore: release stable version
+
 ## 2.0.26
 
 ### Patch Changes
