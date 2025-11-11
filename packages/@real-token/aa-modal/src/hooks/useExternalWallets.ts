@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { AaWalletExternal, Web3AuthPrivateAccess } from "../types/web3auth";
+import {
+  AaWalletExternal,
+  useWeb3AuthPrivate,
+  Web3AuthPrivateAccess,
+} from "@real-token/web3";
 
-type UseExternalWallets = (
-  web3AuthPrivate: Web3AuthPrivateAccess | undefined,
-  search: string
-) => {
+type UseExternalWallets = (search: string) => {
   isLoading: boolean;
   aaExternalWallets: AaWalletExternal[] | undefined;
   error: Error | null;
@@ -39,10 +40,8 @@ const processWallets = async (
     }));
 };
 
-export const useExternalWallets: UseExternalWallets = (
-  web3AuthPrivate,
-  search
-) => {
+export const useExternalWallets: UseExternalWallets = (search) => {
+  const web3AuthPrivate = useWeb3AuthPrivate();
   const {
     data: allWallets,
     isLoading,

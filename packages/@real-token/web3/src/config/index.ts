@@ -1,1 +1,1 @@
-export * from "./torusConfig";
+export * from "./web3AuthNetworks";

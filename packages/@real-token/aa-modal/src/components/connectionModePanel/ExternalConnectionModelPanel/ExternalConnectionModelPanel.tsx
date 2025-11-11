@@ -2,10 +2,7 @@ import { Divider, Flex, Loader, ScrollArea, TextInput } from "@mantine/core";
 import { WalletButtonCustom } from "../../Buttons/WalletButton/WalletCustomButton";
 import { ReadOnly } from "./ReadOnly";
 import { useWeb3Auth } from "@web3auth/modal/react";
-import {
-  AaWalletExternal,
-  getWeb3AuthPrivateAccess,
-} from "../../../types/web3auth";
+import { AaWalletExternal, getWeb3AuthPrivateAccess } from "@real-token/web3";
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { useDeviceAndBrowserDetection } from "../../../hooks/useDeviceAndBrowserDetection";
@@ -40,10 +37,7 @@ export const ExternalConnectionModelPanel = () => {
 
   const [search, setSearch] = useState("");
 
-  const { isLoading, aaExternalWallets } = useExternalWallets(
-    web3AuthPrivate,
-    search
-  );
+  const { isLoading, aaExternalWallets } = useExternalWallets(search);
 
   const { mutate: handleConnection } = useMutation({
     mutationFn: async (connector: AaWalletExternal) => {

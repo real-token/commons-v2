@@ -1,6 +1,6 @@
 import { Avatar, Badge, Text, Flex } from "@mantine/core";
 import { useTranslation } from "react-i18next";
-import { AaWalletExternal } from "../../../types/web3auth";
+import { AaWalletExternal } from "@real-token/web3";
 import { ModalButton } from "../ModalButton/ModalButton";
 import classes from "./WalletCustomButton.module.css";
 

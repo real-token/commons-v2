@@ -1,5 +1,5 @@
 import { useWeb3Auth } from "@web3auth/modal/react";
-import { getWeb3AuthPrivateAccess } from "../types";
+import { getWeb3AuthPrivateAccess } from "@real-token/web3";
 
 export const useModalStatus = () => {
   const { web3Auth } = useWeb3Auth();

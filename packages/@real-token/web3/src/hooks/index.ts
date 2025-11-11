@@ -4,3 +4,4 @@ export * from "./useListenAaSignatures";
 export * from "./useListenWcTx";
 export * from "./useTxBrowserTabNotification";
 export * from "./transactions";
+export * from "./useWeb3AuthPrivate";

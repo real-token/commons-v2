@@ -1,8 +1,6 @@
-import { useWeb3Auth } from "@web3auth/modal/react";
-import { getWeb3AuthPrivateAccess } from "../types/web3auth";
+import { useWeb3AuthPrivate } from "@real-token/web3";
 
 export const useSocialConnectors = () => {
-  const web3auth = useWeb3Auth();
-  const privateWeb3auth = getWeb3AuthPrivateAccess(web3auth.web3Auth);
+  const privateWeb3auth = useWeb3AuthPrivate();
   return privateWeb3auth.loginModal.uiConfig.loginMethodsOrder;
 };

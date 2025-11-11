@@ -9,7 +9,7 @@ import {
   ActionIcon,
   Box,
 } from "@mantine/core";
-import { AaWalletExternal } from "../../types/web3auth";
+import { AaWalletExternal } from "@real-token/web3";
 import { useAaModalConfig } from "../AaModalProvider";
 import { IconClipboardCopy } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";

@@ -1,6 +1,6 @@
 import { Avatar, Button, Flex, Image } from "@mantine/core";
 import { CustomDrawer } from "../CustomDrawer/CustomDrawer";
-import { AaWalletExternal } from "../../types/web3auth";
+import { AaWalletExternal } from "@real-token/web3";
 import { useTranslation } from "react-i18next";
 import {
   BrowserType,
