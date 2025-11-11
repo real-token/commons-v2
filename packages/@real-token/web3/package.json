@@ -67,7 +67,7 @@
     "@web3auth/modal": "^10.0.3",
     "esbuild": "^0.20.2",
     "esbuild-css-modules-plugin": "^3.1.0",
-    "react": "link:@web3auth/modal/react",
+    "react": "^18.3.1",
     "react-cookie": "^8.0.1",
     "react-dom": "^18.3.1",
     "react-i18next": "16.0.0",
