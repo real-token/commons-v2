@@ -10,21 +10,20 @@ export const LanguageInit: FC<LanguageInitProps> = ({ i, children }) => {
   const [cookies] = useCookies([COOKIE_NAME]);
 
   useEffect(() => {
-    // Si la langue n'est pas correcte (ex: "en" par défaut SSR), i18next la détecte côté client automatiquement
-    if (
-      !cookies[COOKIE_NAME] &&
-      i18next.language !== i18next.services.languageDetector.detect()
-    ) {
-      i18next.changeLanguage(i18next.services.languageDetector.detect());
-    }
-  }, [cookies]);
+    // Check if there's a saved language in cookie
+    const savedLanguage = cookies[COOKIE_NAME];
 
-  // useEffect(() => {
-  //   const lng = cookies[COOKIE_NAME] || FALLBACK_LNG;
-  //   if (i.language !== lng) {
-  //     i.changeLanguage(lng);
-  //   }
-  // }, [i, cookies]);
+    if (savedLanguage && i.language !== savedLanguage) {
+      // If there's a saved language and it's different from current, use it
+      i.changeLanguage(savedLanguage);
+    } else if (!savedLanguage && i.services?.languageDetector) {
+      // If no saved language, let the detector handle it
+      const detectedLanguage = i.services.languageDetector.detect();
+      if (detectedLanguage && i.language !== detectedLanguage) {
+        i.changeLanguage(detectedLanguage);
+      }
+    }
+  }, [i, cookies]);
 
   return null;
 };
