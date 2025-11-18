@@ -5,6 +5,7 @@ import { TransactionTypeHeader } from "../../../TransactionDecodeView/Transactio
 import { TransactionChainName } from "../../../TransactionDecodeView/TransactionChainName";
 import { InteractionContract } from "../../../TransactionDecodeView/InteractionContract";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
+import { useTranslation } from "react-i18next";
 
 export const ApproveActionBody = ({
   data,
@@ -13,14 +14,17 @@ export const ApproveActionBody = ({
   data: ParsedTransactionActionData["approveToken"];
   explain: ExplainTxResponse;
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
   if (!data) return null;
   return (
     <Card withBorder>
-      <TransactionTypeHeader type={"Token approval"} />
+      <TransactionTypeHeader type={t("approveToken.title")} />
       <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-        <TransactionChainName chainName={"Gnosis"} />
+        <TransactionChainName />
         <Flex justify={"space-between"} align={"center"} w={"100%"}>
-          <Text>{"Token"}</Text>
+          <Text>{t("common.token")}</Text>
           <Tooltip label={data.token.name}>
             <Flex gap={4} align={"center"}>
               <Avatar
@@ -33,13 +37,13 @@ export const ApproveActionBody = ({
           </Tooltip>
         </Flex>
         <Flex justify={"space-between"} align={"center"} w={"100%"}>
-          <Text>{"Amount"}</Text>
+          <Text>{t("common.amount")}</Text>
           <Text>{data.token.amount}</Text>
         </Flex>
       </Flex>
       <Flex direction={"column"} gap={"sm"} py={"xs"}>
         <InteractionContract
-          interactionName={"Approve to"}
+          interactionName={t("approveToken.approveTo")}
           contractAddress={data.spender}
         />
         {explain.type_token_approval && (

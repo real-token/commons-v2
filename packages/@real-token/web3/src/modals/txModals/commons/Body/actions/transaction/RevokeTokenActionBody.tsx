@@ -5,6 +5,7 @@ import { TransactionTypeHeader } from "../../../TransactionDecodeView/Transactio
 import { TransactionChainName } from "../../../TransactionDecodeView/TransactionChainName";
 import { InteractionContract } from "../../../TransactionDecodeView/InteractionContract";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
+import { useTranslation } from "react-i18next";
 
 export const RevokeTokenActionBody = ({
   data,
@@ -13,14 +14,17 @@ export const RevokeTokenActionBody = ({
   data: ParsedTransactionActionData["revokeToken"];
   explain: ExplainTxResponse;
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
   if (!data) return null;
   return (
     <Card withBorder>
-      <TransactionTypeHeader type={"Revoke token approval"} />
+      <TransactionTypeHeader type={t("revokeToken.title")} />
       <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-        <TransactionChainName chainName={"Gnosis"} />
+        <TransactionChainName />
         <Flex justify={"space-between"} align={"center"} w={"100%"}>
-          <Text>{"Token"}</Text>
+          <Text>{t("common.token")}</Text>
           <Tooltip label={data.token.name}>
             <Flex gap={4} align={"center"}>
               <Avatar
@@ -35,7 +39,7 @@ export const RevokeTokenActionBody = ({
       </Flex>
       <Flex direction={"column"} gap={"sm"} py={"xs"}>
         <InteractionContract
-          interactionName={"Revoke from"}
+          interactionName={t("revokeToken.revokeFrom")}
           contractAddress={data.spender}
         />
         {explain.type_cancel_token_approval && (

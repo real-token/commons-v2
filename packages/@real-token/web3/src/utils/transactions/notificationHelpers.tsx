@@ -1,7 +1,7 @@
 import { notifications, updateNotification } from "@mantine/notifications";
 import { IconCheck, IconX, IconLoader } from "@tabler/icons-react";
 import { Stack, Anchor, Text } from "@mantine/core";
-import { Translation } from "react-i18next";
+import { i18next } from "@real-token/i18n-locales";
 import { shortenString } from "@/utils/address";
 import { generateId } from "../generateId";
 import { TransactionNotifications } from "./types";
@@ -17,10 +17,12 @@ export function showTransactionPendingNotification(
 
   // Always show a notification - use provided config or defaults
   const title =
-    transactionNotifications?.onSent?.title || "Transaction Pending";
+    transactionNotifications?.onSent?.title ||
+    i18next.t("transactions.onchain.onSent.title", { ns: "notifications" });
+
   const message =
     transactionNotifications?.onSent?.message ||
-    "Please confirm the transaction in your wallet";
+    i18next.t("transactions.onchain.onSent.message", { ns: "notifications" });
 
   notifications.show({
     id: notificationId,
@@ -47,32 +49,28 @@ export function updateTransactionSuccessNotification(
 ): void {
   // Always update the notification - use provided config or defaults
   const title =
-    transactionNotifications?.onComplete?.title || "Transaction Confirmed";
+    transactionNotifications?.onComplete?.title ||
+    i18next.t("transactions.onchain.onComplete.title", { ns: "notifications" });
 
   // Créer le message avec le lien vers le block explorer
+  const defaultMessage = i18next.t("transactions.onchain.onComplete.message", {
+    ns: "notifications",
+  });
+
   const message =
     blockExplorerUrl && txHash ? (
-      <Translation ns={"notifications"}>
-        {(t) => (
-          <Stack gap={1}>
-            {transactionNotifications?.onComplete?.message ||
-              t(
-                "transactionConfirmed.message",
-                "Your transaction has been successfully confirmed"
-              )}
-            <Anchor
-              component={"a"}
-              href={`${blockExplorerUrl}tx/${txHash}`}
-              target={"_blank"}
-            >
-              <Text>{`(${shortenString(txHash)})`}</Text>
-            </Anchor>
-          </Stack>
-        )}
-      </Translation>
+      <Stack gap={1}>
+        {transactionNotifications?.onComplete?.message || defaultMessage}
+        <Anchor
+          component={"a"}
+          href={`${blockExplorerUrl}tx/${txHash}`}
+          target={"_blank"}
+        >
+          <Text>{`(${shortenString(txHash)})`}</Text>
+        </Anchor>
+      </Stack>
     ) : (
-      transactionNotifications?.onComplete?.message ||
-      "Your transaction has been successfully confirmed"
+      transactionNotifications?.onComplete?.message || defaultMessage
     );
 
   updateNotification({
@@ -80,7 +78,7 @@ export function updateTransactionSuccessNotification(
     title,
     message,
     loading: false,
-    autoClose: false, // Ne pas fermer automatiquement pour laisser le temps de cliquer sur le lien
+    autoClose: false,
     withCloseButton: true,
     color: "green",
     icon: <IconCheck size={16} />,
@@ -99,32 +97,33 @@ export function updateTransactionWaitingBlockchainNotification(
 ): void {
   const title =
     transactionNotifications?.onWaitingBlockchain?.title ||
-    "Waiting for blockchain validation";
+    i18next.t("transactions.onchain.onWaitingBlockchain.title", {
+      ns: "notifications",
+    });
 
   // Créer le message avec le lien vers le block explorer
+  const defaultMessage = i18next.t(
+    "transactions.onchain.onWaitingBlockchain.message",
+    {
+      ns: "notifications",
+    }
+  );
+
   const message =
     blockExplorerUrl && txHash ? (
-      <Translation ns={"notifications"}>
-        {(t) => (
-          <Stack gap={1}>
-            {transactionNotifications?.onWaitingBlockchain?.message ||
-              t(
-                "waitingBlockchain.message",
-                "Your transaction is being validated on the blockchain"
-              )}
-            <Anchor
-              component={"a"}
-              href={`${blockExplorerUrl}tx/${txHash}`}
-              target={"_blank"}
-            >
-              <Text>{`(${shortenString(txHash)})`}</Text>
-            </Anchor>
-          </Stack>
-        )}
-      </Translation>
+      <Stack gap={1}>
+        {transactionNotifications?.onWaitingBlockchain?.message ||
+          defaultMessage}
+        <Anchor
+          component={"a"}
+          href={`${blockExplorerUrl}tx/${txHash}`}
+          target={"_blank"}
+        >
+          <Text>{`(${shortenString(txHash)})`}</Text>
+        </Anchor>
+      </Stack>
     ) : (
-      transactionNotifications?.onWaitingBlockchain?.message ||
-      "Your transaction is being validated on the blockchain"
+      transactionNotifications?.onWaitingBlockchain?.message || defaultMessage
     );
 
   updateNotification({
@@ -148,10 +147,13 @@ export function updateTransactionErrorNotification(
   transactionNotifications?: TransactionNotifications
 ): void {
   // Always update the notification - use provided config or defaults
-  const title = transactionNotifications?.onFail?.title || "Transaction Failed";
+  const title =
+    transactionNotifications?.onFail?.title ||
+    i18next.t("transactions.onchain.onFail.title", { ns: "notifications" });
+
   const message =
     transactionNotifications?.onFail?.message ||
-    "An error occurred while processing your transaction";
+    i18next.t("transactions.onchain.onFail.message", { ns: "notifications" });
 
   updateNotification({
     id: notificationId,

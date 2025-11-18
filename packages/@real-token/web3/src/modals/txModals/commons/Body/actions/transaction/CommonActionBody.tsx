@@ -6,6 +6,7 @@ import { InteractionContract } from "../../../TransactionDecodeView/InteractionC
 import { ExplainTxResponse } from "@/types/TxResponse";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
 import { BalanceChange } from "../../../TransactionDecodeView/BalanceChange";
+import { useTranslation } from "react-i18next";
 
 export const CommonActionBody = ({
   data,
@@ -14,17 +15,22 @@ export const CommonActionBody = ({
   data: ParsedTransactionActionData["common"];
   explain: ExplainTxResponse;
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
   return (
     <Flex direction={"column"} gap={"md"}>
       <BalanceChange balanceChange={explain.balance_change} />
       <Card withBorder>
-        <TransactionTypeHeader type={data?.title ?? "Unknown"} />
+        <TransactionTypeHeader
+          type={data?.title ?? t("commonAction.unknown")}
+        />
         <Flex direction={"column"} gap={"md"} py={"xs"} w={"100%"}>
-          <TransactionChainName chainName={"Gnosis"} />
+          <TransactionChainName />
           {explain.type_call ? (
             <>
               <InteractionContract
-                interactionName={"Interact contract"}
+                interactionName={t("common.interactContract")}
                 contractAddress={explain.type_call.contract}
               />
               <InteractionProtocol
@@ -34,7 +40,7 @@ export const CommonActionBody = ({
             </>
           ) : null}
           <Flex justify={"space-between"} align={"center"} w={"100%"}>
-            <Text>{"Description"}</Text>
+            <Text>{t("common.description")}</Text>
             <Text>{data?.desc}</Text>
           </Flex>
         </Flex>

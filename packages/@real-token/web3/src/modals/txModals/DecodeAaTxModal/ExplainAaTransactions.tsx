@@ -3,17 +3,22 @@ import { ExplainTransactionBody } from "../commons/ExplainTransactionBody";
 import { TransactionDecodeLoading } from "../commons/TransactionDecodeLoading";
 import { Button, Flex, Group } from "@mantine/core";
 import { modals } from "@mantine/modals";
-import { AddTransactionParams, TxType, useAA } from "@real-token/aa-core";
+import { AddTransactionParams } from "@real-token/aa-core";
 import { useCallback, useMemo, useState } from "react";
 import { useChainId } from "wagmi";
 import { useDecodeTransactions } from "../../../hooks/transactions/decode/useDecodeTransactions";
 import { useTxManager } from "../../../context/TxManagerContext";
+import { useTranslation } from "react-i18next";
 
 export const ExplainAaTransactions = ({
   txs,
 }: {
   txs: AddTransactionParams[];
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "modals.explainAaTransaction",
+  });
+
   const txManager = useTxManager();
 
   const [index, setIndex] = useState<number>(0);
@@ -82,14 +87,14 @@ export const ExplainAaTransactions = ({
             color={"green"}
             onClick={() => confirm()}
           >
-            {"Sign"}
+            {t("buttons.sign")}
           </Button>
           <Button
             w={{ base: "100%", md: "auto" }}
             color={"red"}
             onClick={refuse}
           >
-            {"Reject"}
+            {t("buttons.reject")}
           </Button>
         </Group>
       ) : undefined}

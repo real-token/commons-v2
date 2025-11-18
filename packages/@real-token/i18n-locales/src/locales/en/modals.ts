@@ -1,5 +1,3 @@
-import notifications from "./notifications";
-
 const modals = {
   copyAddress: {
     title: "Available Networks",

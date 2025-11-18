@@ -9,6 +9,7 @@ import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionP
 import { TransactionTypeHeader } from "../../../TransactionDecodeView/TransactionTypeHeader";
 import { TransactionChainName } from "../../../TransactionDecodeView/TransactionChainName";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const PermitTokenBody = ({
   data,
@@ -20,6 +21,10 @@ export const PermitTokenBody = ({
   typedData: string;
 }) => {
   const action = data.action?.data as PermitAction;
+
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
 
   const [parsedMessage, setParsedMessage] = useState<JSON | null>(null);
   useEffect(() => {
@@ -33,11 +38,11 @@ export const PermitTokenBody = ({
   return (
     <Flex direction={"column"} gap={"md"}>
       <Card withBorder>
-        <TransactionTypeHeader type={"Permit token"} />
+        <TransactionTypeHeader type={t("permitToken.title")} />
         <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-          <TransactionChainName chainName={"Gnosis"} />
+          <TransactionChainName />
           <Flex justify={"space-between"} align={"center"} w={"100%"}>
-            <Text>{"Token"}</Text>
+            <Text>{t("common.token")}</Text>
             <Tooltip label={action.token.name}>
               <Flex gap={4} align={"center"}>
                 <Avatar
@@ -50,18 +55,18 @@ export const PermitTokenBody = ({
             </Tooltip>
           </Flex>
           <Flex justify={"space-between"} align={"center"} w={"100%"}>
-            <Text>{"Expire time"}</Text>
+            <Text>{t("common.expireTime")}</Text>
             {/* @ts-ignore */}
             <Text>{data.action.expire_at}</Text>
           </Flex>
           <Flex justify={"space-between"} align={"center"} w={"100%"}>
-            <Text>{"Amount"}</Text>
+            <Text>{t("common.amount")}</Text>
             <Text>{action.token.amount}</Text>
           </Flex>
           {contractInfo && (
             <>
               <InteractionContract
-                interactionName={"Permit to"}
+                interactionName={t("permitToken.permitTo")}
                 contractAddress={contractInfo.id}
               />
               {contractInfo.protocol && (
@@ -77,7 +82,7 @@ export const PermitTokenBody = ({
       <Card withBorder>
         <Flex direction={"column"} gap={"sm"}>
           <Text fw={500} fz={"lg"}>
-            {"Permit data"}
+            {t("permitToken.permitData")}
           </Text>
           <Textarea
             value={JSON.stringify(parsedMessage, null, 2)}

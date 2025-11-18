@@ -4,6 +4,7 @@ import { TransactionChainName } from "../../../TransactionDecodeView/Transaction
 import { InteractionContract } from "../../../TransactionDecodeView/InteractionContract";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
 import { ExplainTxResponse } from "@rabby-wallet/rabby-api/dist/types";
+import { useTranslation } from "react-i18next";
 
 export interface UnknowActionBodyProps {
   data: {
@@ -26,18 +27,21 @@ export const UnknowActionBody = ({
   data,
   preExecutedTx,
 }: UnknowActionBodyProps) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
   const actionName = preExecutedTx.type_call?.action;
   return (
     <Card withBorder>
-      <TransactionTypeHeader type={actionName ?? "Unknown"} />
+      <TransactionTypeHeader type={actionName ?? t("commonAction.unknown")} />
       <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-        <TransactionChainName chainName={"Gnosis"} />
+        <TransactionChainName />
         <InteractionContract
-          interactionName={"Interact contract"}
+          interactionName={t("common.interactContract")}
           contractAddress={preExecutedTx.type_call?.contract ?? ""}
         />
         <Flex justify={"space-between"} align={"center"} w={"100%"}>
-          <Text>{"Operation"}</Text>
+          <Text>{t("common.operation")}</Text>
           <Text>{actionName ?? ""}</Text>
         </Flex>
         {preExecutedTx.type_call?.contract_protocol_name ? (

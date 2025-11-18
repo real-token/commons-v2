@@ -530,6 +530,9 @@ importers:
       '@rabby-wallet/rabby-api':
         specifier: ^0.9.11
         version: 0.9.23(@debank/common@0.3.60)(@rabby-wallet/rabby-sign@0.4.1)
+      '@real-token/i18n-locales':
+        specifier: workspace:^
+        version: link:../i18n-locales
       '@real-token/types':
         specifier: workspace:^
         version: link:../types

@@ -1,13 +1,12 @@
-import { Button, Card, Flex, Text } from '@mantine/core';
-import { IconArrowRight } from '@tabler/icons-react';
+import { Card, Flex, Text } from "@mantine/core";
 
 interface TransactionTypeHeaderProps {
   type: string;
 }
 export const TransactionTypeHeader = ({ type }: TransactionTypeHeaderProps) => {
   return (
-    <Card.Section px={'sm'} py={'xs'} withBorder>
-      <Flex justify={'space-between'} align={'center'}>
+    <Card.Section px={"sm"} py={"xs"} withBorder>
+      <Flex justify={"space-between"} align={"center"}>
         <Text fw={600} fz={20}>
           {type}
         </Text>

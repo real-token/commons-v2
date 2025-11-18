@@ -1,20 +1,20 @@
 import { Button, Flex, Text } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 
 export const DecodingError = ({ refetch }: { refetch: () => void }) => {
+  const { t } = useTranslation("web3", { keyPrefix: "decodingError" });
   return (
     <Flex direction={"column"} gap={"md"} justify={"center"} p="md">
       <Text fw={700} size="lg" c="red">
-        Decoding API not available
+        {t("title")}
       </Text>
       <Text c="dimmed" fs="italic">
-        {
-          "If you trust the origin, you can proceed with blind signing the transaction at your own risk"
-        }
+        {t("description")}
       </Text>
       <Text size="xs" c="dimmed" mt={5}>
-        {"Always verify the source before signing unknown transactions"}
+        {t("alwaysVerify")}
       </Text>
-      <Button onClick={() => refetch()}>{"Retry"}</Button>
+      <Button onClick={() => refetch()}>{t("retry")}</Button>
     </Flex>
   );
 };

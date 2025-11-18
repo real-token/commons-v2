@@ -36,6 +36,7 @@
   "dependencies": {
     "@rabby-wallet/rabby-action": "^0.1.8",
     "@rabby-wallet/rabby-api": "^0.9.11",
+    "@real-token/i18n-locales": "workspace:^",
     "@real-token/types": "workspace:^",
     "@tabler/icons-react": "^3.19.0",
     "@types/uuid": "^11.0.0",

@@ -10,8 +10,6 @@ export const DecodeAaSignatureModal: FC<ContextModalProps> = ({ id }) => {
   // Récupérer les signatures actives depuis le TxManager
   const signaturesToValidate = txManager.getActiveSignatures();
 
-  console.log("Active signatures from TxManager:", signaturesToValidate);
-
   useEffect(() => {
     if (signaturesToValidate.length === 0) {
       console.log("No signatures to validate, closing modal");

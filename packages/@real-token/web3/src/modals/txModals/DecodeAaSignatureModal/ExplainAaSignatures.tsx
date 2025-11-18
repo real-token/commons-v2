@@ -5,12 +5,17 @@ import { useCallback, useMemo, useState } from "react";
 import { useTxManager } from "../../../context/TxManagerContext";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { SignatureAddedEvent } from "../../../class/RealtokenWeb3TxManager";
+import { useTranslation } from "react-i18next";
 
 export const ExplainAaSignatures = ({
   signatures,
 }: {
   signatures: SignatureAddedEvent[];
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "modals.aAsignature",
+  });
+
   const txManager = useTxManager();
   const { confirmTx, refuseTx } = useAA();
 
@@ -59,9 +64,9 @@ export const ExplainAaSignatures = ({
     return (
       <Alert
         icon={<IconInfoCircle size={16} />}
-        title="No signatures to validate"
+        title={t("alertNoSignature.title")}
       >
-        There are no pending signatures to validate.
+        {t("alertNoSignature.description")}
       </Alert>
     );
   }
@@ -82,7 +87,7 @@ export const ExplainAaSignatures = ({
       return (
         <Stack gap="xs">
           <Text size="sm" fw={600}>
-            Message to sign:
+            {t("messageToSign")}
           </Text>
           <Code block>
             {typeof signature.data === "string"
@@ -98,19 +103,21 @@ export const ExplainAaSignatures = ({
     <Flex direction={"column"} gap={"md"}>
       <Stack gap="md">
         <Text size="lg" fw={700}>
-          Signature Request {index + 1} of {signatures.length}
+          {t("signatureRequest", {
+            index: index + 1,
+            total: signatures.length,
+          })}
         </Text>
 
         <Alert icon={<IconInfoCircle size={16} />} color="blue">
-          Please review the signature request below and confirm if you want to
-          proceed.
+          {t("alertReviewSignature.description")}
         </Alert>
 
         {renderSignatureData()}
 
         <Stack gap="xs">
           <Text size="sm" fw={600}>
-            Signature Type:
+            {t("signatureType")}
           </Text>
           <Text size="sm" c="dimmed">
             {signature.signatureType}
@@ -124,10 +131,10 @@ export const ExplainAaSignatures = ({
           color={"green"}
           onClick={confirm}
         >
-          Sign Message
+          {t("buttons.signMessage")}
         </Button>
         <Button w={{ base: "100%", md: "auto" }} color={"red"} onClick={refuse}>
-          Reject
+          {t("buttons.reject")}
         </Button>
       </Group>
     </Flex>

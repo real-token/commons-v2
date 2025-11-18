@@ -8,6 +8,7 @@ import { TokenAmount } from "../../../TransactionDecodeView/TokenAmount";
 import { SwapTokenOrderAction } from "@/types/TxResponse";
 import { InteractionContract } from "../../../TransactionDecodeView/InteractionContract";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
+import { useTranslation } from "react-i18next";
 
 export const TokenOrderBody = ({
   data,
@@ -20,23 +21,27 @@ export const TokenOrderBody = ({
 }) => {
   const parsedMessage = useExtractMessageFromTypedData(typedData);
 
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
+
   const action = data.action?.data as SwapTokenOrderAction;
 
   return (
     <Flex direction={"column"} gap={"md"}>
       <Card withBorder>
-        <TransactionTypeHeader type={"Token order"} />
+        <TransactionTypeHeader type={t("tokenOrder.title")} />
         <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-          <TransactionChainName chainName={"Gnosis"} />
+          <TransactionChainName />
           <TokenAmount
-            title={"Pay"}
+            title={t("common.pay")}
             tokenName={action.pay_token.name}
             tokenLogoURL={action.pay_token.logo_url}
             tokenSymbol={action.pay_token.symbol}
             amount={action.pay_token.amount.toString()}
           />
           <TokenAmount
-            title={"Receive"}
+            title={t("common.receive")}
             tokenName={action.receive_token.name}
             tokenLogoURL={action.receive_token.logo_url}
             tokenSymbol={action.receive_token.symbol}
@@ -44,14 +49,14 @@ export const TokenOrderBody = ({
           />
           {action.expire_at && (
             <Flex justify={"space-between"} align={"center"} w={"100%"}>
-              <Text>{"Expire time"}</Text>
+              <Text>{t("common.expireTime")}</Text>
               <Text>{action.expire_at}</Text>
             </Flex>
           )}
           {contractInfo && (
             <>
               <InteractionContract
-                interactionName={"Permit to"}
+                interactionName={t("permitToken.permitTo")}
                 contractAddress={contractInfo.id}
               />
               {contractInfo.protocol && (
@@ -67,7 +72,7 @@ export const TokenOrderBody = ({
       <Card withBorder>
         <Flex direction={"column"} gap={"sm"}>
           <Text fw={500} fz={"lg"}>
-            {"Permit data"}
+            {t("permitToken.permitData")}
           </Text>
           <Textarea
             value={JSON.stringify(parsedMessage, null, 2)}

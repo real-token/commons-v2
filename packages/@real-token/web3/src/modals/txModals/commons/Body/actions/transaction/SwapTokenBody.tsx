@@ -6,6 +6,7 @@ import { TokenAmount } from "../../../TransactionDecodeView/TokenAmount";
 import { InteractionContract } from "../../../TransactionDecodeView/InteractionContract";
 import { InteractionProtocol } from "../../../TransactionDecodeView/InteractionProtocol";
 import { ParsedTransactionActionData } from "@rabby-wallet/rabby-action";
+import { useTranslation } from "react-i18next";
 
 export const SwapTokenBody = ({
   data,
@@ -14,6 +15,9 @@ export const SwapTokenBody = ({
   data: ParsedTransactionActionData["swap"];
   explain: ExplainTxResponse;
 }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
   const sendToken = data?.payToken;
   const receiveToken = data?.receiveToken;
   return (
@@ -21,7 +25,7 @@ export const SwapTokenBody = ({
       <Card withBorder>
         {explain?.balance_change ? (
           <Flex direction={"column"} gap={"md"}>
-            <Text>{"Simulation results"}</Text>
+            <Text>{t("swapToken.simulationResults")}</Text>
             <Flex justify={"space-between"}>
               <Flex align={"center"} gap={"xs"}>
                 <Avatar
@@ -64,12 +68,12 @@ export const SwapTokenBody = ({
         ) : undefined}
       </Card>
       <Card withBorder>
-        <TransactionTypeHeader type={"Swap token"} />
+        <TransactionTypeHeader type={t("swapToken.title")} />
         <Flex direction={"column"} gap={"sm"} py={"xs"} w={"100%"}>
-          <TransactionChainName chainName={"Gnosis"} />
+          <TransactionChainName />
           {sendToken && (
             <TokenAmount
-              title={"Pay"}
+              title={t("common.pay")}
               tokenName={sendToken.name}
               tokenLogoURL={sendToken.logo_url}
               tokenSymbol={sendToken.symbol}
@@ -78,7 +82,7 @@ export const SwapTokenBody = ({
           )}
           {receiveToken && (
             <TokenAmount
-              title={"Receive"}
+              title={t("common.receive")}
               tokenName={receiveToken.name}
               tokenLogoURL={receiveToken.logo_url}
               tokenSymbol={receiveToken.symbol}
@@ -90,7 +94,7 @@ export const SwapTokenBody = ({
           <>
             <Flex direction={"column"} gap={"sm"} py={"xs"}>
               <InteractionContract
-                interactionName={"Interact contract"}
+                interactionName={t("common.interactContract")}
                 contractAddress={explain.type_call?.contract}
               />
               <InteractionProtocol

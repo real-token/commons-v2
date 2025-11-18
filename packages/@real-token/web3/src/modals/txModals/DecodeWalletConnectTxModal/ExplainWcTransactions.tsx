@@ -6,18 +6,12 @@ import { ExplainTransactionHeader } from "./ExplainTransactionHeader";
 import { TransactionDecodeLoading } from "../commons/TransactionDecodeLoading";
 import { Button, Flex, Group } from "@mantine/core";
 import { modals } from "@mantine/modals";
-import {
-  EIP155_SIGNING_METHODS,
-  TxType,
-  useAA,
-  WcTransactionType,
-} from "@real-token/aa-core";
+import { EIP155_SIGNING_METHODS, WcTransactionType } from "@real-token/aa-core";
 import { useCallback, useMemo, useState } from "react";
 import { useChainId } from "wagmi";
 import { ExplainWcSignMessage } from "./ExplainWcSignMessage";
 import { useDecodeWalletConnectTransactions } from "@/hooks/transactions/decode/useDecodeWalletConnectTransactions";
 import { useTxManager } from "../../../context/TxManagerContext";
-import { generateId } from "../../../utils/generateId";
 
 export const ExplainWcTransactions = ({
   txs,
@@ -27,6 +21,13 @@ export const ExplainWcTransactions = ({
   const txManager = useTxManager();
 
   const [index, setIndex] = useState<number>(0);
+
+  // Récupérer les transactions actives du TxManager
+  const activeTransactions = txManager.getActiveTransactions();
+
+  const activeTx = useMemo(() => {
+    return activeTransactions[index];
+  }, [activeTransactions, index]);
 
   const tx = useMemo(() => {
     return txs[index];
@@ -41,22 +42,22 @@ export const ExplainWcTransactions = ({
     useDecodeWalletConnectTransactions(tx, chainId);
 
   const confirm = useCallback(() => {
-    // Pas besoin de générer un nouvel ID, on utilise l'index et le type
-    // Le manager trouvera la transaction correspondante
-    // txManager.emitTransactionConfirm({
-    //   transactionId: tx.event.id,
-    //   type: TxType.WC,
-    // });
-
-    if (index == 0 && txs.length == 0) modals.closeAll();
-  }, [txManager, index, txs]);
+    txManager.emitTransactionConfirm({
+      transactionId: activeTx.transactionId,
+    });
+    if (index === txs.length - 1) {
+      modals.closeAll();
+    } else {
+      setIndex(index + 1);
+    }
+  }, [txManager, activeTx, index, txs.length]);
 
   const refuse = useCallback(() => {
-    // txManager.emitTransactionRefused({
-    //   index,
-    //   type: TxType.WC,
-    // });
-  }, [txManager, index]);
+    txManager.emitTransactionRefused({
+      transactionId: activeTx.transactionId,
+    });
+    modals.closeAll();
+  }, [txManager, activeTx]);
 
   return (
     <Flex direction={"column"} gap={"md"}>

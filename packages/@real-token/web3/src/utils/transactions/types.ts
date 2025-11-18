@@ -131,8 +131,8 @@ export type Transaction<T = BaseTransactionContext> =
 
 // Type pour une notification individuelle
 export interface NotificationConfig {
-  title?: string;
-  message?: string;
+  title?: React.ReactNode;
+  message?: React.ReactNode;
 }
 
 // Type pour les notifications personnalisées

@@ -1,12 +1,7 @@
 import { Flex, Text } from "@mantine/core";
 import { useCurrentNetwork } from "@real-token/core";
 
-interface TransactionChainNameProps {
-  chainName: string;
-}
-export const TransactionChainName = ({
-  chainName,
-}: TransactionChainNameProps) => {
+export const TransactionChainName = () => {
   const networkConfig = useCurrentNetwork();
   if (!networkConfig) return null;
 

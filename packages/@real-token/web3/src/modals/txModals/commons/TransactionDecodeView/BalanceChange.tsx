@@ -5,6 +5,7 @@ import {
   BalanceChange as BalanceChangeType,
   TokenItem,
 } from "@rabby-wallet/rabby-api/dist/types";
+import { useTranslation } from "react-i18next";
 
 const TokenLine = ({
   token,
@@ -33,6 +34,10 @@ interface Props {
 }
 
 export const BalanceChange: React.FC<Props> = ({ balanceChange }) => {
+  const { t } = useTranslation("web3", {
+    keyPrefix: "explainTransaction",
+  });
+
   if (balanceChange?.error) {
     return null;
   }
@@ -40,7 +45,7 @@ export const BalanceChange: React.FC<Props> = ({ balanceChange }) => {
   return (
     <Card withBorder>
       <Flex direction={"column"} gap={"md"}>
-        <Text>{"Simulation results"}</Text>
+        <Text>{t("common.simulationResults")}</Text>
         {balanceChange?.send_token_list.map((token) => (
           <TokenLine key={token.symbol} token={token} isSend={true} />
         ))}

@@ -77,4 +77,5 @@ const initLanguage = ({
   return i18next;
 };
 
-export { initLanguage };
+// Export both the init function and the i18next instance
+export { initLanguage, i18next };

@@ -1,7 +1,5 @@
 import { useAA } from "@real-token/aa-core";
 import { Flex, Textarea, Button } from "@mantine/core";
-import { modals } from "@mantine/modals";
-// import classes from "../WcTxManagerModal.module.css";
 import { useTranslation } from "react-i18next";
 
 interface WcSignMessageBodyProps {
@@ -14,7 +12,7 @@ export const WcSignMessageBody = ({
 }: WcSignMessageBodyProps) => {
   const { t } = useTranslation("modals");
 
-  const { confirmTx, refuseTx, confirmAllTxs } = useAA();
+  const { confirmTx, refuseTx } = useAA();
 
   return (
     <Flex direction={"column"} gap={"md"}>
