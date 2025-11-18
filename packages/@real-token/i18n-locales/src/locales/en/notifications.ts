@@ -117,19 +117,47 @@ const notifications = {
         title: "Signature Failed",
         message: "An error occurred while signing the ERC20 permit",
       },
+      withDetails: {
+        onSent: {
+          title: "Permit Signature Pending",
+          message: "Please sign permit for {{amount}} to {{spender}}",
+        },
+        onComplete: {
+          title: "Permit Signature Confirmed",
+          message: "Successfully signed permit for {{amount}} to {{spender}}",
+        },
+        onFail: {
+          title: "Permit Signature Failed",
+          message: "Failed to sign permit for {{amount}} to {{spender}}",
+        },
+      },
     },
     signMessageCoinBridge: {
       onSent: {
         title: "Signature Pending",
-        message: "Please sign the CoinBridge permit message in your wallet",
+        message: "Please sign the permit message in your wallet",
       },
       onComplete: {
         title: "Signature Confirmed",
-        message: "CoinBridge permit signature has been successfully created",
+        message: "Permit signature has been successfully created",
       },
       onFail: {
         title: "Signature Failed",
-        message: "An error occurred while signing the CoinBridge permit",
+        message: "An error occurred while signing the permit",
+      },
+      withDetails: {
+        onSent: {
+          title: "Permit Signature Pending",
+          message: "Please sign permit for {{amount}} to {{spender}}",
+        },
+        onComplete: {
+          title: "Permit Signature Confirmed",
+          message: "Successfully signed permit for {{amount}} to {{spender}}",
+        },
+        onFail: {
+          title: "Permit Signature Failed",
+          message: "Failed to sign permit for {{amount}} to {{spender}}",
+        },
       },
     },
     signMessage: {

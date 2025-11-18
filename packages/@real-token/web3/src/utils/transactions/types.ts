@@ -49,6 +49,8 @@ export interface SignMessageErc20TransactionData {
   contractAddress: `0x${string}`;
   noncesFunctionName?: "nonces" | "_nonces";
   signatureKey: string; // Clé pour stocker dans le contexte (obligatoire)
+  tokenSymbol?: string; // Will be fetched from blockchain if not provided
+  tokenDecimals?: number; // Will be fetched from blockchain if not provided
   skipCondition?: boolean | (() => boolean) | (() => Promise<boolean>); // Condition pour ignorer la transaction
   notifications?: TransactionNotifications; // Notifications optionnelles
 }
@@ -63,6 +65,8 @@ export interface SignMessageCoinBridgeTransactionData {
   contractAddress: `0x${string}`;
   noncesFunctionName?: "nonces" | "_nonces";
   signatureKey: string; // Clé pour stocker dans le contexte (obligatoire)
+  tokenSymbol?: string; // Will be fetched from blockchain if not provided
+  tokenDecimals?: number; // Will be fetched from blockchain if not provided
   skipCondition?: boolean | (() => boolean) | (() => Promise<boolean>); // Condition pour ignorer la transaction
   notifications?: TransactionNotifications; // Notifications optionnelles
 }

@@ -195,6 +195,126 @@ function createTransferNotifications(
 }
 
 /**
+ * Creates specialized notifications for ERC20 permit transactions
+ */
+function createErc20PermitNotifications(
+  tokenSymbol: string,
+  formattedAmount: string,
+  spenderAddress: string
+): {
+  onSent: NotificationConfig;
+  onComplete: NotificationConfig;
+  onFail: NotificationConfig;
+} {
+  const shortSpender = `${spenderAddress.slice(0, 6)}...${spenderAddress.slice(-4)}`;
+
+  return {
+    onSent: {
+      title: i18next.t("transactions.signMessageErc20.withDetails.onSent.title", {
+        ns: "notifications",
+      }),
+      message: i18next.t(
+        "transactions.signMessageErc20.withDetails.onSent.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+    onComplete: {
+      title: i18next.t(
+        "transactions.signMessageErc20.withDetails.onComplete.title",
+        {
+          ns: "notifications",
+        }
+      ),
+      message: i18next.t(
+        "transactions.signMessageErc20.withDetails.onComplete.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+    onFail: {
+      title: i18next.t("transactions.signMessageErc20.withDetails.onFail.title", {
+        ns: "notifications",
+      }),
+      message: i18next.t(
+        "transactions.signMessageErc20.withDetails.onFail.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+  };
+}
+
+/**
+ * Creates specialized notifications for CoinBridge permit transactions
+ */
+function createCoinBridgePermitNotifications(
+  tokenSymbol: string,
+  formattedAmount: string,
+  spenderAddress: string
+): {
+  onSent: NotificationConfig;
+  onComplete: NotificationConfig;
+  onFail: NotificationConfig;
+} {
+  const shortSpender = `${spenderAddress.slice(0, 6)}...${spenderAddress.slice(-4)}`;
+
+  return {
+    onSent: {
+      title: i18next.t("transactions.signMessageCoinBridge.withDetails.onSent.title", {
+        ns: "notifications",
+      }),
+      message: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onSent.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+    onComplete: {
+      title: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onComplete.title",
+        {
+          ns: "notifications",
+        }
+      ),
+      message: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onComplete.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+    onFail: {
+      title: i18next.t("transactions.signMessageCoinBridge.withDetails.onFail.title", {
+        ns: "notifications",
+      }),
+      message: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onFail.message",
+        {
+          ns: "notifications",
+          amount: formattedAmount,
+          spender: shortSpender,
+        }
+      ),
+    },
+  };
+}
+
+/**
  * Gets default notifications for a transaction type
  */
 function getDefaultNotifications(
@@ -231,6 +351,40 @@ function getDefaultNotifications(
       tokenSymbol,
       formattedAmount,
       txData.recipientAddress
+    );
+  }
+
+  if (txData.type === "signMessage-erc20") {
+    // For ERC20 permit transactions, we need token metadata to create proper notifications
+    const tokenSymbol = txData.tokenSymbol || "tokens";
+    const tokenDecimals = txData.tokenDecimals || 18;
+    const formattedAmount = formatTokenAmount(
+      txData.amount,
+      tokenDecimals,
+      tokenSymbol
+    );
+
+    return createErc20PermitNotifications(
+      tokenSymbol,
+      formattedAmount,
+      txData.spender
+    );
+  }
+
+  if (txData.type === "signMessage-coinBridge") {
+    // For CoinBridge permit transactions, we need token metadata to create proper notifications
+    const tokenSymbol = txData.tokenSymbol || "tokens";
+    const tokenDecimals = txData.tokenDecimals || 18;
+    const formattedAmount = formatTokenAmount(
+      txData.amount,
+      tokenDecimals,
+      tokenSymbol
+    );
+
+    return createCoinBridgePermitNotifications(
+      tokenSymbol,
+      formattedAmount,
+      txData.spender
     );
   }
 

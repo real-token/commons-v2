@@ -117,19 +117,47 @@ const notifications = {
         title: "Firma fallida",
         message: "Ocurrió un error al firmar el permiso ERC20",
       },
+      withDetails: {
+        onSent: {
+          title: "Firma de permiso pendiente",
+          message: "Por favor firme el permiso para {{amount}} a {{spender}}",
+        },
+        onComplete: {
+          title: "Firma de permiso confirmada",
+          message: "Permiso firmado exitosamente para {{amount}} a {{spender}}",
+        },
+        onFail: {
+          title: "Firma de permiso fallida",
+          message: "Falló la firma del permiso para {{amount}} a {{spender}}",
+        },
+      },
     },
     signMessageCoinBridge: {
       onSent: {
         title: "Firma pendiente",
-        message: "Por favor firme el mensaje de permiso CoinBridge en su billetera",
+        message: "Por favor firme el mensaje de permiso en su billetera",
       },
       onComplete: {
         title: "Firma confirmada",
-        message: "La firma del permiso CoinBridge ha sido creada exitosamente",
+        message: "La firma del permiso ha sido creada exitosamente",
       },
       onFail: {
         title: "Firma fallida",
-        message: "Ocurrió un error al firmar el permiso CoinBridge",
+        message: "Ocurrió un error al firmar el permiso",
+      },
+      withDetails: {
+        onSent: {
+          title: "Firma de permiso pendiente",
+          message: "Por favor firme el permiso para {{amount}} a {{spender}}",
+        },
+        onComplete: {
+          title: "Firma de permiso confirmada",
+          message: "Permiso firmado exitosamente para {{amount}} a {{spender}}",
+        },
+        onFail: {
+          title: "Firma de permiso fallida",
+          message: "Falló la firma del permiso para {{amount}} a {{spender}}",
+        },
       },
     },
     signMessage: {

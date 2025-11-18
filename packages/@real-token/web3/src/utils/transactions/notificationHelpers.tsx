@@ -160,7 +160,7 @@ export function updateTransactionErrorNotification(
     title,
     message,
     loading: false,
-    autoClose: 5000,
+    autoClose: false,
     withCloseButton: true,
     color: "red",
     icon: <IconX size={16} />,

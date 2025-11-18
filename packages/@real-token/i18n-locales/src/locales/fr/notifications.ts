@@ -117,19 +117,47 @@ const notifications = {
         title: "Signature échouée",
         message: "Une erreur s'est produite lors de la signature du permis ERC20",
       },
+      withDetails: {
+        onSent: {
+          title: "Signature de permis en attente",
+          message: "Veuillez signer le permis pour {{amount}} vers {{spender}}",
+        },
+        onComplete: {
+          title: "Signature de permis confirmée",
+          message: "Permis signé avec succès pour {{amount}} vers {{spender}}",
+        },
+        onFail: {
+          title: "Signature de permis échouée",
+          message: "Échec de la signature du permis pour {{amount}} vers {{spender}}",
+        },
+      },
     },
     signMessageCoinBridge: {
       onSent: {
         title: "Signature en attente",
-        message: "Veuillez signer le message de permis CoinBridge dans votre portefeuille",
+        message: "Veuillez signer le message de permis dans votre portefeuille",
       },
       onComplete: {
         title: "Signature confirmée",
-        message: "La signature du permis CoinBridge a été créée avec succès",
+        message: "La signature du permis a été créée avec succès",
       },
       onFail: {
         title: "Signature échouée",
-        message: "Une erreur s'est produite lors de la signature du permis CoinBridge",
+        message: "Une erreur s'est produite lors de la signature du permis",
+      },
+      withDetails: {
+        onSent: {
+          title: "Signature de permis en attente",
+          message: "Veuillez signer le permis pour {{amount}} vers {{spender}}",
+        },
+        onComplete: {
+          title: "Signature de permis confirmée",
+          message: "Permis signé avec succès pour {{amount}} vers {{spender}}",
+        },
+        onFail: {
+          title: "Signature de permis échouée",
+          message: "Échec de la signature du permis pour {{amount}} vers {{spender}}",
+        },
       },
     },
     signMessage: {

@@ -5,6 +5,8 @@ import {
   TransactionNotifications,
   ApproveTransactionData,
   Erc20TransferTransactionData,
+  SignMessageErc20TransactionData,
+  SignMessageCoinBridgeTransactionData,
 } from "./types";
 import { shouldSkipTransaction } from "./skipConditionHelpers";
 import {
@@ -150,6 +152,94 @@ async function preprocessErc20TransferTransaction(
 }
 
 /**
+ * Preprocesses ERC20 permit transactions to fetch missing token metadata
+ */
+async function preprocessErc20PermitTransaction(
+  txData: SignMessageErc20TransactionData,
+  dependencies: TransactionProcessorDependencies
+): Promise<BaseTransaction> {
+  const { publicClient } = dependencies;
+
+  let tokenSymbol = txData.tokenSymbol;
+  let tokenDecimals = txData.tokenDecimals;
+
+  // Fetch missing token metadata from blockchain if not provided
+  if (!tokenSymbol || tokenDecimals === undefined) {
+    if (!publicClient) {
+      console.warn(
+        "PublicClient not available, using defaults for token metadata"
+      );
+      tokenSymbol = tokenSymbol || "Unknown";
+      tokenDecimals = tokenDecimals ?? 18;
+    } else {
+      try {
+        const metadata = await fetchTokenMetadata(
+          txData.contractAddress,
+          publicClient
+        );
+        tokenSymbol = tokenSymbol || metadata.symbol;
+        tokenDecimals = tokenDecimals ?? metadata.decimals;
+      } catch (error) {
+        console.warn("Failed to fetch token metadata, using defaults:", error);
+        tokenSymbol = tokenSymbol || "Unknown";
+        tokenDecimals = tokenDecimals ?? 18;
+      }
+    }
+  }
+
+  // Return the permit transaction with enriched metadata
+  return {
+    ...txData,
+    tokenSymbol,
+    tokenDecimals,
+  } as SignMessageErc20TransactionData;
+}
+
+/**
+ * Preprocesses CoinBridge permit transactions to fetch missing token metadata
+ */
+async function preprocessCoinBridgePermitTransaction(
+  txData: SignMessageCoinBridgeTransactionData,
+  dependencies: TransactionProcessorDependencies
+): Promise<BaseTransaction> {
+  const { publicClient } = dependencies;
+
+  let tokenSymbol = txData.tokenSymbol;
+  let tokenDecimals = txData.tokenDecimals;
+
+  // Fetch missing token metadata from blockchain if not provided
+  if (!tokenSymbol || tokenDecimals === undefined) {
+    if (!publicClient) {
+      console.warn(
+        "PublicClient not available, using defaults for token metadata"
+      );
+      tokenSymbol = tokenSymbol || "Unknown";
+      tokenDecimals = tokenDecimals ?? 18;
+    } else {
+      try {
+        const metadata = await fetchTokenMetadata(
+          txData.contractAddress,
+          publicClient
+        );
+        tokenSymbol = tokenSymbol || metadata.symbol;
+        tokenDecimals = tokenDecimals ?? metadata.decimals;
+      } catch (error) {
+        console.warn("Failed to fetch token metadata, using defaults:", error);
+        tokenSymbol = tokenSymbol || "Unknown";
+        tokenDecimals = tokenDecimals ?? 18;
+      }
+    }
+  }
+
+  // Return the permit transaction with enriched metadata
+  return {
+    ...txData,
+    tokenSymbol,
+    tokenDecimals,
+  } as SignMessageCoinBridgeTransactionData;
+}
+
+/**
  * Converts approve transaction to onchain transaction for processing
  */
 function approveToOnchainTransaction(
@@ -217,6 +307,16 @@ export async function executeTransactionWithNotifications(
   // Preprocess transfer transactions to fetch metadata and prepare for execution
   if (txData.type === "erc20-transfer") {
     processedTxData = await preprocessErc20TransferTransaction(txData, dependencies);
+  }
+
+  // Preprocess ERC20 permit transactions to fetch metadata
+  if (txData.type === "signMessage-erc20") {
+    processedTxData = await preprocessErc20PermitTransaction(txData, dependencies);
+  }
+
+  // Preprocess CoinBridge permit transactions to fetch metadata
+  if (txData.type === "signMessage-coinBridge") {
+    processedTxData = await preprocessCoinBridgePermitTransaction(txData, dependencies);
   }
 
   // Merge custom notifications with defaults based on transaction type
