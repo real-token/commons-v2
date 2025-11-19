@@ -1,5 +1,19 @@
 # @real-token/aa-modal
 
+## 3.1.0
+
+### Minor Changes
+
+- Spender mapping for permit and approve
+- Translations to web3
+- Move aa-modal web3auth type to web3 package
+
+### Patch Changes
+
+- Fix i18next config
+- Fix notifications permit
+- Fix circular deps
+
 ## 3.0.0
 
 ### Major Changes

@@ -1,5 +1,24 @@
 # @real-token/ui-components
 
+## 3.1.0
+
+### Minor Changes
+
+- Spender mapping for permit and approve
+- Translations to web3
+- Move aa-modal web3auth type to web3 package
+
+### Patch Changes
+
+- Fix i18next config
+- Fix notifications permit
+- Fix circular deps
+- Updated dependencies
+  - @real-token/types@3.1.0
+  - @real-token/core@3.1.0
+  - @real-token/web3@3.1.0
+  - @real-token/i18n-locales@3.1.0
+
 ## 3.0.0
 
 ### Major Changes
