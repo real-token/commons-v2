@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BaseTransaction,
   TransactionNotifications,
@@ -5,6 +6,8 @@ import {
 } from "./types";
 import { formatTokenAmount } from "./tokenHelpers";
 import { i18next } from "@real-token/i18n-locales";
+import { createSpenderLink } from "../spenderNotificationUtils";
+import { getSpenderDisplayName } from "../spenderMappingUtils";
 
 // Helper function to get translated notification config
 function getTranslatedConfig(keyPrefix: string): NotificationConfig {
@@ -80,26 +83,32 @@ function getDefaultNotificationsConfig(type: string): TransactionNotifications {
 function createApproveNotifications(
   tokenSymbol: string,
   formattedAmount: string,
-  spenderAddress: string
+  spenderAddress: string,
+  blockExplorerUrl?: string,
+  networkMappings?: any
 ): {
   onSent: NotificationConfig;
   onComplete: NotificationConfig;
   onFail: NotificationConfig;
 } {
-  const shortSpender = `${spenderAddress.slice(0, 6)}...${spenderAddress.slice(-4)}`;
+  // Obtenir le nom convivial du spender
+  const spenderName = getSpenderDisplayName(spenderAddress, networkMappings || {});
+  
+  // Créer le composant cliquable
+  const clickableSpender = createSpenderLink(spenderAddress, spenderName, blockExplorerUrl);
 
   return {
     onSent: {
       title: i18next.t("transactions.erc20Approve.withDetails.onSent.title", {
         ns: "notifications",
       }),
-      message: i18next.t(
-        "transactions.erc20Approve.withDetails.onSent.message",
-        {
-          ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
-        }
+      message: (
+        <span>
+          {i18next.t("transactions.erc20Approve.withDetails.onSent.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onComplete: {
@@ -109,26 +118,26 @@ function createApproveNotifications(
           ns: "notifications",
         }
       ),
-      message: i18next.t(
-        "transactions.erc20Approve.withDetails.onComplete.message",
-        {
-          ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
-        }
+      message: (
+        <span>
+          {i18next.t("transactions.erc20Approve.withDetails.onComplete.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onFail: {
       title: i18next.t("transactions.erc20Approve.withDetails.onFail.title", {
         ns: "notifications",
       }),
-      message: i18next.t(
-        "transactions.erc20Approve.withDetails.onFail.message",
-        {
-          ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
-        }
+      message: (
+        <span>
+          {i18next.t("transactions.erc20Approve.withDetails.onFail.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
   };
@@ -200,26 +209,35 @@ function createTransferNotifications(
 function createErc20PermitNotifications(
   tokenSymbol: string,
   formattedAmount: string,
-  spenderAddress: string
+  spenderAddress: string,
+  blockExplorerUrl?: string,
+  networkMappings?: any
 ): {
   onSent: NotificationConfig;
   onComplete: NotificationConfig;
   onFail: NotificationConfig;
 } {
-  const shortSpender = `${spenderAddress.slice(0, 6)}...${spenderAddress.slice(-4)}`;
+  // Obtenir le nom convivial du spender
+  const spenderName = getSpenderDisplayName(spenderAddress, networkMappings || {});
+
+  // Créer le composant cliquable
+  const clickableSpender = createSpenderLink(spenderAddress, spenderName, blockExplorerUrl);
 
   return {
     onSent: {
-      title: i18next.t("transactions.signMessageErc20.withDetails.onSent.title", {
-        ns: "notifications",
-      }),
-      message: i18next.t(
-        "transactions.signMessageErc20.withDetails.onSent.message",
+      title: i18next.t(
+        "transactions.signMessageErc20.withDetails.onSent.title",
         {
           ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
         }
+      ),
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageErc20.withDetails.onSent.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onComplete: {
@@ -229,26 +247,29 @@ function createErc20PermitNotifications(
           ns: "notifications",
         }
       ),
-      message: i18next.t(
-        "transactions.signMessageErc20.withDetails.onComplete.message",
-        {
-          ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
-        }
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageErc20.withDetails.onComplete.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onFail: {
-      title: i18next.t("transactions.signMessageErc20.withDetails.onFail.title", {
-        ns: "notifications",
-      }),
-      message: i18next.t(
-        "transactions.signMessageErc20.withDetails.onFail.message",
+      title: i18next.t(
+        "transactions.signMessageErc20.withDetails.onFail.title",
         {
           ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
         }
+      ),
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageErc20.withDetails.onFail.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
   };
@@ -260,26 +281,35 @@ function createErc20PermitNotifications(
 function createCoinBridgePermitNotifications(
   tokenSymbol: string,
   formattedAmount: string,
-  spenderAddress: string
+  spenderAddress: string,
+  blockExplorerUrl?: string,
+  networkMappings?: any
 ): {
   onSent: NotificationConfig;
   onComplete: NotificationConfig;
   onFail: NotificationConfig;
 } {
-  const shortSpender = `${spenderAddress.slice(0, 6)}...${spenderAddress.slice(-4)}`;
+  // Obtenir le nom convivial du spender
+  const spenderName = getSpenderDisplayName(spenderAddress, networkMappings || {});
+
+  // Créer le composant cliquable
+  const clickableSpender = createSpenderLink(spenderAddress, spenderName, blockExplorerUrl);
 
   return {
     onSent: {
-      title: i18next.t("transactions.signMessageCoinBridge.withDetails.onSent.title", {
-        ns: "notifications",
-      }),
-      message: i18next.t(
-        "transactions.signMessageCoinBridge.withDetails.onSent.message",
+      title: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onSent.title",
         {
           ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
         }
+      ),
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageCoinBridge.withDetails.onSent.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onComplete: {
@@ -289,26 +319,29 @@ function createCoinBridgePermitNotifications(
           ns: "notifications",
         }
       ),
-      message: i18next.t(
-        "transactions.signMessageCoinBridge.withDetails.onComplete.message",
-        {
-          ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
-        }
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageCoinBridge.withDetails.onComplete.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
     onFail: {
-      title: i18next.t("transactions.signMessageCoinBridge.withDetails.onFail.title", {
-        ns: "notifications",
-      }),
-      message: i18next.t(
-        "transactions.signMessageCoinBridge.withDetails.onFail.message",
+      title: i18next.t(
+        "transactions.signMessageCoinBridge.withDetails.onFail.title",
         {
           ns: "notifications",
-          amount: formattedAmount,
-          spender: shortSpender,
         }
+      ),
+      message: (
+        <span>
+          {i18next.t("transactions.signMessageCoinBridge.withDetails.onFail.messagePrefix", {
+            ns: "notifications",
+            amount: formattedAmount,
+          })} {clickableSpender}
+        </span>
       ),
     },
   };
@@ -318,7 +351,9 @@ function createCoinBridgePermitNotifications(
  * Gets default notifications for a transaction type
  */
 function getDefaultNotifications(
-  txData: BaseTransaction
+  txData: BaseTransaction,
+  blockExplorerUrl?: string,
+  networkMappings?: any
 ): TransactionNotifications {
   if (txData.type === "erc20-approve") {
     // For approve transactions, we need token metadata to create proper notifications
@@ -333,7 +368,9 @@ function getDefaultNotifications(
     return createApproveNotifications(
       tokenSymbol,
       formattedAmount,
-      txData.spenderAddress
+      txData.spenderAddress,
+      blockExplorerUrl,
+      networkMappings
     );
   }
 
@@ -367,7 +404,9 @@ function getDefaultNotifications(
     return createErc20PermitNotifications(
       tokenSymbol,
       formattedAmount,
-      txData.spender
+      txData.spender,
+      blockExplorerUrl,
+      networkMappings
     );
   }
 
@@ -384,7 +423,9 @@ function getDefaultNotifications(
     return createCoinBridgePermitNotifications(
       tokenSymbol,
       formattedAmount,
-      txData.spender
+      txData.spender,
+      blockExplorerUrl,
+      networkMappings
     );
   }
 
@@ -399,9 +440,11 @@ function getDefaultNotifications(
  */
 export function mergeWithDefaultNotifications(
   txData: BaseTransaction,
-  customNotifications?: TransactionNotifications
+  customNotifications?: TransactionNotifications,
+  blockExplorerUrl?: string,
+  networkMappings?: any
 ): TransactionNotifications {
-  const defaults = getDefaultNotifications(txData);
+  const defaults = getDefaultNotifications(txData, blockExplorerUrl, networkMappings);
 
   if (!customNotifications) {
     return defaults;

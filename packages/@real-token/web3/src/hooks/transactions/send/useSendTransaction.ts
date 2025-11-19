@@ -15,6 +15,7 @@ import {
   BaseTransactionHookParameters,
   SingleTransactionHookReturnType,
 } from "../shared/singleTransactionHookTypes";
+import { useSpenderMapping } from "../../useSpenderMapping";
 
 export function useSendTransaction<T = BaseTransactionContext>({
   initialContext,
@@ -26,12 +27,14 @@ export function useSendTransaction<T = BaseTransactionContext>({
   const publicClient = usePublicClient();
   const isAA = useIsAA();
   const currentNetwork = useCurrentNetwork();
+  const { spenderMapping } = useSpenderMapping();
 
   const transactionDependencies: TransactionProcessorDependencies = {
     txManager,
     publicClient,
     isAA,
     blockExplorerUrl: currentNetwork?.blockExplorerUrl,
+    networkMappings: spenderMapping,
   };
 
   const { mutate, mutateAsync, isPending, isError, isSuccess } = useMutation({

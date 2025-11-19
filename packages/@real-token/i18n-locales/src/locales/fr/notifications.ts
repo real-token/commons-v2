@@ -11,7 +11,8 @@ const notifications = {
       },
       onWaitingBlockchain: {
         title: "En attente de validation blockchain",
-        message: "Votre transaction est en cours de validation sur la blockchain",
+        message:
+          "Votre transaction est en cours de validation sur la blockchain",
       },
       onComplete: {
         title: "Transaction confirmée",
@@ -19,13 +20,15 @@ const notifications = {
       },
       onFail: {
         title: "Transaction échouée",
-        message: "Une erreur s'est produite lors du traitement de votre transaction",
+        message:
+          "Une erreur s'est produite lors du traitement de votre transaction",
       },
     },
     native: {
       onSent: {
         title: "Transfert en attente",
-        message: "Veuillez confirmer le transfert de jetons natifs dans votre portefeuille",
+        message:
+          "Veuillez confirmer le transfert de jetons natifs dans votre portefeuille",
       },
       onWaitingBlockchain: {
         title: "En attente de validation blockchain",
@@ -37,17 +40,20 @@ const notifications = {
       },
       onFail: {
         title: "Transfert échoué",
-        message: "Une erreur s'est produite lors du traitement de votre transfert",
+        message:
+          "Une erreur s'est produite lors du traitement de votre transfert",
       },
     },
     erc20Approve: {
       onSent: {
         title: "Approbation en attente",
-        message: "Veuillez confirmer l'approbation du jeton dans votre portefeuille",
+        message:
+          "Veuillez confirmer l'approbation du jeton dans votre portefeuille",
       },
       onWaitingBlockchain: {
         title: "En attente de validation blockchain",
-        message: "Votre approbation est en cours de validation sur la blockchain",
+        message:
+          "Votre approbation est en cours de validation sur la blockchain",
       },
       onComplete: {
         title: "Approbation confirmée",
@@ -55,27 +61,29 @@ const notifications = {
       },
       onFail: {
         title: "Approbation échouée",
-        message: "Une erreur s'est produite lors du traitement de l'approbation du jeton",
+        message:
+          "Une erreur s'est produite lors du traitement de l'approbation du jeton",
       },
       withDetails: {
         onSent: {
           title: "Approbation en attente",
-          message: "Veuillez confirmer l'approbation de {{amount}} pour {{spender}}",
+          messagePrefix: "Veuillez confirmer l'approbation de {{amount}} pour",
         },
         onComplete: {
           title: "Approbation confirmée",
-          message: "{{amount}} approuvé avec succès pour {{spender}}",
+          messagePrefix: "{{amount}} approuvé avec succès pour",
         },
         onFail: {
           title: "Approbation échouée",
-          message: "Échec de l'approbation de {{amount}} pour {{spender}}",
+          messagePrefix: "Échec de l'approbation de {{amount}} pour",
         },
       },
     },
     erc20Transfer: {
       onSent: {
         title: "Transfert en attente",
-        message: "Veuillez confirmer le transfert de jetons dans votre portefeuille",
+        message:
+          "Veuillez confirmer le transfert de jetons dans votre portefeuille",
       },
       onWaitingBlockchain: {
         title: "En attente de validation blockchain",
@@ -87,12 +95,14 @@ const notifications = {
       },
       onFail: {
         title: "Transfert échoué",
-        message: "Une erreur s'est produite lors du traitement du transfert de jetons",
+        message:
+          "Une erreur s'est produite lors du traitement du transfert de jetons",
       },
       withDetails: {
         onSent: {
           title: "Transfert en attente",
-          message: "Veuillez confirmer le transfert de {{amount}} vers {{recipient}}",
+          message:
+            "Veuillez confirmer le transfert de {{amount}} vers {{recipient}}",
         },
         onComplete: {
           title: "Transfert confirmé",
@@ -107,7 +117,8 @@ const notifications = {
     signMessageErc20: {
       onSent: {
         title: "Signature en attente",
-        message: "Veuillez signer le message de permis ERC20 dans votre portefeuille",
+        message:
+          "Veuillez signer le message de permis ERC20 dans votre portefeuille",
       },
       onComplete: {
         title: "Signature confirmée",
@@ -115,20 +126,21 @@ const notifications = {
       },
       onFail: {
         title: "Signature échouée",
-        message: "Une erreur s'est produite lors de la signature du permis ERC20",
+        message:
+          "Une erreur s'est produite lors de la signature du permis ERC20",
       },
       withDetails: {
         onSent: {
           title: "Signature de permis en attente",
-          message: "Veuillez signer le permis pour {{amount}} vers {{spender}}",
+          messagePrefix: "Veuillez signer le permis pour {{amount}} vers",
         },
         onComplete: {
           title: "Signature de permis confirmée",
-          message: "Permis signé avec succès pour {{amount}} vers {{spender}}",
+          messagePrefix: "Permis signé avec succès pour {{amount}} vers",
         },
         onFail: {
           title: "Signature de permis échouée",
-          message: "Échec de la signature du permis pour {{amount}} vers {{spender}}",
+          messagePrefix: "Échec de la signature du permis pour {{amount}} vers",
         },
       },
     },
@@ -148,15 +160,15 @@ const notifications = {
       withDetails: {
         onSent: {
           title: "Signature de permis en attente",
-          message: "Veuillez signer le permis pour {{amount}} vers {{spender}}",
+          messagePrefix: "Veuillez signer le permis pour {{amount}} vers",
         },
         onComplete: {
           title: "Signature de permis confirmée",
-          message: "Permis signé avec succès pour {{amount}} vers {{spender}}",
+          messagePrefix: "Permis signé avec succès pour {{amount}} vers",
         },
         onFail: {
           title: "Signature de permis échouée",
-          message: "Échec de la signature du permis pour {{amount}} vers {{spender}}",
+          messagePrefix: "Échec de la signature du permis pour {{amount}} vers",
         },
       },
     },

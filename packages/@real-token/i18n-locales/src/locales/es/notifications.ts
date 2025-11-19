@@ -25,7 +25,8 @@ const notifications = {
     native: {
       onSent: {
         title: "Transferencia pendiente",
-        message: "Por favor confirme la transferencia de tokens nativos en su billetera",
+        message:
+          "Por favor confirme la transferencia de tokens nativos en su billetera",
       },
       onWaitingBlockchain: {
         title: "Esperando validación de blockchain",
@@ -33,7 +34,8 @@ const notifications = {
       },
       onComplete: {
         title: "Transferencia confirmada",
-        message: "Su transferencia de tokens nativos ha sido confirmada exitosamente",
+        message:
+          "Su transferencia de tokens nativos ha sido confirmada exitosamente",
       },
       onFail: {
         title: "Transferencia fallida",
@@ -60,22 +62,23 @@ const notifications = {
       withDetails: {
         onSent: {
           title: "Aprobación pendiente",
-          message: "Por favor confirme la aprobación de {{amount}} para {{spender}}",
+          messagePrefix: "Por favor confirme la aprobación de {{amount}} para",
         },
         onComplete: {
           title: "Aprobación confirmada",
-          message: "{{amount}} aprobado exitosamente para {{spender}}",
+          messagePrefix: "{{amount}} aprobado exitosamente para",
         },
         onFail: {
           title: "Aprobación fallida",
-          message: "Falló la aprobación de {{amount}} para {{spender}}",
+          messagePrefix: "Falló la aprobación de {{amount}} para",
         },
       },
     },
     erc20Transfer: {
       onSent: {
         title: "Transferencia pendiente",
-        message: "Por favor confirme la transferencia de tokens en su billetera",
+        message:
+          "Por favor confirme la transferencia de tokens en su billetera",
       },
       onWaitingBlockchain: {
         title: "Esperando validación de blockchain",
@@ -92,7 +95,8 @@ const notifications = {
       withDetails: {
         onSent: {
           title: "Transferencia pendiente",
-          message: "Por favor confirme la transferencia de {{amount}} a {{recipient}}",
+          message:
+            "Por favor confirme la transferencia de {{amount}} a {{recipient}}",
         },
         onComplete: {
           title: "Transferencia confirmada",
@@ -120,15 +124,15 @@ const notifications = {
       withDetails: {
         onSent: {
           title: "Firma de permiso pendiente",
-          message: "Por favor firme el permiso para {{amount}} a {{spender}}",
+          messagePrefix: "Por favor firme el permiso para {{amount}} a",
         },
         onComplete: {
           title: "Firma de permiso confirmada",
-          message: "Permiso firmado exitosamente para {{amount}} a {{spender}}",
+          messagePrefix: "Permiso firmado exitosamente para {{amount}} a",
         },
         onFail: {
           title: "Firma de permiso fallida",
-          message: "Falló la firma del permiso para {{amount}} a {{spender}}",
+          messagePrefix: "Falló la firma del permiso para {{amount}} a",
         },
       },
     },
@@ -148,15 +152,15 @@ const notifications = {
       withDetails: {
         onSent: {
           title: "Firma de permiso pendiente",
-          message: "Por favor firme el permiso para {{amount}} a {{spender}}",
+          messagePrefix: "Por favor firme el permiso para {{amount}} a",
         },
         onComplete: {
           title: "Firma de permiso confirmada",
-          message: "Permiso firmado exitosamente para {{amount}} a {{spender}}",
+          messagePrefix: "Permiso firmado exitosamente para {{amount}} a",
         },
         onFail: {
           title: "Firma de permiso fallida",
-          message: "Falló la firma del permiso para {{amount}} a {{spender}}",
+          messagePrefix: "Falló la firma del permiso para {{amount}} a",
         },
       },
     },

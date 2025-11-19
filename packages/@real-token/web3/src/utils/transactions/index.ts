@@ -5,6 +5,6 @@ export * from "./types";
 export * from "./transactionProcessor";
 export * from "./notificationHelpers";
 export * from "./tokenHelpers";
-export * from "./notificationDefaults";
+export * from "./notificationDefaultsWithComponents";
 export * from "./transactionExecutor";
 export * from "./skipConditionHelpers";

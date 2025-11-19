@@ -17,6 +17,7 @@ import {
   MultipleTransactionHookParameters,
   MultipleTransactionsHookReturnType,
 } from "../shared/multipleTransactionsHookTypes";
+import { useSpenderMapping } from "../../useSpenderMapping";
 
 export function useSendTransactions<T = BaseTransactionContext>({
   initialContext,
@@ -29,6 +30,7 @@ export function useSendTransactions<T = BaseTransactionContext>({
   const publicClient = usePublicClient();
   const isAA = useIsAA();
   const currentNetwork = useCurrentNetwork();
+  const { spenderMapping } = useSpenderMapping();
 
   const [currentTransactionIndex, setCurrentTransactionIndex] = useState(0);
   const [totalTransactions, setTotalTransactions] = useState(0);
@@ -38,6 +40,7 @@ export function useSendTransactions<T = BaseTransactionContext>({
     publicClient,
     isAA,
     blockExplorerUrl: currentNetwork?.blockExplorerUrl,
+    networkMappings: spenderMapping,
   };
 
   const { mutate, mutateAsync, isPending, isError, isSuccess } = useMutation({

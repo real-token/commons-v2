@@ -19,7 +19,7 @@ import {
   updateTransactionErrorNotification,
   updateTransactionWaitingBlockchainNotification,
 } from "./notificationHelpers";
-import { mergeWithDefaultNotifications } from "./notificationDefaults";
+import { mergeWithDefaultNotifications } from "./notificationDefaultsWithComponents";
 import { fetchTokenMetadata } from "./tokenHelpers";
 
 // Standard ERC20 approve function ABI
@@ -322,7 +322,9 @@ export async function executeTransactionWithNotifications(
   // Merge custom notifications with defaults based on transaction type
   const notifications = mergeWithDefaultNotifications(
     processedTxData,
-    customNotifications
+    customNotifications,
+    dependencies.blockExplorerUrl,
+    dependencies.networkMappings
   );
 
   // Show initial pending notification

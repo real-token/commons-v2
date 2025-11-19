@@ -13,14 +13,22 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { merge } from "lodash";
 import { Web3Provider } from "./Web3Provider";
+import {
+  RealTokenWeb3ConfigProvider,
+  RealTokenWeb3Config,
+  NetworkSpenderMappings,
+} from "../context/RealTokenWeb3ConfigContext";
+import defaultSpenderMappings from "../config/defaultSpenderMappings";
 
 export type RealTokenWeb3ProviderProps = {
   listenNewWcTx?: boolean;
   listenNewAaTx?: boolean;
+  spenderMapping?: NetworkSpenderMappings;
 };
 export const defaultProviderConfig: RealTokenWeb3ProviderProps = {
   listenNewWcTx: true,
   listenNewAaTx: true,
+  spenderMapping: defaultSpenderMappings,
 };
 
 export function RealTokenWeb3Provider({
@@ -40,12 +48,18 @@ export function RealTokenWeb3Provider({
   );
 
   const config = useMemo(() => {
-    if (!providerConfig) return defaultProviderConfig;
-    return merge(
+    const mergedConfig = merge(
       {},
       defaultProviderConfig,
       providerConfig
     ) as RealTokenWeb3ProviderProps;
+
+    // Conversion vers RealTokenWeb3Config
+    return {
+      listenNewWcTx: mergedConfig.listenNewWcTx!,
+      listenNewAaTx: mergedConfig.listenNewAaTx!,
+      spenderMapping: mergedConfig.spenderMapping!,
+    } as RealTokenWeb3Config;
   }, [providerConfig]);
 
   return (
@@ -53,7 +67,9 @@ export function RealTokenWeb3Provider({
       <Web3AuthProvider config={web3authConfig}>
         <WagmiProvider>
           <AAProvider config={aaClientConfig}>
-            <Web3Provider config={config}>{children}</Web3Provider>
+            <RealTokenWeb3ConfigProvider config={config}>
+              <Web3Provider config={config}>{children}</Web3Provider>
+            </RealTokenWeb3ConfigProvider>
           </AAProvider>
         </WagmiProvider>
       </Web3AuthProvider>

@@ -23,6 +23,7 @@ export interface TransactionProcessorDependencies {
   publicClient: any;
   isAA: boolean;
   blockExplorerUrl?: string;
+  networkMappings?: any;
 }
 
 /**

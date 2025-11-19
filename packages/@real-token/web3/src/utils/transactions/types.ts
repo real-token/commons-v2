@@ -1,5 +1,3 @@
-import { SignableMessage } from "viem";
-
 // Contexte partagé entre les transactions (générique)
 export interface BaseTransactionContext {
   [key: string]: any; // Fallback pour compatibilité

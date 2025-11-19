@@ -2,6 +2,7 @@ export * from "./useIsAA";
 export * from "./useListenAaTx";
 export * from "./useListenAaSignatures";
 export * from "./useListenWcTx";
+export * from "./useSpenderMapping";
 export * from "./useTxBrowserTabNotification";
 export * from "./transactions";
 export * from "./useWeb3AuthPrivate";

@@ -1,15 +1,15 @@
 import { useListenNewTx } from "../hooks/useListenWcTx";
 import { useListenAaTx } from "../hooks/useListenAaTx";
 import { PropsWithChildren } from "react";
-import { RealTokenWeb3ProviderProps } from "./RealTokenWeb3Provider";
 import { useCheckSdkIsLastVersion } from "../hooks/useCheckSdkIsLastVersion";
 import { TxManagerProvider } from "../context/TxManagerContext";
+import { RealTokenWeb3Config } from "../context/RealTokenWeb3ConfigContext";
 
 export const Web3Provider = ({
   children,
   config,
 }: PropsWithChildren & {
-  config: RealTokenWeb3ProviderProps;
+  config: RealTokenWeb3Config;
 }) => {
   return (
     <TxManagerProvider>
@@ -22,7 +22,7 @@ const Web3ProviderInner = ({
   children,
   config,
 }: PropsWithChildren & {
-  config: RealTokenWeb3ProviderProps;
+  config: RealTokenWeb3Config;
 }) => {
   useListenNewTx(config.listenNewWcTx);
   useListenAaTx(config.listenNewAaTx);
