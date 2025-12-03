@@ -539,9 +539,6 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.19.0
         version: 3.34.0(react@18.3.1)
-      '@types/uuid':
-        specifier: ^11.0.0
-        version: 11.0.0
       abitype:
         specifier: ^1.0.8
         version: 1.0.8(typescript@5.8.3)(zod@3.22.4)
@@ -618,6 +615,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.7(@types/react@18.3.23)
+      '@types/uuid':
+        specifier: ^11.0.0
+        version: 11.0.0
       '@web3auth/modal':
         specifier: ^10.0.3
         version: 10.2.0(@babel/runtime@7.27.6)(@solana/web3.js@1.98.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
@@ -5110,7 +5110,7 @@ packages:
     deprecated: This is a stub types definition. uuid provides its own type definitions, so you do not need this installed.
     dependencies:
       uuid: 13.0.0
-    dev: false
+    dev: true
 
   /@types/uuid@8.3.4:
     resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
@@ -11063,7 +11063,6 @@ packages:
   /uuid@13.0.0:
     resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
     hasBin: true
-    dev: false
 
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
