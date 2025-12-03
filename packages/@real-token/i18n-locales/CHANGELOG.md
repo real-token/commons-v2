@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 3.1.2
+
+### Patch Changes
+
+- Release 3.1.2
+
 ## 3.1.1
 
 ### Patch Changes

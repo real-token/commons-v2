@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 3.1.2
+
+### Patch Changes
+
+- Release 3.1.2
+- Updated dependencies
+  - @real-token/types@3.1.2
+
 ## 3.1.1
 
 ### Patch Changes

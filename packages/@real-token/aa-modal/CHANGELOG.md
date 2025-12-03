@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.2
+
+### Patch Changes
+
+- Release 3.1.2
+- Updated dependencies
+  - @real-token/web3@3.1.2
+
 ## 3.1.1
 
 ### Patch Changes
