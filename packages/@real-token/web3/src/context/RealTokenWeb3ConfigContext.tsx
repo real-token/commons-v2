@@ -9,6 +9,7 @@ import {
   mergeSpenderMappings,
   getSpenderDisplayName,
 } from "../utils/spenderMappingUtils";
+import { TorusConfig } from "@real-token/aa-core";
 
 export interface SpenderMapping {
   [address: string]: {
@@ -29,6 +30,7 @@ export interface RealTokenWeb3Config {
 
 interface RealTokenWeb3ConfigContextType {
   config: RealTokenWeb3Config;
+  authProviderConfig: TorusConfig["loginConfig"];
   getSpenderName: (address: string, networkId?: string) => string;
 }
 
@@ -38,7 +40,11 @@ const RealTokenWeb3ConfigContext =
 export const RealTokenWeb3ConfigProvider = ({
   children,
   config,
-}: PropsWithChildren<{ config: RealTokenWeb3Config }>) => {
+  authProviderConfig,
+}: PropsWithChildren<{
+  config: RealTokenWeb3Config;
+  authProviderConfig: TorusConfig["loginConfig"];
+}>) => {
   const currentNetwork = useCurrentNetwork();
 
   // Fusionner les mappings par défaut avec ceux fournis par l'utilisateur pour chaque réseau
@@ -61,14 +67,14 @@ export const RealTokenWeb3ConfigProvider = ({
       // Fallback vers l'adresse raccourcie si pas de réseau
       return `${address.slice(0, 6)}...${address.slice(-4)}`;
     }
-    
+
     const networkMappings = finalSpenderMapping[targetNetworkId];
     return getSpenderDisplayName(address, networkMappings || {});
   };
 
   return (
     <RealTokenWeb3ConfigContext.Provider
-      value={{ config: finalConfig, getSpenderName }}
+      value={{ config: finalConfig, getSpenderName, authProviderConfig }}
     >
       {children}
     </RealTokenWeb3ConfigContext.Provider>

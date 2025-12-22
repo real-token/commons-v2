@@ -1,0 +1,12 @@
+.yalc
+yalc.lock
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store

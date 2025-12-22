@@ -1,12 +1,57 @@
 {
-  "name": "mcp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@real-token/mcp",
+  "version": "3.1.2",
+  "type": "module",
+  "description": "MCP server exposing @real-token SDK documentation and types",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/real-token/commons-v2.git"
   },
-  "keywords": [],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "bin": {
+    "real-token-mcp": "./bin/mcp-server.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc && node build.mjs",
+    "clean-build": "rm -rf dist",
+    "start": "node dist/index.js",
+    "yalc:publish": "yalc add .",
+    "yalc:push": "yalc push --sig --replace",
+    "clean-install": "rm -rf node_modules"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "real-token",
+    "typescript",
+    "documentation"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "comment-parser": "^1.4.0",
+    "zod": "^3.23.0",
+    "glob": "^10.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.6.2"
+  }
 }

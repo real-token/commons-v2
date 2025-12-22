@@ -1,5 +1,5 @@
 import { useAA } from "@real-token/aa-core";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useMemo } from "react";
 import {
   IconBrandGoogle,
   IconBrandFacebook,
@@ -15,6 +15,7 @@ import { AUTH_CONNECTION_TYPE, WALLET_CONNECTORS } from "@web3auth/modal";
 import { useWeb3AuthConnect } from "@web3auth/modal/react";
 import { notifications } from "@mantine/notifications";
 import { useMutation } from "@tanstack/react-query";
+import { useRealTokenWeb3Config } from "@real-token/web3";
 
 const loginProvidersToLogo: Map<AUTH_CONNECTION_TYPE, ReactNode> = new Map([
   ["google", <IconBrandGoogle />],
@@ -39,6 +40,15 @@ export const SocialCustomButton = ({
 
   const { connectTo, error } = useWeb3AuthConnect();
 
+  const { authProviderConfig } = useRealTokenWeb3Config();
+
+  const authConnectionId = useMemo(() => {
+    if (!authProviderConfig || !authProviderConfig[socialConnectorName]) {
+      return null;
+    }
+    return authProviderConfig[socialConnectorName].authConnectionId;
+  }, [authProviderConfig, socialConnectorName]);
+
   useEffect(() => {
     if (!error) return;
     console.error(error);
@@ -52,6 +62,9 @@ export const SocialCustomButton = ({
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
       try {
+        if (!authConnectionId) {
+          throw new Error("Auth connection ID not found");
+        }
         await login({
           toggleAA: true,
           forceVersion: config.forceVersion,
@@ -59,6 +72,7 @@ export const SocialCustomButton = ({
         });
         await connectTo(WALLET_CONNECTORS.AUTH, {
           authConnection: socialConnectorName,
+          authConnectionId,
         });
       } catch (error) {
         throw error;

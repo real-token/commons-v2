@@ -5,4 +5,5 @@ packages:
   - "packages/@real-token/core"
   - "packages/@real-token/types"
   - "packages/@real-token/i18n-locales"
+  - "packages/@real-token/mcp"
   - "apps/realtoken-commons-example"
