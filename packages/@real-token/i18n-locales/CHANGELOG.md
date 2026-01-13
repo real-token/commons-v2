@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 3.1.4
+
+### Patch Changes
+
+- 651a70b: fix: invert logic accept session WC
+
 ## 3.1.3
 
 ### Patch Changes

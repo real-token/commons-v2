@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.4
+
+### Patch Changes
+
+- 651a70b: fix: invert logic accept session WC
+- Updated dependencies [651a70b]
+  - @real-token/web3@3.1.4
+
 ## 3.1.3
 
 ### Patch Changes
