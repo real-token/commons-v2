@@ -52,7 +52,9 @@ export const useExternalWallets: UseExternalWallets = (search) => {
       web3AuthPrivate?.loginModal?.uiConfig?.walletRegistry,
     ],
     queryFn: () => processWallets(web3AuthPrivate!),
-    enabled: !!web3AuthPrivate?.loginModal?.uiConfig?.walletRegistry,
+    enabled:
+      !!web3AuthPrivate?.loginModal?.uiConfig?.walletRegistry &&
+      !!web3AuthPrivate?.loginModal?.externalWalletsConfig,
     gcTime: 10 * 60 * 1000, // Keep in garbage collection for 10 minutes
     staleTime: 5 * 60 * 1000, // Consider data fresh for 5 minutes
   });

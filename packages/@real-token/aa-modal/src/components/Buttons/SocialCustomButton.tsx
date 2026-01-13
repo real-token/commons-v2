@@ -38,10 +38,9 @@ export const SocialCustomButton = ({
   const { login } = useAA();
   const { config } = useAaModalConfig();
 
-  const { connectTo, error } = useWeb3AuthConnect();
+  const { connectTo, error, loading: isConnecting } = useWeb3AuthConnect();
 
   const { authProviderConfig } = useRealTokenWeb3Config();
-  console.log("authProviderConfig", authProviderConfig);
 
   const authConnectionId = useMemo(() => {
     if (!authProviderConfig || !authProviderConfig[socialConnectorName]) {
@@ -60,7 +59,7 @@ export const SocialCustomButton = ({
     });
   }, [error]);
 
-  const { mutateAsync } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: async () => {
       try {
         if (!authConnectionId) {
@@ -89,9 +88,11 @@ export const SocialCustomButton = ({
     },
   });
 
+  const isLoading = isPending || isConnecting;
+
   if (variant == "compact") {
     return (
-      <ModalButtonCompact onClick={() => mutateAsync()} w={"100%"}>
+      <ModalButtonCompact onClick={() => mutateAsync()} w={"100%"} loading={isLoading}>
         {loginProvidersToLogo.get(socialConnectorName)}
       </ModalButtonCompact>
     );
@@ -101,6 +102,7 @@ export const SocialCustomButton = ({
         onClick={() => mutateAsync()}
         leftSection={loginProvidersToLogo.get(socialConnectorName)}
         variant={variant}
+        loading={isLoading}
       >
         {children}
       </ModalButton>
