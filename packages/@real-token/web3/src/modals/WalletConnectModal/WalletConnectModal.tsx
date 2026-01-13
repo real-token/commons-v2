@@ -73,24 +73,24 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
     }
   };
 
-  const handleProposalAction = (id: number, reject: boolean) => {
+  const handleProposalAction = (id: number, accept: boolean) => {
     try {
-      proposalAction(id, reject);
-      if (reject) {
-        notifications.show({
-          id: "session-proposal-refused",
-          title: t("sessionProposal.notifications.title"),
-          message: t("sessionProposal.notifications.refused"),
-          icon: <IconX />,
-          color: "red",
-        });
-      } else {
+      proposalAction(id, accept);
+      if (accept) {
         notifications.show({
           id: "session-proposal-accepted",
           title: t("sessionProposal.notifications.title"),
           message: t("sessionProposal.notifications.accepted"),
           icon: <IconCheck />,
           color: "green",
+        });
+      } else {
+        notifications.show({
+          id: "session-proposal-refused",
+          title: t("sessionProposal.notifications.title"),
+          message: t("sessionProposal.notifications.refused"),
+          icon: <IconX />,
+          color: "red",
         });
       }
     } catch (e) {
@@ -175,7 +175,7 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
             w={"100%"}
             variant="outline"
             onClick={() => {
-              handleProposalAction(sessionProposal.id, true);
+              handleProposalAction(sessionProposal.id, false);
             }}
           >
             {t("sessionProposal.buttons.reject")}
@@ -184,7 +184,7 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
             w={"100%"}
             color={buttonColor}
             onClick={() => {
-              handleProposalAction(sessionProposal.id, false);
+              handleProposalAction(sessionProposal.id, true);
             }}
           >
             {t("sessionProposal.buttons.approve")}
