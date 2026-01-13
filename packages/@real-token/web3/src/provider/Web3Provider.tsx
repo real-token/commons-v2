@@ -37,6 +37,9 @@ export const Web3Provider = ({
     return cookieToWeb3AuthState(cookies.cookie);
   }, [cookies]);
 
+  console.log("aaClientConfig", aaClientConfig);
+  console.log("torusConfig", aaClientConfig.torusConfig);
+
   return (
     <Web3AuthProvider config={web3authConfig} initialState={initialState}>
       <WagmiProvider>

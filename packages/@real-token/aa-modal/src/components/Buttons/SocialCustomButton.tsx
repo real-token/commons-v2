@@ -41,6 +41,7 @@ export const SocialCustomButton = ({
   const { connectTo, error } = useWeb3AuthConnect();
 
   const { authProviderConfig } = useRealTokenWeb3Config();
+  console.log("authProviderConfig", authProviderConfig);
 
   const authConnectionId = useMemo(() => {
     if (!authProviderConfig || !authProviderConfig[socialConnectorName]) {

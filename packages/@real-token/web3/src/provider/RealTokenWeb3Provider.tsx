@@ -24,6 +24,11 @@ export const defaultProviderConfig: RealTokenWeb3ProviderProps = {
   spenderMapping: defaultSpenderMappings,
 };
 
+/**
+ * Main providers for web3 connection.
+ * @param param0
+ * @returns
+ */
 export function RealTokenWeb3Provider({
   children,
   queryClient,
