@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.3
+
+### Patch Changes
+
+- 5511f41: fix: debug and connect to right social connector
+- Updated dependencies [5511f41]
+  - @real-token/web3@3.1.3
+
 ## 3.1.2
 
 ### Patch Changes

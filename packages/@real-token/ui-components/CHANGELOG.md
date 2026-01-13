@@ -1,5 +1,16 @@
 # @real-token/ui-components
 
+## 3.1.3
+
+### Patch Changes
+
+- 5511f41: fix: debug and connect to right social connector
+- Updated dependencies [5511f41]
+  - @real-token/core@3.1.3
+  - @real-token/i18n-locales@3.1.3
+  - @real-token/types@3.1.3
+  - @real-token/web3@3.1.3
+
 ## 3.1.2
 
 ### Patch Changes
