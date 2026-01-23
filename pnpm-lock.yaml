@@ -42,8 +42,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/aa-modal':
         specifier: workspace:*
         version: link:../../packages/@real-token/aa-modal
@@ -200,8 +200,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/types':
         specifier: workspace:*
         version: link:../types
@@ -288,8 +288,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -417,8 +417,8 @@ importers:
         specifier: ^7.24.7
         version: 7.27.1(@babel/core@7.27.4)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.23
@@ -505,8 +505,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -623,8 +623,8 @@ importers:
         specifier: ^7.17.3
         version: 7.17.8(@mantine/core@7.17.8)(@mantine/hooks@7.17.8)(react-dom@18.3.1)(react@18.3.1)
       '@real-token/aa-core':
-        specifier: 2.1.0-alpha.10
-        version: 2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
+        specifier: 2.1.0-alpha.11
+        version: 2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1)
       '@real-token/core':
         specifier: workspace:*
         version: link:../core
@@ -3310,11 +3310,6 @@ packages:
   /@lit-labs/ssr-dom-shim@1.3.0:
     resolution: {integrity: sha512-nQIWonJ6eFAvUUrSlwyHDm/aE8PBDu5kRpL0vHMg6K8fK3Diq1xdPjTnsJSwxABhaZ+5eBi1btQB5ShUTKo4nQ==}
 
-  /@lit/reactive-element@1.6.3:
-    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
-    dependencies:
-      '@lit-labs/ssr-dom-shim': 1.3.0
-
   /@lit/reactive-element@2.1.0:
     resolution: {integrity: sha512-L2qyoZSQClcBmq0qajBVbhYEcG6iK0XfLn66ifLe/RfC0/ihpc+pl0Wdn8bJ8o+hj38cG0fGXRgSS20MuXn7qA==}
     dependencies:
@@ -3734,62 +3729,12 @@ packages:
       - supports-color
     dev: false
 
-  /@motionone/animation@10.18.0:
-    resolution: {integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==}
-    dependencies:
-      '@motionone/easing': 10.18.0
-      '@motionone/types': 10.17.1
-      '@motionone/utils': 10.18.0
-      tslib: 2.8.1
-
-  /@motionone/dom@10.18.0:
-    resolution: {integrity: sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==}
-    dependencies:
-      '@motionone/animation': 10.18.0
-      '@motionone/generators': 10.18.0
-      '@motionone/types': 10.17.1
-      '@motionone/utils': 10.18.0
-      hey-listen: 1.0.8
-      tslib: 2.8.1
-
-  /@motionone/easing@10.18.0:
-    resolution: {integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==}
-    dependencies:
-      '@motionone/utils': 10.18.0
-      tslib: 2.8.1
-
-  /@motionone/generators@10.18.0:
-    resolution: {integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==}
-    dependencies:
-      '@motionone/types': 10.17.1
-      '@motionone/utils': 10.18.0
-      tslib: 2.8.1
-
-  /@motionone/svelte@10.16.4:
-    resolution: {integrity: sha512-zRVqk20lD1xqe+yEDZhMYgftsuHc25+9JSo+r0a0OWUJFocjSV9D/+UGhX4xgJsuwB9acPzXLr20w40VnY2PQA==}
-    dependencies:
-      '@motionone/dom': 10.18.0
-      tslib: 2.8.1
-
-  /@motionone/types@10.17.1:
-    resolution: {integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==}
-
-  /@motionone/utils@10.18.0:
-    resolution: {integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==}
-    dependencies:
-      '@motionone/types': 10.17.1
-      hey-listen: 1.0.8
-      tslib: 2.8.1
-
-  /@motionone/vue@10.16.4:
-    resolution: {integrity: sha512-z10PF9JV6SbjFq+/rYabM+8CVlMokgl8RFGvieSGNTmrkQanfHn+15XBrhG3BgUfvmTeSeyShfOHpG0i9zEdcg==}
-    deprecated: Motion One for Vue is deprecated. Use Oku Motion instead https://oku-ui.com/motion
-    dependencies:
-      '@motionone/dom': 10.18.0
-      tslib: 2.8.1
-
   /@msgpack/msgpack@3.1.2:
     resolution: {integrity: sha512-JEW4DEtBzfe8HvUYecLU9e6+XJnKDlUAIve8FvPzF3Kzs6Xo/KuZkZJsDH0wJXl/qEZbeeE7edxDNY3kMs39hQ==}
+    engines: {node: '>= 18'}
+
+  /@msgpack/msgpack@3.1.3:
+    resolution: {integrity: sha512-47XIizs9XZXvuJgoaJUIE2lFoID8ugvc0jzSHP+Ptfk8nTbnR8g788wv48N03Kx0UkAv559HWRQ3yzOgzlRNUA==}
     engines: {node: '>= 18'}
 
   /@noble/ciphers@1.2.1:
@@ -3842,6 +3787,12 @@ packages:
 
   /@noble/curves@1.9.2:
     resolution: {integrity: sha512-HxngEd2XUcg9xi20JkwlLCtYwfoFw4JGkuZpT+WlsPD4gB/cxkvTD8fSsoAnphGZhFdZYKeQIPCuFlWPm1uE0g==}
+    engines: {node: ^14.21.3 || >=16}
+    dependencies:
+      '@noble/hashes': 1.8.0
+
+  /@noble/curves@1.9.7:
+    resolution: {integrity: sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==}
     engines: {node: ^14.21.3 || >=16}
     dependencies:
       '@noble/hashes': 1.8.0
@@ -3961,8 +3912,8 @@ packages:
       url-parse: 1.5.10
     dev: false
 
-  /@real-token/aa-core@2.1.0-alpha.10(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
-    resolution: {integrity: sha512-UPMdfAb4eNTyivks7RSD/M82QtwSUGS8Q15aXBcsseyNMsKP4+uZrD1YTCu9JzWV0YzlSIulZektPjB4pDi1cg==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.10/77910d7f3f2fa5dd5dab7f18a238e41e9e9f0e76}
+  /@real-token/aa-core@2.1.0-alpha.11(@types/react@18.3.23)(@web3auth/modal@10.2.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)(wagmi@2.16.1):
+    resolution: {integrity: sha512-TG2BW+gZ1kRwTQDGu8n1WTVnukPLf/2I50FphvC4aoKFXPcir7r57WtDLSuvFiTchpY8vvTZdYPmFCA5vR0DQA==, tarball: https://npm.pkg.github.com/download/@real-token/aa-core/2.1.0-alpha.11/985b60c7237013493123a7abd61c68fa6bf2744f}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -3975,15 +3926,14 @@ packages:
       '@babel/runtime': 7.27.6
       '@etherspot/modular-sdk': 2.0.6
       '@etherspot/prime-sdk': 1.9.2(graphql@15.10.1)(react-dom@18.3.1)(react@18.3.1)(subscriptions-transport-ws@0.9.19)
-      '@reown/walletkit': 1.2.6(typescript@5.8.3)
+      '@reown/walletkit': 1.5.0(typescript@5.8.3)
       '@solana/web3.js': 1.98.4(typescript@5.8.3)
       '@tanstack/react-query': 5.80.7(react@18.3.1)
       '@wagmi/core': 2.18.1(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0)(viem@2.29.4)
-      '@walletconnect/core': 2.21.8(typescript@5.8.3)
+      '@walletconnect/core': 2.23.4(typescript@5.8.3)
       '@walletconnect/jsonrpc-utils': 1.0.8
-      '@walletconnect/modal': 2.7.0(@types/react@18.3.23)(react@18.3.1)
-      '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@5.8.3)
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/utils': 2.23.4(typescript@5.8.3)
       '@web3auth/modal': 10.2.0(@babel/runtime@7.27.6)(@solana/web3.js@1.98.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)(viem@2.29.4)
       graphql: 15.10.1
       prettier: 3.5.3
@@ -4015,6 +3965,7 @@ packages:
       - encoding
       - immer
       - ioredis
+      - react-native
       - typescript
       - uploadthing
       - use-sync-external-store
@@ -4276,16 +4227,17 @@ packages:
       - utf-8-validate
       - zod
 
-  /@reown/walletkit@1.2.6(typescript@5.8.3):
-    resolution: {integrity: sha512-tDhp1iKGIk1aALVhxEuVw9RUCrjePtoxMRKom03eVwH86dFqlcjItvJ3l4Foe0lULV3cYk22qp6bH1QW1qW6jw==}
+  /@reown/walletkit@1.5.0(typescript@5.8.3):
+    resolution: {integrity: sha512-W2+dUgNqOQ3JE+woHkCS5uZR0a6swZqLZmsyHvrJLQcI24DBdc21ecnWkhyyLqFmXv8Kw++c1TKfZon5eSGgqg==}
     dependencies:
-      '@walletconnect/core': 2.21.2(typescript@5.8.3)
+      '@walletconnect/core': 2.23.4(typescript@5.8.3)
       '@walletconnect/jsonrpc-provider': 1.0.14
       '@walletconnect/jsonrpc-utils': 1.0.8
-      '@walletconnect/logger': 2.1.2
-      '@walletconnect/sign-client': 2.21.2(typescript@5.8.3)
-      '@walletconnect/types': 2.21.2
-      '@walletconnect/utils': 2.21.2(typescript@5.8.3)
+      '@walletconnect/logger': 3.0.2
+      '@walletconnect/pay': 1.0.2(typescript@5.8.3)
+      '@walletconnect/sign-client': 2.23.4(typescript@5.8.3)
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/utils': 2.23.4(typescript@5.8.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -4305,6 +4257,7 @@ packages:
       - bufferutil
       - db0
       - ioredis
+      - react-native
       - typescript
       - uploadthing
       - utf-8-validate
@@ -5454,8 +5407,8 @@ packages:
       - utf-8-validate
       - zod
 
-  /@walletconnect/core@2.21.2(typescript@5.8.3):
-    resolution: {integrity: sha512-t7iW+VYkNM6sO0F6G8n9qZ/32RtM4LTeye/XqfFOeoUaWzuu2xk7iR7oy1o04cu5lLy6+OV1xKDMYcOR74z49Q==}
+  /@walletconnect/core@2.21.8(typescript@5.8.3):
+    resolution: {integrity: sha512-MD1SY7KAeHWvufiBK8C1MwP9/pxxI7SnKi/rHYfjco2Xvke+M+Bbm2OzvuSN7dYZvwLTkZCiJmBccTNVPCpSUQ==}
     engines: {node: '>=18'}
     dependencies:
       '@walletconnect/heartbeat': 1.2.2
@@ -5469,10 +5422,10 @@ packages:
       '@walletconnect/relay-auth': 1.1.0
       '@walletconnect/safe-json': 1.0.2
       '@walletconnect/time': 1.0.2
-      '@walletconnect/types': 2.21.2
-      '@walletconnect/utils': 2.21.2(typescript@5.8.3)
+      '@walletconnect/types': 2.21.8
+      '@walletconnect/utils': 2.21.8(typescript@5.8.3)
       '@walletconnect/window-getters': 1.0.1
-      es-toolkit: 1.38.0
+      es-toolkit: 1.39.3
       events: 3.3.0
       uint8arrays: 3.1.1
     transitivePeerDependencies:
@@ -5499,9 +5452,9 @@ packages:
       - utf-8-validate
       - zod
 
-  /@walletconnect/core@2.21.8(typescript@5.8.3):
-    resolution: {integrity: sha512-MD1SY7KAeHWvufiBK8C1MwP9/pxxI7SnKi/rHYfjco2Xvke+M+Bbm2OzvuSN7dYZvwLTkZCiJmBccTNVPCpSUQ==}
-    engines: {node: '>=18'}
+  /@walletconnect/core@2.23.4(typescript@5.8.3):
+    resolution: {integrity: sha512-qkzNvRfibl+r2GoPqKl+2MJLYA7ApEWyCmECJoK6IExeWyjKawAUC6Eo4cN0geCBefk9VSFRFEIVQ17vYWp0jQ==}
+    engines: {node: '>=18.20.8'}
     dependencies:
       '@walletconnect/heartbeat': 1.2.2
       '@walletconnect/jsonrpc-provider': 1.0.14
@@ -5509,15 +5462,15 @@ packages:
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/jsonrpc-ws-connection': 1.0.16
       '@walletconnect/keyvaluestorage': 1.1.1
-      '@walletconnect/logger': 2.1.2
+      '@walletconnect/logger': 3.0.2
       '@walletconnect/relay-api': 1.0.11
       '@walletconnect/relay-auth': 1.1.0
       '@walletconnect/safe-json': 1.0.2
       '@walletconnect/time': 1.0.2
-      '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@5.8.3)
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/utils': 2.23.4(typescript@5.8.3)
       '@walletconnect/window-getters': 1.0.1
-      es-toolkit: 1.39.3
+      es-toolkit: 1.44.0
       events: 3.3.0
       uint8arrays: 3.1.1
     transitivePeerDependencies:
@@ -5712,34 +5665,44 @@ packages:
       '@walletconnect/safe-json': 1.0.2
       pino: 7.11.0
 
-  /@walletconnect/modal-core@2.7.0(@types/react@18.3.23)(react@18.3.1):
-    resolution: {integrity: sha512-oyMIfdlNdpyKF2kTJowTixZSo0PGlCJRdssUN/EZdA6H6v03hZnf09JnwpljZNfir2M65Dvjm/15nGrDQnlxSA==}
+  /@walletconnect/logger@3.0.2:
+    resolution: {integrity: sha512-7wR3wAwJTOmX4gbcUZcFMov8fjftY05+5cO/d4cpDD8wDzJ+cIlKdYOXaXfxHLSYeDazMXIsxMYjHYVDfkx+nA==}
     dependencies:
-      valtio: 1.11.2(@types/react@18.3.23)(react@18.3.1)
-    transitivePeerDependencies:
-      - '@types/react'
-      - react
+      '@walletconnect/safe-json': 1.0.2
+      pino: 10.0.0
 
-  /@walletconnect/modal-ui@2.7.0(@types/react@18.3.23)(react@18.3.1):
-    resolution: {integrity: sha512-gERYvU7D7K1ANCN/8vUgsE0d2hnRemfAFZ2novm9aZBg7TEd/4EgB+AqbJ+1dc7GhOL6dazckVq78TgccHb7mQ==}
+  /@walletconnect/pay@1.0.2(typescript@5.8.3):
+    resolution: {integrity: sha512-8SvH5M4rC2v+PBXXZu4sQl21IV8dP3WDI4VVMVHYrHkrVCC9XQ0uZiVIIon4fjQoZDphrV/mZH16GPu5p8W8mw==}
+    peerDependencies:
+      react-native: '>=0.64.0'
+    peerDependenciesMeta:
+      react-native:
+        optional: true
     dependencies:
-      '@walletconnect/modal-core': 2.7.0(@types/react@18.3.23)(react@18.3.1)
-      lit: 2.8.0
-      motion: 10.16.2
-      qrcode: 1.5.3
+      '@walletconnect/logger': 3.0.2
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/utils': 2.23.4(typescript@5.8.3)
     transitivePeerDependencies:
-      - '@types/react'
-      - react
-
-  /@walletconnect/modal@2.7.0(@types/react@18.3.23)(react@18.3.1):
-    resolution: {integrity: sha512-RQVt58oJ+rwqnPcIvRFeMGKuXb9qkgSmwz4noF8JZGUym3gUAzVs+uW2NQ1Owm9XOJAV+sANrtJ+VoVq1ftElw==}
-    deprecated: Please follow the migration guide on https://docs.reown.com/appkit/upgrade/wcm
-    dependencies:
-      '@walletconnect/modal-core': 2.7.0(@types/react@18.3.23)(react@18.3.1)
-      '@walletconnect/modal-ui': 2.7.0(@types/react@18.3.23)(react@18.3.1)
-    transitivePeerDependencies:
-      - '@types/react'
-      - react
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/kv'
+      - aws4fetch
+      - db0
+      - ioredis
+      - typescript
+      - uploadthing
+      - zod
 
   /@walletconnect/relay-api@1.0.11:
     resolution: {integrity: sha512-tLPErkze/HmC9aCmdZOhtVmYZq1wKfWTJtygQHoWtgg722Jd4homo54Cs4ak2RUFUZIGO2RsOpIcWipaua5D5Q==}
@@ -5797,6 +5760,7 @@ packages:
 
   /@walletconnect/sign-client@2.21.0(typescript@5.8.3):
     resolution: {integrity: sha512-z7h+PeLa5Au2R591d/8ZlziE0stJvdzP9jNFzFolf2RG/OiXulgFKum8PrIyXy+Rg2q95U9nRVUF9fWcn78yBA==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
     dependencies:
       '@walletconnect/core': 2.21.0(typescript@5.8.3)
       '@walletconnect/events': 1.0.1
@@ -5867,17 +5831,17 @@ packages:
       - utf-8-validate
       - zod
 
-  /@walletconnect/sign-client@2.21.2(typescript@5.8.3):
-    resolution: {integrity: sha512-3cgd5j2itbbB9SiSk0lT3P/39vVW7PA8uN+BIouzlZw74RwQnzVu+Lms21hH2aY3S44EvnZoU2DtLjKNSTYc7g==}
+  /@walletconnect/sign-client@2.21.8(typescript@5.8.3):
+    resolution: {integrity: sha512-lTcUbMjQ0YUZ5wzCLhpBeS9OkWYgLLly6BddEp2+pm4QxiwCCU2Nao0nBJXgzKbZYQOgrEGqtdm/7ze67gjzRA==}
     dependencies:
-      '@walletconnect/core': 2.21.2(typescript@5.8.3)
+      '@walletconnect/core': 2.21.8(typescript@5.8.3)
       '@walletconnect/events': 1.0.1
       '@walletconnect/heartbeat': 1.2.2
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/logger': 2.1.2
       '@walletconnect/time': 1.0.2
-      '@walletconnect/types': 2.21.2
-      '@walletconnect/utils': 2.21.2(typescript@5.8.3)
+      '@walletconnect/types': 2.21.8
+      '@walletconnect/utils': 2.21.8(typescript@5.8.3)
       events: 3.3.0
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -5903,17 +5867,17 @@ packages:
       - utf-8-validate
       - zod
 
-  /@walletconnect/sign-client@2.21.8(typescript@5.8.3):
-    resolution: {integrity: sha512-lTcUbMjQ0YUZ5wzCLhpBeS9OkWYgLLly6BddEp2+pm4QxiwCCU2Nao0nBJXgzKbZYQOgrEGqtdm/7ze67gjzRA==}
+  /@walletconnect/sign-client@2.23.4(typescript@5.8.3):
+    resolution: {integrity: sha512-Q3hM8YmO+RHdT3R0MWyRBmekK5SNwpeheQQ+rWbu2dZFm9NyqfxJqwr6ZEhrZltFGTzCHrajTaFPrQnMb/LxuA==}
     dependencies:
-      '@walletconnect/core': 2.21.8(typescript@5.8.3)
+      '@walletconnect/core': 2.23.4(typescript@5.8.3)
       '@walletconnect/events': 1.0.1
       '@walletconnect/heartbeat': 1.2.2
       '@walletconnect/jsonrpc-utils': 1.0.8
-      '@walletconnect/logger': 2.1.2
+      '@walletconnect/logger': 3.0.2
       '@walletconnect/time': 1.0.2
-      '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@5.8.3)
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/utils': 2.23.4(typescript@5.8.3)
       events: 3.3.0
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -6031,35 +5995,6 @@ packages:
       - ioredis
       - uploadthing
 
-  /@walletconnect/types@2.21.2:
-    resolution: {integrity: sha512-4uvE01iPV5GgvHRREVb/gHc9qDoDwSgaI+eFO2hVO/HYZdg5KTQ50lbFX7VGuvdCG4YQqXd9PHHxfcS+/GLU0g==}
-    dependencies:
-      '@walletconnect/events': 1.0.1
-      '@walletconnect/heartbeat': 1.2.2
-      '@walletconnect/jsonrpc-types': 1.0.4
-      '@walletconnect/keyvaluestorage': 1.1.1
-      '@walletconnect/logger': 2.1.2
-      events: 3.3.0
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@react-native-async-storage/async-storage'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/kv'
-      - aws4fetch
-      - db0
-      - ioredis
-      - uploadthing
-
   /@walletconnect/types@2.21.8:
     resolution: {integrity: sha512-xuLIPrLxe6viMu8Uk28Nf0sgyMy+4oT0mroOjBe5Vqyft8GTiwUBKZXmrGU9uDzZsYVn1FXLO9CkuNHXda3ODA==}
     dependencies:
@@ -6089,8 +6024,38 @@ packages:
       - ioredis
       - uploadthing
 
+  /@walletconnect/types@2.23.4:
+    resolution: {integrity: sha512-6M+9JEXbZdnvdPc4tleXOFTV9al1brKojBpL5uzNCbzCxqvq273wWtW/eqPgTqH7BJam1nDVK8D02o63ECIooQ==}
+    dependencies:
+      '@walletconnect/events': 1.0.1
+      '@walletconnect/heartbeat': 1.2.2
+      '@walletconnect/jsonrpc-types': 1.0.4
+      '@walletconnect/keyvaluestorage': 1.1.1
+      '@walletconnect/logger': 3.0.2
+      events: 3.3.0
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/kv'
+      - aws4fetch
+      - db0
+      - ioredis
+      - uploadthing
+
   /@walletconnect/universal-provider@2.10.0:
     resolution: {integrity: sha512-jtVWf+AeTCqBcB3lCmWkv3bvSmdRCkQdo67GNoT5y6/pvVHMxfjgrJNBOUsWQMxpREpWDpZ993X0JRjsYVsMcA==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
     dependencies:
       '@walletconnect/jsonrpc-http-connection': 1.0.8
       '@walletconnect/jsonrpc-provider': 1.0.13
@@ -6126,6 +6091,7 @@ packages:
 
   /@walletconnect/universal-provider@2.21.0(typescript@5.8.3):
     resolution: {integrity: sha512-mtUQvewt+X0VBQay/xOJBvxsB3Xsm1lTwFjZ6WUwSOTR1X+FNb71hSApnV5kbsdDIpYPXeQUbGt2se1n5E5UBg==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
     dependencies:
       '@walletconnect/events': 1.0.1
       '@walletconnect/jsonrpc-http-connection': 1.0.8
@@ -6329,53 +6295,6 @@ packages:
       - utf-8-validate
       - zod
 
-  /@walletconnect/utils@2.21.2(typescript@5.8.3):
-    resolution: {integrity: sha512-gtKKa4qw33/XgKpO2ADoo8wgGml9lvMxY5B0LLWzlIma89dbDcx80LWT2Fd4+7CXb/PKt2/2kJLLGjD8MzKoqQ==}
-    dependencies:
-      '@msgpack/msgpack': 3.1.2
-      '@noble/ciphers': 1.3.0
-      '@noble/curves': 1.9.1
-      '@noble/hashes': 1.8.0
-      '@scure/base': 1.2.6
-      '@walletconnect/jsonrpc-utils': 1.0.8
-      '@walletconnect/keyvaluestorage': 1.1.1
-      '@walletconnect/relay-api': 1.0.11
-      '@walletconnect/relay-auth': 1.1.0
-      '@walletconnect/safe-json': 1.0.2
-      '@walletconnect/time': 1.0.2
-      '@walletconnect/types': 2.21.2
-      '@walletconnect/window-getters': 1.0.1
-      '@walletconnect/window-metadata': 1.0.1
-      blakejs: 1.2.1
-      bs58: 6.0.0
-      detect-browser: 5.3.0
-      query-string: 7.1.3
-      uint8arrays: 3.1.1
-      viem: 2.30.6(typescript@5.8.3)
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@react-native-async-storage/async-storage'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/kv'
-      - aws4fetch
-      - bufferutil
-      - db0
-      - ioredis
-      - typescript
-      - uploadthing
-      - utf-8-validate
-      - zod
-
   /@walletconnect/utils@2.21.8(typescript@5.8.3):
     resolution: {integrity: sha512-HtMraGJ9qXo55l4wGSM1aZvyz0XVv460iWhlRGAyRl9Yz8RQeKyXavDhwBfcTFha/6kwLxPExqQ+MURtKeVVXw==}
     dependencies:
@@ -6421,6 +6340,51 @@ packages:
       - typescript
       - uploadthing
       - utf-8-validate
+      - zod
+
+  /@walletconnect/utils@2.23.4(typescript@5.8.3):
+    resolution: {integrity: sha512-J2QTS1rga3/FE+REJUAk1HNnZZ2ubAA3VRZehsT3bfOn+OzT2+skQXVzU6ZFaiwPWsLtIOF3aSodZoc5bUrLyw==}
+    dependencies:
+      '@msgpack/msgpack': 3.1.3
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      '@scure/base': 1.2.6
+      '@walletconnect/jsonrpc-utils': 1.0.8
+      '@walletconnect/keyvaluestorage': 1.1.1
+      '@walletconnect/logger': 3.0.2
+      '@walletconnect/relay-api': 1.0.11
+      '@walletconnect/relay-auth': 1.1.0
+      '@walletconnect/safe-json': 1.0.2
+      '@walletconnect/time': 1.0.2
+      '@walletconnect/types': 2.23.4
+      '@walletconnect/window-getters': 1.0.1
+      '@walletconnect/window-metadata': 1.0.1
+      blakejs: 1.2.1
+      bs58: 6.0.0
+      detect-browser: 5.3.0
+      ox: 0.9.3(typescript@5.8.3)
+      uint8arrays: 3.1.1
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/kv'
+      - aws4fetch
+      - db0
+      - ioredis
+      - typescript
+      - uploadthing
       - zod
 
   /@walletconnect/window-getters@1.0.1:
@@ -6698,6 +6662,19 @@ packages:
     dependencies:
       typescript: 5.8.3
       zod: 3.22.4
+
+  /abitype@1.2.3(typescript@5.8.3):
+    resolution: {integrity: sha512-Ofer5QUnuUdTFsBRwARMoWKOH1ND5ehwYhJ3OJ/BQO+StkwQjHw0XyVh4vDttzHB7QOFhPHa/o413PJ82gU/Tg==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+      zod: ^3.22.0 || ^4.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      zod:
+        optional: true
+    dependencies:
+      typescript: 5.8.3
 
   /abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -7866,11 +7843,11 @@ packages:
   /es-toolkit@1.33.0:
     resolution: {integrity: sha512-X13Q/ZSc+vsO1q600bvNK4bxgXMkHcf//RxCmYDaRY5DAcT+eoXjY5hoAPGMdRnWQjvyLEcyauG3b6hz76LNqg==}
 
-  /es-toolkit@1.38.0:
-    resolution: {integrity: sha512-OT3AxczYYd3W50bCj4V0hKoOAfqIy9tof0leNQYekEDxVKir3RTVTJOLij7VAe6fsCNsGhC0JqIkURpMXTCSEA==}
-
   /es-toolkit@1.39.3:
     resolution: {integrity: sha512-Qb/TCFCldgOy8lZ5uC7nLGdqJwSabkQiYQShmw4jyiPk1pZzaYWTwaYKYP7EgLccWYgZocMrtItrwh683voaww==}
+
+  /es-toolkit@1.44.0:
+    resolution: {integrity: sha512-6penXeZalaV88MM3cGkFZZfOoLGWshWWfdy0tWw/RlVVyhvMaWSBTOvXNeiW3e5FwdS5ePW0LGEu17zT139ktg==}
 
   /es6-promise@4.2.8:
     resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==}
@@ -8551,9 +8528,6 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
-  /hey-listen@1.0.8:
-    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
-
   /hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
     dependencies:
@@ -9137,13 +9111,6 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lit-element@3.3.3:
-    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
-    dependencies:
-      '@lit-labs/ssr-dom-shim': 1.3.0
-      '@lit/reactive-element': 1.6.3
-      lit-html: 2.8.0
-
   /lit-element@4.2.0:
     resolution: {integrity: sha512-MGrXJVAI5x+Bfth/pU9Kst1iWID6GHDLEzFEnyULB/sFiRLgkd8NPK/PeeXxktA3T6EIIaq8U3KcbTU5XFcP2Q==}
     dependencies:
@@ -9151,22 +9118,10 @@ packages:
       '@lit/reactive-element': 2.1.0
       lit-html: 3.3.0
 
-  /lit-html@2.8.0:
-    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
-    dependencies:
-      '@types/trusted-types': 2.0.7
-
   /lit-html@3.3.0:
     resolution: {integrity: sha512-RHoswrFAxY2d8Cf2mm4OZ1DgzCoBKUKSPvA1fhtSELxUERq2aQQ2h05pO9j81gS1o7RIRJ+CePLogfyahwmynw==}
     dependencies:
       '@types/trusted-types': 2.0.7
-
-  /lit@2.8.0:
-    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
-    dependencies:
-      '@lit/reactive-element': 1.6.3
-      lit-element: 3.3.3
-      lit-html: 2.8.0
 
   /lit@3.3.0:
     resolution: {integrity: sha512-DGVsqsOIHBww2DqnuZzW7QsuCdahp50ojuDaBPC7jUDRpYoH0z7kHBBYZewRzer75FwtrkmkKk7iOAwSaWdBmw==}
@@ -9358,16 +9313,6 @@ packages:
     dependencies:
       typescript: 5.8.3
 
-  /motion@10.16.2:
-    resolution: {integrity: sha512-p+PurYqfUdcJZvtnmAqu5fJgV2kR0uLFQuBKtLeFVTrYEVllI99tiOTSefVNYuip9ELTEkepIIDftNdze76NAQ==}
-    dependencies:
-      '@motionone/animation': 10.18.0
-      '@motionone/dom': 10.18.0
-      '@motionone/svelte': 10.16.4
-      '@motionone/types': 10.17.1
-      '@motionone/utils': 10.18.0
-      '@motionone/vue': 10.16.4
-
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -9530,6 +9475,10 @@ packages:
   /on-exit-leak-free@0.2.0:
     resolution: {integrity: sha512-dqaz3u44QbRXQooZLTUKU41ZrzYrcvLISVgbrzbyCMxpmSLJvZ3ZamIJIZ29P6OhZIkNIQKosdeM6t1LYbA9hg==}
 
+  /on-exit-leak-free@2.1.2:
+    resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
+    engines: {node: '>=14.0.0'}
+
   /on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -9660,6 +9609,26 @@ packages:
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
       abitype: 1.0.8(typescript@5.8.3)(zod@3.22.4)
+      eventemitter3: 5.0.1
+      typescript: 5.8.3
+    transitivePeerDependencies:
+      - zod
+
+  /ox@0.9.3(typescript@5.8.3):
+    resolution: {integrity: sha512-KzyJP+fPV4uhuuqrTZyok4DC7vFzi7HLUFiUNEmpbyh59htKWkOC98IONC1zgXJPbHAhQgqs6B0Z6StCGhmQvg==}
+    peerDependencies:
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.0
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.1
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
+      abitype: 1.2.3(typescript@5.8.3)
       eventemitter3: 5.0.1
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -9857,8 +9826,32 @@ packages:
       duplexify: 4.1.3
       split2: 4.2.0
 
+  /pino-abstract-transport@2.0.0:
+    resolution: {integrity: sha512-F63x5tizV6WCh4R6RHyi2Ml+M70DNRXt/+HANowMflpgGFMAym/VKm6G7ZOQRjqN7XbGxK1Lg9t6ZrtzOaivMw==}
+    dependencies:
+      split2: 4.2.0
+
   /pino-std-serializers@4.0.0:
     resolution: {integrity: sha512-cK0pekc1Kjy5w9V2/n+8MkZwusa6EyyxfeQCB799CQRhRt/CqYKiWs5adeu8Shve2ZNffvfC/7J64A2PJo1W/Q==}
+
+  /pino-std-serializers@7.1.0:
+    resolution: {integrity: sha512-BndPH67/JxGExRgiX1dX0w1FvZck5Wa4aal9198SrRhZjH3GxKQUKIBnYJTdj2HDN3UQAS06HlfcSbQj2OHmaw==}
+
+  /pino@10.0.0:
+    resolution: {integrity: sha512-eI9pKwWEix40kfvSzqEP6ldqOoBIN7dwD/o91TY5z8vQI12sAffpR/pOqAD1IVVwIVHDpHjkq0joBPdJD0rafA==}
+    hasBin: true
+    dependencies:
+      atomic-sleep: 1.0.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 2.0.0
+      pino-std-serializers: 7.1.0
+      process-warning: 5.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      slow-redact: 0.3.2
+      sonic-boom: 4.2.0
+      thread-stream: 3.1.0
 
   /pino@7.11.0:
     resolution: {integrity: sha512-dMACeu63HtRLmCG8VKdy4cShCPKaYDR4youZqoSWLxl5Gu99HUw8bw75thbPv9Nip+H+QYX8o3ZJbTdVZZ2TVg==}
@@ -10016,6 +10009,9 @@ packages:
   /process-warning@1.0.0:
     resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
 
+  /process-warning@5.0.0:
+    resolution: {integrity: sha512-a39t9ApHNx2L4+HBnQKqxxHNs1r7KF+Intd8Q/g1bUh6q0WIp9voPXJ/x0j+ZL45KF1pJd9+q2jLIRMfvEshkA==}
+
   /process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
@@ -10042,9 +10038,6 @@ packages:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
     dev: false
-
-  /proxy-compare@2.5.1:
-    resolution: {integrity: sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==}
 
   /proxy-compare@2.6.0:
     resolution: {integrity: sha512-8xuCeM3l8yqdmbPoYeLbrAXCBWu19XEYc5/F28f5qOaoAIMyfmBUkl5axiK+x9olUvRlcekvnm98AP9RDngOIw==}
@@ -10408,6 +10401,10 @@ packages:
 
   /real-require@0.1.0:
     resolution: {integrity: sha512-r/H9MzAWtrv8aSVjPCMFpDMl5q66GqtmmRkRjpHTsp4zBAa+snZyiQNlMONiUmEJcsnaw0wCauJ2GWODr/aFkg==}
+    engines: {node: '>= 12.13.0'}
+
+  /real-require@0.2.0:
+    resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
     engines: {node: '>= 12.13.0'}
 
   /reflect-metadata@0.1.14:
@@ -10885,6 +10882,9 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
+  /slow-redact@0.3.2:
+    resolution: {integrity: sha512-MseHyi2+E/hBRqdOi5COy6wZ7j7DxXRz9NkseavNYSvvWC06D8a5cidVZX3tcG5eCW3NIyVU4zT63hw0Q486jw==}
+
   /socket.io-client@4.8.1:
     resolution: {integrity: sha512-hJVXfu3E28NmzGk8o1sHhN3om52tRvwYeidbj7xKy2eIIse5IoKX3USlS6Tqt3BHAtflLIkCQBkzVrEEfWUyYQ==}
     engines: {node: '>=10.0.0'}
@@ -10909,6 +10909,11 @@ packages:
 
   /sonic-boom@2.8.0:
     resolution: {integrity: sha512-kuonw1YOYYNOve5iHdSahXPOK49GqwA+LZhI6Wz/l0rP57iKyXXIHaRagOBHAPmGwJC6od2Z9zgvZ5loSgMlVg==}
+    dependencies:
+      atomic-sleep: 1.0.0
+
+  /sonic-boom@4.2.0:
+    resolution: {integrity: sha512-INb7TM37/mAcsGmc9hyyI6+QR3rR1zVRu36B0NeGXKnOOLiZOfER5SA+N7X7k3yUYRzLWafduTDvJAfDswwEww==}
     dependencies:
       atomic-sleep: 1.0.0
 
@@ -11141,6 +11146,11 @@ packages:
     resolution: {integrity: sha512-UkEhKIg2pD+fjkHQKyJO3yoIvAP3N6RlNFt2dUhcS1FGvCD1cQa1M/PGknCLFIyZdtJOWQjejp7bdNqmN7zwdA==}
     dependencies:
       real-require: 0.1.0
+
+  /thread-stream@3.1.0:
+    resolution: {integrity: sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==}
+    dependencies:
+      real-require: 0.2.0
 
   /tightrope@0.2.0:
     resolution: {integrity: sha512-Kw36UHxJEELq2VUqdaSGR2/8cAsPgMtvX8uGVU6Jk26O66PhXec0A5ZnRYs47btbtwPDpXXF66+Fo3vimCM9aQ==}
@@ -11611,23 +11621,6 @@ packages:
     resolution: {integrity: sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A==}
     engines: {node: '>= 0.10'}
 
-  /valtio@1.11.2(@types/react@18.3.23)(react@18.3.1):
-    resolution: {integrity: sha512-1XfIxnUXzyswPAPXo1P3Pdx2mq/pIqZICkWN60Hby0d9Iqb+MEIpqgYVlbflvHdrp2YR/q3jyKWRPJJ100yxaw==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      '@types/react': '>=16.8'
-      react: '>=16.8'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-    dependencies:
-      '@types/react': 18.3.23
-      proxy-compare: 2.5.1
-      react: 18.3.1
-      use-sync-external-store: 1.2.0(react@18.3.1)
-
   /valtio@1.13.2(@types/react@18.3.23)(react@18.3.1):
     resolution: {integrity: sha512-Qik0o+DSy741TmkqmRfjq+0xpZBXi/Y6+fXZLn0xNF1z/waFMbE3rkivv5Zcf9RrMUp6zswf2J7sbh2KBlba5A==}
     engines: {node: '>=12.20.0'}
@@ -11690,28 +11683,6 @@ packages:
       ox: 0.6.9(typescript@5.8.3)(zod@3.22.4)
       typescript: 5.8.3
       ws: 8.18.1
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-      - zod
-
-  /viem@2.30.6(typescript@5.8.3):
-    resolution: {integrity: sha512-N3vGy3pZ+EVgQRuWqQhZPFXxQE8qMRrBd3uM+KLc1Ub2w6+vkyr7umeWQCM4c+wlsCdByUgh2630MDMLquMtpg==}
-    peerDependencies:
-      typescript: '>=5.0.4'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@noble/curves': 1.9.1
-      '@noble/hashes': 1.8.0
-      '@scure/bip32': 1.7.0
-      '@scure/bip39': 1.6.0
-      abitype: 1.0.8(typescript@5.8.3)(zod@3.22.4)
-      isows: 1.0.7(ws@8.18.2)
-      ox: 0.7.1(typescript@5.8.3)
-      typescript: 5.8.3
-      ws: 8.18.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
