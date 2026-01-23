@@ -5,7 +5,7 @@ import { ContextModalProps } from "@mantine/modals";
 import { Flex, LoadingOverlay, Text } from "@mantine/core";
 import { LanguageSwitcher } from "./Buttons/LanguageSwitcher";
 import { RealTokenLogo } from "../assets/RealtokenLogo/RealTokenLogo";
-import { merge } from "lodash";
+import { merge } from "lodash-es";
 import { useMemo } from "react";
 import { AaModalConfig, defaultAaModalConfig } from "@real-token/types";
 import { ConnectionMode } from "./ConnectionMode";

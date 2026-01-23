@@ -52,6 +52,7 @@ export interface TransactionAddedEvent {
   type: TransactionType;
   index: number;
   data: AddTransactionParams;
+  wcEventId?: number; // WalletConnect event ID for correlation
 }
 export interface TransactionSuccessEvent extends SuccessEvent {
   type: TransactionType;
@@ -473,5 +474,42 @@ export class RealtokenWeb3TxManager extends EventEmitter {
   // Méthode pour récupérer les transactions actives
   getActiveTransactions(): TransactionAddedEvent[] {
     return Array.from(this.activeTransactions.values());
+  }
+
+  // Register an existing WC transaction (already in txs.wc)
+  // without calling addTransactionFn (which would re-add it to the cart)
+  registerWcTransaction(
+    transactionId: string,
+    index: number,
+    wcEventId: number,
+    data?: AddTransactionParams
+  ): void {
+    this.activeTransactions.set(transactionId, {
+      transactionId,
+      type: TxType.WC,
+      index,
+      data: data || { to: "0x" as `0x${string}` },
+      wcEventId,
+    });
+  }
+
+  // Remove a WC transaction from the registry
+  unregisterWcTransaction(transactionId: string): void {
+    this.activeTransactions.delete(transactionId);
+  }
+
+  // Find a WC transaction by its WalletConnect event ID
+  getTransactionByWcEventId(wcEventId: number): TransactionAddedEvent | undefined {
+    return Array.from(this.activeTransactions.values()).find(
+      (tx) => tx.wcEventId === wcEventId
+    );
+  }
+
+  // Update the index of a WC transaction (when other transactions are removed)
+  updateWcTransactionIndex(transactionId: string, newIndex: number): void {
+    const tx = this.activeTransactions.get(transactionId);
+    if (tx) {
+      tx.index = newIndex;
+    }
   }
 }

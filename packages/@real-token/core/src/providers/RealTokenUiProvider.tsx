@@ -3,7 +3,7 @@ import { RealTokenUiNetworkConfig, SHOW_NETWORKS } from "../types/networks";
 import { NetworkId } from "../constants";
 import { AaModalConfig, defaultAaModalConfig } from "@real-token/types";
 import { Env } from "../types/env";
-import { merge } from "lodash";
+import { merge } from "lodash-es";
 
 interface RealTokenUiContextProps<
   T extends RealTokenUiNetworkConfig = RealTokenUiNetworkConfig,

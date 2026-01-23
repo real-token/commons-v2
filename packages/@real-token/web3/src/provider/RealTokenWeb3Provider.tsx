@@ -4,7 +4,7 @@ import { AAClientConfig } from "@real-token/aa-core";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { merge } from "lodash";
+import { merge } from "lodash-es";
 import { Web3Provider } from "./Web3Provider";
 import {
   RealTokenWeb3Config,

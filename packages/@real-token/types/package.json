@@ -1,6 +1,7 @@
 {
   "name": "@real-token/types",
   "version": "3.1.4",
+  "type": "module",
   "description": "",
   "repository": {
     "type": "git",

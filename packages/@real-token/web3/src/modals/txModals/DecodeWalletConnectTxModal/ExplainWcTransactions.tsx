@@ -22,26 +22,29 @@ export const ExplainWcTransactions = ({
 
   const [index, setIndex] = useState<number>(0);
 
-  // Récupérer les transactions actives du TxManager
-  const activeTransactions = txManager.getActiveTransactions();
-
-  const activeTx = useMemo(() => {
-    return activeTransactions[index];
-  }, [activeTransactions, index]);
-
   const tx = useMemo(() => {
     return txs[index];
   }, [txs, index]);
 
+  // Find the matching transaction in TxManager by WC event ID
+  const activeTx = useMemo(() => {
+    if (!tx) return undefined;
+    return txManager.getTransactionByWcEventId(tx.event.id);
+  }, [tx, txManager]);
+
   const chainId = useChainId();
 
   const isPersonalSign =
-    tx.event.params.request.method == EIP155_SIGNING_METHODS.PERSONAL_SIGN;
+    tx?.event.params.request.method == EIP155_SIGNING_METHODS.PERSONAL_SIGN;
 
   const { decodeData, decodeLoading, isError, refetch } =
     useDecodeWalletConnectTransactions(tx, chainId);
 
   const confirm = useCallback(() => {
+    if (!activeTx) {
+      console.error("No active transaction found for WC event");
+      return;
+    }
     txManager.emitTransactionConfirm({
       transactionId: activeTx.transactionId,
     });
@@ -53,6 +56,10 @@ export const ExplainWcTransactions = ({
   }, [txManager, activeTx, index, txs.length]);
 
   const refuse = useCallback(() => {
+    if (!activeTx) {
+      console.error("No active transaction found for WC event");
+      return;
+    }
     txManager.emitTransactionRefused({
       transactionId: activeTx.transactionId,
     });
