@@ -43,7 +43,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
-    "@real-token/aa-core": "2.1.0-alpha.11",
+    "@real-token/aa-core": "2.1.0-alpha.12",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "esbuild": "^0.20.2",
@@ -53,7 +53,7 @@
     "typescript": "^5.6.2"
   },
   "peerDependencies": {
-    "@real-token/aa-core": "2.1.0-alpha.11",
+    "@real-token/aa-core": "2.1.0-alpha.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
