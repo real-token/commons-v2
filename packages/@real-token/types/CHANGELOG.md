@@ -1,5 +1,12 @@
 # @real-token/types
 
+## 3.1.5
+
+### Patch Changes
+
+- 8220447: fix: web3auth conf sanitize\
+  fix: local env cannot connect
+
 ## 3.1.4
 
 ### Patch Changes
