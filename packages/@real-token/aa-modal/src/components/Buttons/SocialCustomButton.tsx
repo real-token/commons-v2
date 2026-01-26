@@ -63,7 +63,7 @@ export const SocialCustomButton = ({
     mutationFn: async () => {
       try {
         if (!authConnectionId) {
-          throw new Error("Auth connection ID not found");
+          console.warn("Auth connection ID not found");
         }
         await login({
           toggleAA: true,
@@ -72,7 +72,7 @@ export const SocialCustomButton = ({
         });
         await connectTo(WALLET_CONNECTORS.AUTH, {
           authConnection: socialConnectorName,
-          authConnectionId,
+          authConnectionId: authConnectionId || undefined,
         });
       } catch (error) {
         throw error;
@@ -92,7 +92,11 @@ export const SocialCustomButton = ({
 
   if (variant == "compact") {
     return (
-      <ModalButtonCompact onClick={() => mutateAsync()} w={"100%"} loading={isLoading}>
+      <ModalButtonCompact
+        onClick={() => mutateAsync()}
+        w={"100%"}
+        loading={isLoading}
+      >
         {loginProvidersToLogo.get(socialConnectorName)}
       </ModalButtonCompact>
     );
