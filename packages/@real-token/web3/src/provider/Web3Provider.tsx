@@ -18,6 +18,29 @@ import {
   getInitialState,
 } from "@real-token/aa-core";
 
+// Remove non-serializable properties (React components) from networks
+// These cannot be passed via postMessage to Web3Auth iframe
+const sanitizeConfigForWeb3Auth = (config: AAClientConfig): AAClientConfig => {
+  if (!config.torusConfig?.networks) return config;
+
+  const sanitizedNetworks = config.torusConfig.networks.map((network) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { chainLogo, v2Logo, ...serializableNetwork } = network as Record<
+      string,
+      unknown
+    >;
+    return serializableNetwork;
+  });
+
+  return {
+    ...config,
+    torusConfig: {
+      ...config.torusConfig,
+      networks: sanitizedNetworks,
+    },
+  } as AAClientConfig;
+};
+
 export const Web3Provider = ({
   children,
   config,
@@ -26,9 +49,15 @@ export const Web3Provider = ({
   config: RealTokenWeb3Config;
   aaClientConfig: AAClientConfig;
 }) => {
-  const { web3authConfig } = useMemo(
-    () => getInitialState(aaClientConfig),
+  // Sanitize config to remove non-serializable properties before passing to Web3Auth
+  const sanitizedAaClientConfig = useMemo(
+    () => sanitizeConfigForWeb3Auth(aaClientConfig),
     [aaClientConfig]
+  );
+
+  const { web3authConfig } = useMemo(
+    () => getInitialState(sanitizedAaClientConfig),
+    [sanitizedAaClientConfig]
   );
 
   const [cookies] = useCookies(["cookie"]);
@@ -37,16 +66,13 @@ export const Web3Provider = ({
     return cookieToWeb3AuthState(cookies.cookie);
   }, [cookies]);
 
-  console.log("aaClientConfig", aaClientConfig);
-  console.log("torusConfig", aaClientConfig.torusConfig);
-
   return (
     <Web3AuthProvider config={web3authConfig} initialState={initialState}>
       <WagmiProvider>
-        <AAProvider config={aaClientConfig}>
+        <AAProvider config={sanitizedAaClientConfig}>
           <RealTokenWeb3ConfigProvider
             config={config}
-            authProviderConfig={aaClientConfig.torusConfig.loginConfig}
+            authProviderConfig={sanitizedAaClientConfig.torusConfig?.loginConfig}
           >
             <TxManagerProvider>
               <Web3ProviderInner config={config}>{children}</Web3ProviderInner>
