@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 3.1.7
+
+### Patch Changes
+
+- 5c90ff2: feat: option to hide wallet-connect buton and to display wallet amount
+
 ## 3.1.6
 
 ### Patch Changes
@@ -80,24 +86,19 @@
 ### Patch Changes
 
 - a9eeeaf: fix(monorepo):
-
   - trubopack config, cache now working
 
   feat(ui-component):
-
   - CopyToAddress, ManageAaAccounts, WatchAddress wallet menu items, WatchWalletModal
 
   feat(web3):
-
   - readOnly connector and rainbow-kit wallet
   - hook and modals to check last sdk version
 
   feat(aa-modal):
-
   - ReadOnly connection mode
 
   feat(i18n-locales):
-
   - modals translations
 
 ## 2.0.22
@@ -123,24 +124,20 @@
 ### Patch Changes
 
 - 434832c: fix(aa-modal):
-
   - Tabs translations not working
   - LanguageSwitcher not working at init
   - Remove connectors name from config. Connectors are now get from aa-core trough wagmi.
   - PostCSS not in esbuild causing wrong css style applied to components
 
   fix(commons-website-examples):
-
   - Update deps
   - Fix development server: Buffer polyfill
 
   fix(web3):
-
   - Decoding crashing
   - WC Decoding decodes AA transactions instead of WC
 
   All fix:
-
   - Upgrade aa-core to last version
   - Upgrade wagmi peerDeps version
 
@@ -161,16 +158,13 @@
 ### Patch Changes
 
 - 321a0c0: feat(aa-core):
-
   - add env to UiProvider
   - add aaModalConfig to UiProvider
 
   feat(ui-components):
-
   - connect button doing nothing
 
   fix(aa-modal):
-
   - export config types
   - export default config
 

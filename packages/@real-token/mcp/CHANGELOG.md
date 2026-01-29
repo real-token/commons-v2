@@ -1,5 +1,11 @@
 # @real-token/mcp
 
+## 3.1.7
+
+### Patch Changes
+
+- 5c90ff2: feat: option to hide wallet-connect buton and to display wallet amount
+
 ## 3.1.6
 
 ### Patch Changes
