@@ -3,6 +3,7 @@ import { useListenAaTx } from "../hooks/useListenAaTx";
 import { PropsWithChildren, useMemo } from "react";
 import { useCheckSdkIsLastVersion } from "../hooks/useCheckSdkIsLastVersion";
 import { TxManagerProvider } from "../context/TxManagerContext";
+import { TransactionCartProvider } from "../context/TransactionCartContext";
 import {
   RealTokenWeb3Config,
   RealTokenWeb3ConfigProvider,
@@ -18,19 +19,26 @@ import {
   getInitialState,
 } from "@real-token/aa-core";
 
-// Remove non-serializable properties (React components) from networks
-// These cannot be passed via postMessage to Web3Auth iframe
+// Extract only the properties expected by Web3Auth's ProviderConfig type
+// This ensures we only pass serializable data via postMessage to the Web3Auth iframe
+// ProviderConfig expects: chainNamespace, blockExplorerUrl, logo, tickerName, ticker,
+// rpcTarget, wsTarget, chainId, displayName, isTestnet, decimals
 const sanitizeConfigForWeb3Auth = (config: AAClientConfig): AAClientConfig => {
   if (!config.torusConfig?.networks) return config;
 
-  const sanitizedNetworks = config.torusConfig.networks.map((network) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { chainLogo, v2Logo, ...serializableNetwork } = network as Record<
-      string,
-      unknown
-    >;
-    return serializableNetwork;
-  });
+  const sanitizedNetworks = config.torusConfig.networks.map((network) => ({
+    chainNamespace: network.chainNamespace,
+    blockExplorerUrl: network.blockExplorerUrl,
+    logo: network.logo,
+    tickerName: network.tickerName,
+    ticker: network.ticker,
+    rpcTarget: network.rpcTarget,
+    wsTarget: network.wsTarget,
+    chainId: network.chainId,
+    displayName: network.displayName,
+    isTestnet: network.isTestnet,
+    decimals: network.decimals,
+  }));
 
   return {
     ...config,
@@ -75,7 +83,9 @@ export const Web3Provider = ({
             authProviderConfig={sanitizedAaClientConfig.torusConfig?.loginConfig}
           >
             <TxManagerProvider>
-              <Web3ProviderInner config={config}>{children}</Web3ProviderInner>
+              <TransactionCartProvider>
+                <Web3ProviderInner config={config}>{children}</Web3ProviderInner>
+              </TransactionCartProvider>
             </TxManagerProvider>
           </RealTokenWeb3ConfigProvider>
         </AAProvider>
