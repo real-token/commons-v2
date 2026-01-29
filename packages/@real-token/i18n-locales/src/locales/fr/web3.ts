@@ -1,4 +1,41 @@
 const web3 = {
+  cart: {
+    title: "Panier de transactions",
+    group: "groupe",
+    groups: "groupes",
+    transaction: "transaction",
+    transactions: "transactions",
+    status: {
+      pending: "En attente",
+      simulating: "Simulation...",
+      ready: "Prêt",
+      hasFailures: "Contient des échecs",
+      confirmed: "Confirmé",
+      rejected: "Rejeté",
+    },
+    simulation: {
+      success: "Réussira",
+      willRevert: "Échouera",
+      error: "Erreur",
+      dependsOnFailed: "Dépend d'une transaction échouée",
+      retry: "Réessayer",
+      remove: "Supprimer",
+      warningFailed: "{{count}} transaction(s) vont échouer. Veuillez vérifier avant de confirmer.",
+    },
+    gas: {
+      total: "Gas total estimé",
+      estimated: "Est.",
+    },
+    buttons: {
+      confirmAll: "Tout confirmer",
+      rejectAll: "Tout rejeter",
+      close: "Fermer",
+    },
+    empty: {
+      title: "Le panier est vide",
+      description: "Ajoutez des transactions à votre panier pour les regrouper et les vérifier avant de les envoyer.",
+    },
+  },
   decodingError: {
     title: "API de décodage non disponible",
     description:

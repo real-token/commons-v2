@@ -10,6 +10,7 @@ interface HeaderProps {
   currentWebsite?: Websites;
   newWebsite?: Website;
   disableHeaderMultisite?: boolean;
+  disableWalletConnect?: boolean;
   banner?: React.ReactElement;
   headerButtons?: React.ReactElement;
 }
@@ -18,6 +19,7 @@ export function Header({
   newWebsite,
   headerNav,
   disableHeaderMultisite = false,
+  disableWalletConnect = false,
   banner,
   headerButtons,
 }: HeaderProps) {
@@ -39,7 +41,11 @@ export function Header({
           />
         }
         nav={headerNav ?? undefined}
-        buttons={headerButtons ?? <HeaderButtons />}
+        buttons={
+          headerButtons ?? (
+            <HeaderButtons disableWalletConnect={disableWalletConnect} />
+          )
+        }
       />
       <Divider />
     </>

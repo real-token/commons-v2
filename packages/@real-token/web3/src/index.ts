@@ -9,3 +9,4 @@ export * from "./config";
 export * from "./context";
 export * from "./class";
 export * from "./abis";
+export * from "./types";

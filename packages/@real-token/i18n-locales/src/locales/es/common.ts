@@ -20,6 +20,7 @@ const common = {
     viewOn: "Ver en el explorador",
     disconnect: "Desconectar",
     network: "Red",
+    balance: "Saldo",
     DisabledGnosisSafe:
       'La conexión directa a Safe no es posible. Para conectarte a un GnosisSafe, por favor ve a safe.global y conéctate a tu Safe. En la sección "App", agrega una "aplicación personalizada" usando la URL del sitio web de yam (https://yam.realtoken.network). Podrás tener YAM directamente en la interfaz de tu Safe.',
     readOnly: {

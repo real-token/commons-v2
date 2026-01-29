@@ -1,6 +1,8 @@
 import { Group } from "@mantine/core";
 import { WalletMenu, SettingsMenu } from "../../menus";
 import { NetworkSelector } from "../../buttons/NetworkSelector/NetworkSelector";
+import { NativeBalanceButton } from "../../buttons/NativeBalanceButton";
+import { CartButton } from "../../cart";
 import { useAA } from "@real-token/aa-core";
 import {
   AaWalletConnectButton,
@@ -8,15 +10,25 @@ import {
   useIsAA,
 } from "@real-token/web3";
 
-export function HeaderButtons() {
+export interface HeaderButtonsProps {
+  disableWalletConnect?: boolean;
+}
+
+export function HeaderButtons({
+  disableWalletConnect = false,
+}: HeaderButtonsProps) {
   const { walletAddress } = useAA();
   const isAA = useIsAA();
 
   return (
     <Group gap={10}>
-      {isAA && walletAddress && <AaWalletConnectButton />}
+      {!disableWalletConnect && isAA && walletAddress && (
+        <AaWalletConnectButton />
+      )}
       <NetworkSelector />
+      {walletAddress && <NativeBalanceButton />}
       {walletAddress ? <WalletMenu /> : <AaConnectButton />}
+      {walletAddress && <CartButton />}
       <SettingsMenu />
     </Group>
   );

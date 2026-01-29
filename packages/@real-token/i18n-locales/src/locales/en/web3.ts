@@ -1,4 +1,41 @@
 const web3 = {
+  cart: {
+    title: "Transaction Cart",
+    group: "group",
+    groups: "groups",
+    transaction: "transaction",
+    transactions: "transactions",
+    status: {
+      pending: "Pending",
+      simulating: "Simulating...",
+      ready: "Ready",
+      hasFailures: "Has failures",
+      confirmed: "Confirmed",
+      rejected: "Rejected",
+    },
+    simulation: {
+      success: "Will succeed",
+      willRevert: "Will revert",
+      error: "Error",
+      dependsOnFailed: "Depends on failed transaction",
+      retry: "Retry",
+      remove: "Remove",
+      warningFailed: "{{count}} transaction(s) will fail. Please review before confirming.",
+    },
+    gas: {
+      total: "Total estimated gas",
+      estimated: "Est.",
+    },
+    buttons: {
+      confirmAll: "Confirm All",
+      rejectAll: "Reject All",
+      close: "Close",
+    },
+    empty: {
+      title: "Cart is empty",
+      description: "Add transactions to your cart to batch them together and review before sending.",
+    },
+  },
   decodingError: {
     title: "Decoding API not available",
     description:
