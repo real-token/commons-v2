@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.8
+
+### Patch Changes
+
+- adcb8de: fix: social buttons and socials logos
+- Updated dependencies [adcb8de]
+  - @real-token/web3@3.1.8
+
 ## 3.1.7
 
 ### Patch Changes

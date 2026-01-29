@@ -1,5 +1,16 @@
 # @real-token/ui-components
 
+## 3.1.8
+
+### Patch Changes
+
+- adcb8de: fix: social buttons and socials logos
+- Updated dependencies [adcb8de]
+  - @real-token/core@3.1.8
+  - @real-token/i18n-locales@3.1.8
+  - @real-token/types@3.1.8
+  - @real-token/web3@3.1.8
+
 ## 3.1.7
 
 ### Patch Changes
