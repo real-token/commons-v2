@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 3.1.6
+
+### Patch Changes
+
+- 59e3d5f: fix: wrong aa-core config sanitizing
+
 ## 3.1.5
 
 ### Patch Changes

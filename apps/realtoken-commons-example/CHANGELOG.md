@@ -1,5 +1,17 @@
 # @real-token/realtoken-commons-example
 
+## 3.1.6
+
+### Patch Changes
+
+- Updated dependencies [59e3d5f]
+  - @real-token/ui-components@3.1.6
+  - @real-token/i18n-locales@3.1.6
+  - @real-token/web3@3.1.6
+  - @real-token/aa-modal@3.1.6
+  - @real-token/core@3.1.6
+  - @real-token/types@3.1.6
+
 ## 3.1.5
 
 ### Patch Changes

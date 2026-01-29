@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.6
+
+### Patch Changes
+
+- 59e3d5f: fix: wrong aa-core config sanitizing
+- Updated dependencies [59e3d5f]
+  - @real-token/web3@3.1.6
+
 ## 3.1.5
 
 ### Patch Changes
