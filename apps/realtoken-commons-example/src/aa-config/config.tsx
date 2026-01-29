@@ -1,27 +1,15 @@
 import {
   AAClientConfig,
   TorusConfig,
-  LoginMethodConfigWithRainbowLogo,
 } from "@real-token/aa-core";
-import {
-  metaMaskWallet,
-  rabbyWallet,
-  walletConnectWallet,
-  coinbaseWallet,
-  ledgerWallet,
-  trustWallet,
-  frameWallet,
-} from "@rainbow-me/rainbowkit/wallets";
 import { EthereumLogo } from "@real-token/ui-components";
-import { googleLogo, discordLogo } from "@real-token/web3";
 import { RealTokenUiNetworkConfig } from "@real-token/core";
-import { REALTOKEN_AA_GROUP_NAME } from "@real-token/aa-modal";
 
 const env = import.meta.env.VITE_ENV;
 
 export const networks: RealTokenUiNetworkConfig[] = [
   {
-    logo: "",
+    logo: '',
     chainLogo: EthereumLogo,
     blockExplorerUrl: "https://sepolia.etherscan.io/",
     isTestnet: true,
@@ -34,55 +22,19 @@ export const networks: RealTokenUiNetworkConfig[] = [
     ticker: "ETH",
     tickerName: "Sepolia ETH",
     serverChainId: "eth",
+    fallbackRpcTargets: [],
+    fallbackWsTargets: []
   },
 ];
-
-const loginConfig: LoginMethodConfigWithRainbowLogo = {
-  google: {
-    name: "google",
-    authConnectionId: "realt-google",
-    authConnection: "google",
-    groupedAuthConnectionId: "",
-    rainbowLogo: async () => googleLogo,
-  },
-  discord: {
-    name: "discord",
-    authConnectionId: "realt-discord",
-    authConnection: "discord",
-    groupedAuthConnectionId: "",
-    rainbowLogo: async () => discordLogo,
-  },
-  email_passwordless: {
-    name: "email_passwordless",
-    authConnectionId: "realt-email_passwordless",
-    authConnection: "email_passwordless",
-    groupedAuthConnectionId: "",
-    rainbowLogo: async () => "",
-  },
-};
 
 const torusConfig: TorusConfig = {
   mfaLevel: "optional", // TODO en parler à web3auth
   networks,
   enableLogging: true,
-  loginConfig: loginConfig,
+  loginConfig: {}
 };
 
 export const aaClient: AAClientConfig = {
-  walletList: [
-    // {
-    //   groupName: REALTOKEN_AA_GROUP_NAME.AA_ADVANCED,
-    //   wallets: [ledgerWallet],
-    // },
-    {
-      groupName: REALTOKEN_AA_GROUP_NAME.EXTERNAL,
-      wallets: [rabbyWallet],
-    },
-    {
-      groupName: REALTOKEN_AA_GROUP_NAME.AA_ADVANCED_AND_EXTERNAL,
-      wallets: [metaMaskWallet],
-    },
-  ],
   uiConfig: {
     appName: "RealToken",
     appUrl: "https://realt.co",
@@ -97,7 +49,7 @@ export const aaClient: AAClientConfig = {
   },
   web3auth: {
     apiKey: import.meta.env.VITE_TORUS_API_KEY!,
-    network: "sapphire_mainnet",
+    network: "sapphire_devnet",
     uxMode: "popup",
   },
   guardians: [
