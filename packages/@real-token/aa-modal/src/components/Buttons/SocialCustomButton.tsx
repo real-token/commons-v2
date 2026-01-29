@@ -7,6 +7,12 @@ import {
   IconBrandDiscord,
   IconBrandTwitter,
   IconBrandApple,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandReddit,
+  IconBrandWechat,
+  IconBrandLine,
+  IconDeviceMobile,
 } from "@tabler/icons-react";
 import { ModalButton } from "./ModalButton/ModalButton";
 import { ModalButtonCompact } from "./ModalButton/ModalButtonCompact";
@@ -24,6 +30,12 @@ const loginProvidersToLogo: Map<AUTH_CONNECTION_TYPE, ReactNode> = new Map([
   ["discord", <IconBrandDiscord />],
   ["twitter", <IconBrandTwitter />],
   ["apple", <IconBrandApple />],
+  ["github", <IconBrandGithub />],
+  ["linkedin", <IconBrandLinkedin />],
+  ["reddit", <IconBrandReddit />],
+  ["wechat", <IconBrandWechat />],
+  ["line", <IconBrandLine />],
+  ["sms_passwordless", <IconDeviceMobile />],
 ]);
 
 export const SocialCustomButton = ({
