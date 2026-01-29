@@ -32,11 +32,13 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       >
         <MantineProviders modals={modals}>
           <Layout
-            newWebsite={{
-              name: "Realtoken commons example",
-              url: "#",
-              logo: Logo,
-              comingSoon: false,
+            header={{
+              newWebsite: {
+                name: "Realtoken commons example",
+                url: "#",
+                logo: Logo,
+                comingSoon: false,
+              },
             }}
           >
             <App />
