@@ -146,7 +146,7 @@ const esmConfig = merge(commonConfig, {
     outputModule: true,
   },
   externalsType: "module",
-  target: ["web", "es2020"],
+  target: ["web", "ES2021"],
 });
 
 module.exports = [esmConfig];

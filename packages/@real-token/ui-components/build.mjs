@@ -17,7 +17,7 @@ await esbuild.build({
   bundle: true,
   outfile: "dist/index.js",
   format: "esm",
-  target: ["es2020"],
+  target: ["ES2021"],
   platform: "browser",
   external,
   plugins: [
