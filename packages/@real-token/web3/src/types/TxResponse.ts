@@ -994,7 +994,8 @@ export declare type TypedDataActionName =
   | "send_token"
   | "permit1_revoke_token"
   | "swap_order"
-  | "approve_nft";
+  | "approve_nft"
+  | "multi_actions";
 export interface BuyNFTOrderAction {
   expire_at: string;
   pay_token: TokenItem;
@@ -1078,6 +1079,31 @@ export interface SubmitTokenApprovalModificationAction {
     logo_url: string;
   };
 }
+export interface TransactionAction {
+  type: string;
+  data:
+    | SwapAction
+    | ApproveAction
+    | SendAction
+    | SendNFTAction
+    | ApproveNFTAction
+    | RevokeNFTAction
+    | ApproveNFTCollectionAction
+    | RevokeNFTCollectionAction
+    | RevokeTokenApproveAction
+    | WrapTokenAction
+    | UnWrapTokenAction
+    | PushMultiSigAction
+    | CrossSwapAction
+    | CrossTokenAction
+    | RevokePermit2Action
+    | SwapOrderAction
+    | TransferOwnerAction
+    | MultiSwapAction
+    | SwapLimitPay
+    | null;
+}
+export declare type MultiAction = TransactionAction[];
 export interface ParseTypedDataResponse {
   action: {
     type: TypedDataActionName;
@@ -1100,7 +1126,8 @@ export interface ParseTypedDataResponse {
       | SendAction
       | SwapOrderAction
       | RevokeTokenApproveAction
-      | ApproveNFTAction;
+      | ApproveNFTAction
+      | MultiAction;
   } | null;
   log_id: string;
 }

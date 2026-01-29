@@ -3,7 +3,6 @@ import { useListenAaTx } from "../hooks/useListenAaTx";
 import { PropsWithChildren, useMemo } from "react";
 import { useCheckSdkIsLastVersion } from "../hooks/useCheckSdkIsLastVersion";
 import { TxManagerProvider } from "../context/TxManagerContext";
-import { TransactionCartProvider } from "../context/TransactionCartContext";
 import {
   RealTokenWeb3Config,
   RealTokenWeb3ConfigProvider,
@@ -83,9 +82,7 @@ export const Web3Provider = ({
             authProviderConfig={sanitizedAaClientConfig.torusConfig?.loginConfig}
           >
             <TxManagerProvider>
-              <TransactionCartProvider>
-                <Web3ProviderInner config={config}>{children}</Web3ProviderInner>
-              </TransactionCartProvider>
+              <Web3ProviderInner config={config}>{children}</Web3ProviderInner>
             </TxManagerProvider>
           </RealTokenWeb3ConfigProvider>
         </AAProvider>

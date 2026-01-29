@@ -1,8 +1,5 @@
-import {
-  ContractInfo,
-  ParseCommonResponse,
-} from "@rabby-wallet/rabby-api/dist/types";
-import { ExplainTxResponse } from "./TxResponse";
+import { ContractInfo } from "@rabby-wallet/rabby-api/dist/types";
+import { ExplainTxResponse, ParseCommonResponse } from "./TxResponse";
 import { ParsedTransactionActionData } from "@rabby-wallet/rabby-action";
 
 export interface Tx {
