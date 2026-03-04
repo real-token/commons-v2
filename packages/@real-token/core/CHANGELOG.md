@@ -1,5 +1,11 @@
 # @real-token/core
 
+## 3.1.9
+
+### Patch Changes
+
+- @real-token/types@3.1.9
+
 ## 3.1.8
 
 ### Patch Changes

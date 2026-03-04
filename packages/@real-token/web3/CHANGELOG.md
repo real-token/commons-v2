@@ -1,5 +1,20 @@
 # @real-token/web3
 
+## 3.1.9
+
+### Patch Changes
+
+- fix: WalletConnect modal crashes and active sessions display
+  - Add optional chaining for verifyContext.verified access across all WC components
+  - Support both flat and nested WC proposal formats (Tally compatibility)
+  - Add all WC permission method translations (en/fr/es)
+  - Fix React Query undefined return for personal_sign
+  - Fix duplicate Sign/Reject buttons in sign message modal
+  - Display active WC sessions using wcConnectedWebsiteMetadata
+  - @real-token/core@3.1.9
+  - @real-token/i18n-locales@3.1.9
+  - @real-token/types@3.1.9
+
 ## 3.1.8
 
 ### Patch Changes
