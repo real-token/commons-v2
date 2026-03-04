@@ -36,14 +36,14 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
 
   const {
     walletConnectPair,
-    wcClient,
+    wcConnectedWebsiteMetadata,
     sdkVersion,
     latestSdkVersion,
     proposals,
     proposalAction,
   } = useAA();
 
-  const activeSessions = wcClient?.getActiveSessions();
+  const activeSessions = wcConnectedWebsiteMetadata;
 
   const [showProposalSession, setShowProposalSession] =
     useState<boolean>(false);
@@ -52,8 +52,6 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
     () => proposals?.[sessionProposalIndex],
     [proposals, sessionProposalIndex]
   );
-  console.log(proposals);
-
   const wcEnabled = useMemo(() => {
     return sdkVersion == latestSdkVersion;
   }, [sdkVersion, latestSdkVersion]);
@@ -238,7 +236,7 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
       <Flex
         direction={"row"}
         justify={
-          Object.keys(activeSessions ?? {}).length > 0 && proposals?.length > 0
+          activeSessions?.length > 0 && proposals?.length > 0
             ? "space-between"
             : proposals?.length > 0
               ? "end"
@@ -246,10 +244,10 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
         }
         align={"center"}
       >
-        {activeSessions && Object.keys(activeSessions).length > 0 ? (
+        {activeSessions?.length > 0 ? (
           <Text fw={700} fz={20}>
             {t("activeConnections", {
-              count: Object.keys(activeSessions).length,
+              count: activeSessions.length,
             })}
           </Text>
         ) : undefined}
@@ -263,11 +261,11 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
           </Button>
         ) : undefined}
       </Flex>
-      {activeSessions && Object.keys(activeSessions).length > 0 ? (
+      {activeSessions?.length > 0 ? (
         <ScrollArea h={300}>
           <Flex direction={"column"} gap={"sm"}>
-            {Object.keys(activeSessions).map((sessionKey) => (
-              <ActiveConnectionPane key={sessionKey} sessionKey={sessionKey} />
+            {activeSessions.map((session) => (
+              <ActiveConnectionPane key={session.topic} sessionKey={session.topic} />
             ))}
           </Flex>
         </ScrollArea>
