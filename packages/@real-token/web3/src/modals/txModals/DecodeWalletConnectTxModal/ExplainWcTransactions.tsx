@@ -28,14 +28,14 @@ export const ExplainWcTransactions = ({
 
   // Find the matching transaction in TxManager by WC event ID
   const activeTx = useMemo(() => {
-    if (!tx) return undefined;
+    if (!tx?.event) return undefined;
     return txManager.getTransactionByWcEventId(tx.event.id);
   }, [tx, txManager]);
 
   const chainId = useChainId();
 
   const isPersonalSign =
-    tx?.event.params.request.method == EIP155_SIGNING_METHODS.PERSONAL_SIGN;
+    tx?.event?.params?.request?.method == EIP155_SIGNING_METHODS.PERSONAL_SIGN;
 
   const { decodeData, decodeLoading, isError, refetch } =
     useDecodeWalletConnectTransactions(tx, chainId);
@@ -77,7 +77,7 @@ export const ExplainWcTransactions = ({
       ) : decodeData ? (
         <>
           <ExplainTransactionHeader
-            url={tx.event.verifyContext.verified.origin}
+            url={tx.event.verifyContext?.verified?.origin}
           />
           {acceptedSignMethods.includes(tx.event.params.request.method) ? (
             <ExplainSignTransaction
@@ -90,7 +90,7 @@ export const ExplainWcTransactions = ({
           )}
         </>
       ) : undefined}
-      {!decodeLoading || isError ? (
+      {(!decodeLoading || isError) && !isPersonalSign ? (
         <Group>
           <Button
             w={{ base: "100%", md: "75%" }}

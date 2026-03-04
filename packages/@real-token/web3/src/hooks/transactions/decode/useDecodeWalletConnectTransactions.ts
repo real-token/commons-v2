@@ -30,8 +30,8 @@ export const useDecodeWalletConnectTransactions: UseDecodeWalletConnectTransacti
       isError,
       refetch,
     } = useQuery({
-      queryKey: ["decodeWcTransaction", tx.event.id],
-      enabled: !!walletAddress && !!chainId,
+      queryKey: ["decodeWcTransaction", tx?.event?.id],
+      enabled: !!walletAddress && !!chainId && !!tx?.event,
       retry: 1,
       queryFn: async () => {
         if (!walletAddress) throw new Error("Wallet address is required");
@@ -53,12 +53,12 @@ export const useDecodeWalletConnectTransactions: UseDecodeWalletConnectTransacti
         const txData = tx.event.params.request.params[0];
         const typedData = tx.event.params.request.params[1];
 
-        const origin = tx.event.verifyContext.verified.origin;
+        const origin = tx.event.verifyContext?.verified?.origin;
 
         if (
           tx.event.params.request.method == EIP155_SIGNING_METHODS.PERSONAL_SIGN
         ) {
-          return undefined;
+          return null;
         }
 
         const decodeResult = await decodeTransaction(

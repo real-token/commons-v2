@@ -100,8 +100,23 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
 
   if (showProposalSession && sessionProposal) {
     // "UNKNOWN" | "VALID" | "INVALID"
-    const validationStatus = sessionProposal.verifyContext.verified.validation;
-    const isScam = sessionProposal.verifyContext.verified.isScam ?? false;
+    const validationStatus =
+      sessionProposal.verifyContext?.verified?.validation ?? "UNKNOWN";
+    const isScam =
+      sessionProposal.verifyContext?.verified?.isScam ?? false;
+
+    // Support both formats: { params: { proposer, requiredNamespaces } } and { proposer, requiredNamespaces }
+    const proposal = sessionProposal as any;
+    const proposer =
+      proposal.params?.proposer ?? proposal.proposer;
+    const requiredNamespaces =
+      proposal.params?.requiredNamespaces ?? proposal.requiredNamespaces;
+    const optionalNamespaces =
+      proposal.params?.optionalNamespaces ?? proposal.optionalNamespaces;
+    const methods =
+      requiredNamespaces?.eip155?.methods ??
+      optionalNamespaces?.eip155?.methods ??
+      [];
 
     const buttonColor =
       validationStatus == "VALID"
@@ -139,7 +154,7 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
         ) : undefined}
         <Flex direction={"column"} align={"center"} gap={"xs"}>
           <Image
-            src={sessionProposal.params.proposer.metadata.icons[0]}
+            src={proposer?.metadata?.icons?.[0]}
             w={80}
             h={80}
             radius={"md"}
@@ -147,11 +162,11 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
           />
           <Title order={4} ta={"center"}>
             {t("sessionProposal.wantToConnect", {
-              name: sessionProposal.params.proposer.metadata.name,
+              name: proposer?.metadata?.name ?? "Unknown",
             })}
           </Title>
           <Text c={"dimmed"}>
-            {sessionProposal.params.proposer.metadata.url}
+            {proposer?.metadata?.url}
           </Text>
           <ValidationStatusBadge
             validationStatus={validationStatus}
@@ -159,7 +174,7 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
           />
         </Flex>
         <PermissionsRequested
-          permissions={sessionProposal.params.requiredNamespaces.eip155.methods}
+          permissions={methods}
         />
         <SecurityAlert validationStatus={validationStatus} isScam={isScam} />
         <Flex gap={"md"}>

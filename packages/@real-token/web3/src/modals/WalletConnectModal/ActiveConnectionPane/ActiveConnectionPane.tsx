@@ -25,7 +25,7 @@ export const ActiveConnectionPane = ({
     return (
       txs.wc.filter(
         (tx) =>
-          tx.event.verifyContext.verified.origin === session?.peer.metadata.url
+          tx.event.verifyContext?.verified?.origin === session?.peer.metadata.url
       ) ?? []
     );
   }, [txs, session]);
