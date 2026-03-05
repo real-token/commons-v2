@@ -1,5 +1,14 @@
 # @real-token/aa-modal
 
+## 3.1.10
+
+### Patch Changes
+
+- feat: handle auth request Wallet Connect
+  feat: ManageMFA menu item
+- Updated dependencies
+  - @real-token/web3@3.1.10
+
 ## 3.1.9
 
 ### Patch Changes

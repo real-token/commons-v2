@@ -1,5 +1,12 @@
 # @real-token/i18n-locales
 
+## 3.1.10
+
+### Patch Changes
+
+- feat: handle auth request Wallet Connect
+  feat: ManageMFA menu item
+
 ## 3.1.9
 
 ## 3.1.8
