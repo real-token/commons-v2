@@ -117,6 +117,19 @@ const modals = {
         refused: "Sesión rechazada",
       },
     },
+    authRequest: {
+      wantToAuthenticate: '"{{name}}" quiere autenticarse',
+      chains: "Cadenas solicitadas: {{count}}",
+      buttons: {
+        approve: "Aprobar",
+        reject: "Rechazar",
+      },
+      notifications: {
+        title: "Solicitud de autenticación",
+        accepted: "Autenticación aceptada",
+        refused: "Autenticación rechazada",
+      },
+    },
   },
 } as const;
 

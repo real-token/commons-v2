@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -41,17 +41,33 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
     latestSdkVersion,
     proposals,
     proposalAction,
+    authRequests,
+    authAction,
   } = useAA();
 
   const activeSessions = wcConnectedWebsiteMetadata;
 
   const [showProposalSession, setShowProposalSession] =
     useState<boolean>(false);
+  const [showAuthRequest, setShowAuthRequest] = useState<boolean>(false);
   const [sessionProposalIndex, setSessionProposalIndex] = useState<number>(0);
+  const [authRequestIndex, setAuthRequestIndex] = useState<number>(0);
   const sessionProposal = useMemo(
     () => proposals?.[sessionProposalIndex],
     [proposals, sessionProposalIndex]
   );
+  const currentAuthRequest = useMemo(
+    () => authRequests?.[authRequestIndex],
+    [authRequests, authRequestIndex]
+  );
+  // Auto-show auth request view when a new auth request arrives
+  useEffect(() => {
+    if (authRequests?.length > 0 && !showAuthRequest) {
+      setShowAuthRequest(true);
+      setAuthRequestIndex(0);
+    }
+  }, [authRequests?.length]);
+
   const wcEnabled = useMemo(() => {
     return sdkVersion == latestSdkVersion;
   }, [sdkVersion, latestSdkVersion]);
@@ -95,6 +111,134 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
       console.error(e);
     }
   };
+
+  const handleAuthAction = (id: number, accept: boolean) => {
+    try {
+      authAction(id, accept);
+      if (accept) {
+        notifications.show({
+          id: "auth-request-accepted",
+          title: t("authRequest.notifications.title"),
+          message: t("authRequest.notifications.accepted"),
+          icon: <IconCheck />,
+          color: "green",
+        });
+      } else {
+        notifications.show({
+          id: "auth-request-refused",
+          title: t("authRequest.notifications.title"),
+          message: t("authRequest.notifications.refused"),
+          icon: <IconX />,
+          color: "red",
+        });
+      }
+      setShowAuthRequest(false);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  if (showAuthRequest && currentAuthRequest) {
+    const validationStatus =
+      currentAuthRequest.verifyContext?.verified?.validation ?? "UNKNOWN";
+    const isScam =
+      currentAuthRequest.verifyContext?.verified?.isScam ?? false;
+
+    const requester = currentAuthRequest.params.requester;
+    const authPayload = currentAuthRequest.params.authPayload;
+
+    const buttonColor =
+      validationStatus == "VALID"
+        ? "blue"
+        : validationStatus == "INVALID"
+          ? "red"
+          : "orange";
+
+    return (
+      <Flex direction={"column"} gap={"lg"}>
+        {authRequests?.length > 1 ? (
+          <Flex
+            direction={"row"}
+            justify={"space-between"}
+            align={"center"}
+            w={"100%"}
+            gap={"md"}
+          >
+            <ActionIcon
+              onClick={() => setAuthRequestIndex(authRequestIndex - 1)}
+              disabled={authRequestIndex - 1 < 0}
+            >
+              <IconArrowLeft />
+            </ActionIcon>
+            <Text fw={700} fz={20}>
+              {authRequestIndex + 1} / {authRequests?.length}
+            </Text>
+            <ActionIcon
+              onClick={() => setAuthRequestIndex(authRequestIndex + 1)}
+              disabled={authRequestIndex + 1 >= authRequests?.length}
+            >
+              <IconArrowRight />
+            </ActionIcon>
+          </Flex>
+        ) : undefined}
+        <Flex direction={"column"} align={"center"} gap={"xs"}>
+          <Image
+            src={requester?.metadata?.icons?.[0]}
+            w={80}
+            h={80}
+            radius={"md"}
+            fallbackSrc="https://placehold.co/80x80?text=🌐"
+          />
+          <Title order={4} ta={"center"}>
+            {t("authRequest.wantToAuthenticate", {
+              name: requester?.metadata?.name ?? authPayload.domain ?? "Unknown",
+            })}
+          </Title>
+          <Text c={"dimmed"}>
+            {requester?.metadata?.url ?? authPayload.domain}
+          </Text>
+          <ValidationStatusBadge
+            validationStatus={validationStatus}
+            isScam={isScam}
+          />
+        </Flex>
+        {authPayload.chains?.length > 0 ? (
+          <Text fz={"sm"} c={"dimmed"} ta={"center"}>
+            {t("authRequest.chains", { count: authPayload.chains.length })}
+          </Text>
+        ) : undefined}
+        <SecurityAlert validationStatus={validationStatus} isScam={isScam} />
+        <Flex gap={"md"}>
+          <ActionIcon
+            onClick={() => setShowAuthRequest(false)}
+            size={"lg"}
+            variant="outline"
+          >
+            <IconArrowLeft />
+          </ActionIcon>
+          <Button
+            color="blue"
+            w={"100%"}
+            variant="outline"
+            onClick={() => {
+              handleAuthAction(currentAuthRequest.id, false);
+            }}
+          >
+            {t("authRequest.buttons.reject")}
+          </Button>
+          <Button
+            w={"100%"}
+            color={buttonColor}
+            onClick={() => {
+              handleAuthAction(currentAuthRequest.id, true);
+            }}
+          >
+            {t("authRequest.buttons.approve")}
+          </Button>
+        </Flex>
+      </Flex>
+    );
+  }
 
   if (showProposalSession && sessionProposal) {
     // "UNKNOWN" | "VALID" | "INVALID"
@@ -236,13 +380,14 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
       <Flex
         direction={"row"}
         justify={
-          activeSessions?.length > 0 && proposals?.length > 0
+          activeSessions?.length > 0 && (proposals?.length > 0 || authRequests?.length > 0)
             ? "space-between"
-            : proposals?.length > 0
+            : (proposals?.length > 0 || authRequests?.length > 0)
               ? "end"
               : "center"
         }
         align={"center"}
+        gap={"sm"}
       >
         {activeSessions?.length > 0 ? (
           <Text fw={700} fz={20}>
@@ -251,15 +396,27 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
             })}
           </Text>
         ) : undefined}
-        {proposals?.length > 0 ? (
-          <Button
-            onClick={() => setShowProposalSession(true)}
-            leftSection={<IconNotification size={16} />}
-            size={"sm"}
-          >
-            <Text>{`${proposals?.length} Proposals`}</Text>
-          </Button>
-        ) : undefined}
+        <Flex gap={"xs"}>
+          {proposals?.length > 0 ? (
+            <Button
+              onClick={() => setShowProposalSession(true)}
+              leftSection={<IconNotification size={16} />}
+              size={"sm"}
+            >
+              <Text>{`${proposals?.length} Proposals`}</Text>
+            </Button>
+          ) : undefined}
+          {authRequests?.length > 0 ? (
+            <Button
+              onClick={() => setShowAuthRequest(true)}
+              leftSection={<IconNotification size={16} />}
+              size={"sm"}
+              color="orange"
+            >
+              <Text>{`${authRequests?.length} Auth`}</Text>
+            </Button>
+          ) : undefined}
+        </Flex>
       </Flex>
       {activeSessions?.length > 0 ? (
         <ScrollArea h={300}>
