@@ -19,6 +19,7 @@ const common = {
     copy: "Copie d'adresse",
     viewOn: "Voir sur l'explorateur",
     disconnect: "Déconnexion",
+    manageMFA: "Paramètres MFA",
     network: "Réseau",
     disabledGnosisSafe:
       'La connexion directe au Safe n\'est pas possible, pour se connecter à un GnosisSafe, veuillez vous rendre sur safe.global et vous connecter à votre Safe. Dans la section "Apps", ajoutez une "custom app" en utilisant l\'url du site yam (https://yam.realtoken.network). Vous pourrez alors avoir le YAM directement dans l\'interface de votre safe.',

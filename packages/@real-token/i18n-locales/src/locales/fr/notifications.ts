@@ -3,6 +3,10 @@ const notifications = {
     title: "Copié ✅",
     message: "Adresse copiée dans le presse-papiers",
   },
+  manageMfaError: {
+    title: "Error",
+    message: "Erreur lors de la gestion de l'authentification multifactorielle (MFA)"
+  },
   transactions: {
     onchain: {
       onSent: {

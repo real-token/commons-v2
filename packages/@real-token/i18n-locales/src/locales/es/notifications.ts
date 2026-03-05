@@ -3,6 +3,10 @@ const notifications = {
     title: "Copiado ✅",
     message: "Dirección copiada al portapapeles",
   },
+  manageMfaError: {
+    title: "Error",
+    message: "Error al gestionar la autenticación multifactor (MFA)"
+  },
   transactions: {
     onchain: {
       onSent: {

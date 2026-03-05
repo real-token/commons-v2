@@ -3,6 +3,10 @@ const notifications = {
     title: "Copied ✅",
     message: "Address copied to clipboard",
   },
+  manageMfaError: {
+    title: "Error",
+    message: "Error managing MFA"
+  },
   transactions: {
     onchain: {
       onSent: {
