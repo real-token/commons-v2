@@ -7,6 +7,8 @@ import { useWeb3AuthConnect } from "@web3auth/modal/react";
 import { WALLET_CONNECTORS } from "@web3auth/modal";
 import { useMutation } from "@tanstack/react-query";
 import { notifications } from "@mantine/notifications";
+import { useRealTokenWeb3Config } from "@real-token/web3";
+import { useMemo } from "react";
 
 export const EmailPasswordless = () => {
   const { t } = useTranslation("main");
@@ -21,15 +23,29 @@ export const EmailPasswordless = () => {
 
   const { connectTo, loading } = useWeb3AuthConnect();
 
+  const { authProviderConfig } = useRealTokenWeb3Config();
+  
+  const authConnectionId = useMemo(() => {
+    if (!authProviderConfig || !authProviderConfig["email_passwordless"]) {
+      return null;
+    }
+    return authProviderConfig["email_passwordless"].authConnectionId;
+  }, [authProviderConfig]);
+
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
       try {
+        if(!authConnectionId){
+          throw new Error("email_passwordless authConnectionId not found")
+        }
+        console.log("email_passwordless authConnectionId: ", authConnectionId)
         await login({
           toggleAA: true,
           forceVersion: config.forceVersion,
           walletAddress: config.walletAddress,
         });
         await connectTo(WALLET_CONNECTORS.AUTH, {
+          authConnectionId,
           authConnection: "email_passwordless",
           loginHint: getInputProps().value,
         });
