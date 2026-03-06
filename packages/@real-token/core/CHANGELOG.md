@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 3.1.11
+
+### Patch Changes
+
+- 9fc0734: chore: upgrade dependencies
+- Updated dependencies [9fc0734]
+  - @real-token/types@3.1.11
+
 ## 3.1.10
 
 ### Patch Changes

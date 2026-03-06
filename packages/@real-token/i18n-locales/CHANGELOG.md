@@ -1,5 +1,11 @@
 # @real-token/i18n-locales
 
+## 3.1.11
+
+### Patch Changes
+
+- 9fc0734: chore: upgrade dependencies
+
 ## 3.1.10
 
 ### Patch Changes
