@@ -1,5 +1,13 @@
 # @real-token/aa-modal
 
+## 3.1.12
+
+### Patch Changes
+
+- fix: passwordless auth
+- Updated dependencies
+  - @real-token/web3@3.1.12
+
 ## 3.1.11
 
 ### Patch Changes

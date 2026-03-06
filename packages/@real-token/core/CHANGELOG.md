@@ -1,5 +1,13 @@
 # @real-token/core
 
+## 3.1.12
+
+### Patch Changes
+
+- fix: passwordless auth
+- Updated dependencies
+  - @real-token/types@3.1.12
+
 ## 3.1.11
 
 ### Patch Changes

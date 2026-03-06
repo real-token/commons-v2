@@ -1,5 +1,11 @@
 # @real-token/types
 
+## 3.1.12
+
+### Patch Changes
+
+- fix: passwordless auth
+
 ## 3.1.11
 
 ### Patch Changes
