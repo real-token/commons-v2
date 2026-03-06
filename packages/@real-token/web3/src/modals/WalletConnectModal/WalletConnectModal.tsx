@@ -242,10 +242,11 @@ export const WalletConnectModal: FC<ContextModalProps> = ({ id }) => {
 
   if (showProposalSession && sessionProposal) {
     // "UNKNOWN" | "VALID" | "INVALID"
+    const verifyContext = (sessionProposal as any).verifyContext;
     const validationStatus =
-      sessionProposal.verifyContext?.verified?.validation ?? "UNKNOWN";
+      verifyContext?.verified?.validation ?? "UNKNOWN";
     const isScam =
-      sessionProposal.verifyContext?.verified?.isScam ?? false;
+      verifyContext?.verified?.isScam ?? false;
 
     // Support both formats: { params: { proposer, requiredNamespaces } } and { proposer, requiredNamespaces }
     const proposal = sessionProposal as any;
